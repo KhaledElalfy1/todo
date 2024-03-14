@@ -1,5 +1,5 @@
-class Assets {
-  Assets._();
+class AppImages {
+  AppImages._();
   
   /// Assets for imagesOnbodrding1
   /// assets/images/onbodrding1.png
