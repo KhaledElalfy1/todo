@@ -6,11 +6,11 @@ abstract class AppFonts {
   static TextStyle bold32White = GoogleFonts.lato(
     fontSize: 32,
     fontWeight: FontWeight.bold,
-    color:AppColor.white,
+    color: AppColor.white,
   );
   static TextStyle regular16White = GoogleFonts.lato(
-    fontSize: 16,
+    fontSize: 20,
     fontWeight: FontWeight.normal,
-    color:AppColor.white,
+    color: AppColor.white,
   );
 }
