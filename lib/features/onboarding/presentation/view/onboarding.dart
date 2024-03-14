@@ -1,12 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 import 'package:testfirebase/core/helpers/extentions.dart';
 import 'package:testfirebase/core/routes/routing.dart';
 import 'package:testfirebase/core/utils/app_fonts.dart';
 import 'package:testfirebase/core/utils/app_images.dart';
+import 'package:testfirebase/features/onboarding/presentation/controller/cubit/onboarding_cubit.dart';
 import 'package:testfirebase/features/onboarding/presentation/view/widgets/indicator.dart';
 import 'package:testfirebase/features/onboarding/presentation/view/widgets/onboarding_widget.dart';
 
@@ -50,21 +52,31 @@ class Onboarding extends StatelessWidget {
                   style: AppFonts.regular16White,
                 ),
               ),
+              Gap(10.h),
               Expanded(
                 child: Stack(
                   children: [
                     PageView.builder(
-                      onPageChanged: (value) {},
+                      controller: OnboardingCubit.get(context).controller,
+                      onPageChanged: (value) {
+                        OnboardingCubit.get(context).updateIndicator(value);
+                      },
                       itemCount: onboarding.length,
                       itemBuilder: (context, index) => OnboardingWidget(
                         onboarding: onboarding,
                         index: index,
                       ),
                     ),
-                    const Align(
-                      alignment: Alignment(0, 0.1),
-                      child: IndicatorWidget(),
-                    )
+                    BlocBuilder<OnboardingCubit, OnboardingState>(
+                      builder: (context, state) {
+                        return Align(
+                          alignment: const Alignment(0, 0.1),
+                          child: IndicatorWidget(
+                            position: OnboardingCubit.get(context).indicator,
+                          ),
+                        );
+                      },
+                    ),
                   ],
                 ),
               ),
@@ -72,17 +84,22 @@ class Onboarding extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   TextButton(
-                    onPressed: () {},
+                    onPressed: () => OnboardingCubit.get(context).getBack(),
                     child: Text(
                       'BACK',
                       style: AppFonts.regular16White,
                     ),
                   ),
                   ElevatedButton(
-                    onPressed: () {},
-                    child: Text(
-                      'NEXT',
-                      style: AppFonts.regular16White,
+                    onPressed: () =>
+                        OnboardingCubit.get(context).getNext(context),
+                    child: BlocBuilder<OnboardingCubit, OnboardingState>(
+                      builder: (context, state) {
+                        return Text(
+                          OnboardingCubit.get(context).text,
+                          style: AppFonts.regular16White,
+                        );
+                      },
                     ),
                   )
                 ],

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:testfirebase/core/utils/app_color.dart';
 
 ThemeData appTheme() {
@@ -7,12 +6,12 @@ ThemeData appTheme() {
       brightness: Brightness.dark,
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ButtonStyle(
-          minimumSize: MaterialStatePropertyAll(Size(90.w, 48.h)),
+          minimumSize:const MaterialStatePropertyAll( Size(90, 48)),
           backgroundColor:
               const MaterialStatePropertyAll(AppColor.primaryColor),
           shape: MaterialStatePropertyAll(
             RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(4.r),
+              borderRadius: BorderRadius.circular(4),
             ),
           ),
         ),
