@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -6,6 +7,7 @@ import 'package:testfirebase/core/helpers/extentions.dart';
 import 'package:testfirebase/core/routes/routing.dart';
 import 'package:testfirebase/core/utils/app_fonts.dart';
 import 'package:testfirebase/core/utils/app_images.dart';
+import 'package:testfirebase/features/onboarding/presentation/view/widgets/indicator.dart';
 import 'package:testfirebase/features/onboarding/presentation/view/widgets/onboarding_widget.dart';
 
 class Onboarding extends StatelessWidget {
@@ -49,12 +51,21 @@ class Onboarding extends StatelessWidget {
                 ),
               ),
               Expanded(
-                child: PageView.builder(
-                  itemCount: onboarding.length,
-                  itemBuilder: (context, index) => OnboardingWidget(
-                    onboarding: onboarding,
-                    index: index,
-                  ),
+                child: Stack(
+                  children: [
+                    PageView.builder(
+                      onPageChanged: (value) {},
+                      itemCount: onboarding.length,
+                      itemBuilder: (context, index) => OnboardingWidget(
+                        onboarding: onboarding,
+                        index: index,
+                      ),
+                    ),
+                    const Align(
+                      alignment: Alignment(0, 0.1),
+                      child: IndicatorWidget(),
+                    )
+                  ],
                 ),
               ),
               Row(
