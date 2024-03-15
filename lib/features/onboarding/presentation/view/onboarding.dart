@@ -49,7 +49,7 @@ class Onboarding extends StatelessWidget {
                 },
                 child: Text(
                   'SKIP',
-                  style: AppFonts.regular16White,
+                  style: AppFonts.regular20White,
                 ),
               ),
               Gap(10.h),
@@ -87,7 +87,7 @@ class Onboarding extends StatelessWidget {
                     onPressed: () => OnboardingCubit.get(context).getBack(),
                     child: Text(
                       'BACK',
-                      style: AppFonts.regular16White,
+                      style: AppFonts.regular20White,
                     ),
                   ),
                   ElevatedButton(
@@ -97,7 +97,7 @@ class Onboarding extends StatelessWidget {
                       builder: (context, state) {
                         return Text(
                           OnboardingCubit.get(context).text,
-                          style: AppFonts.regular16White,
+                          style: AppFonts.regular20White,
                         );
                       },
                     ),

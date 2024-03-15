@@ -7,7 +7,7 @@ ThemeData appTheme() {
     brightness: Brightness.dark,
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ButtonStyle(
-        minimumSize: const MaterialStatePropertyAll(Size(90, 48)),
+        minimumSize: const MaterialStatePropertyAll(Size(90, 56)),
         backgroundColor: const MaterialStatePropertyAll(AppColor.primaryColor),
         shape: MaterialStatePropertyAll(
           RoundedRectangleBorder(
