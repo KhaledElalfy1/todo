@@ -6,6 +6,7 @@ import 'package:testfirebase/features/onboarding/presentation/controller/cubit/o
 import 'package:testfirebase/features/onboarding/presentation/view/onboarding.dart';
 import 'package:testfirebase/features/sign_in/presentation/controller/cubit/sign_in_cubit.dart';
 import 'package:testfirebase/features/sign_in/presentation/view/sign_in.dart';
+import 'package:testfirebase/features/sign_up/presentation/controller/cubit/sign_up_cubit.dart';
 import 'package:testfirebase/features/sign_up/presentation/view/sign_up.dart';
 import 'package:testfirebase/features/welcome/presentation/view/welcome.dart';
 
@@ -30,14 +31,17 @@ class AppRouter {
         );
       case Routing.signUp:
         return MaterialPageRoute(
-          builder: (_) => const SignUp(),
+          builder: (_) => BlocProvider(
+            create: (context) => SignUpCubit(),
+            child:const SignUp(),
+          ),
         );
 
       case Routing.signIn:
         return MaterialPageRoute(
           builder: (_) => BlocProvider(
             create: (context) => SignInCubit(),
-            child:const SignIn(),
+            child: const SignIn(),
           ),
         );
 
