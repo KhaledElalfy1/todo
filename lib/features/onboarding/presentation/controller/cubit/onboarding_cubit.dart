@@ -18,7 +18,11 @@ class OnboardingCubit extends Cubit<OnboardingState> {
   }
 
   void updateText() {
-    text = indicator == 2 ? 'GET START' : 'NEXT';
+     final newText = indicator == 2 ? 'GET START' : 'NEXT';
+    if (newText != text) {
+      text = newText;
+      emit(OnboardingUpdateText());
+    }
   }
 
   void getNext(BuildContext context) {
