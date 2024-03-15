@@ -11,6 +11,12 @@ class OnboardingCubit extends Cubit<OnboardingState> {
   int indicator = 0;
   String text = 'NEXT';
   PageController controller = PageController();
+  @override
+  Future<void> close() {
+    controller.dispose();
+    return super.close();
+  }
+
   void updateIndicator(int index) {
     indicator = index;
     updateText();
@@ -18,7 +24,7 @@ class OnboardingCubit extends Cubit<OnboardingState> {
   }
 
   void updateText() {
-     final newText = indicator == 2 ? 'GET START' : 'NEXT';
+    final newText = indicator == 2 ? 'GET START' : 'NEXT';
     if (newText != text) {
       text = newText;
       emit(OnboardingUpdateText());
