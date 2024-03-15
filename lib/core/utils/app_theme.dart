@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:testfirebase/core/utils/app_color.dart';
+import 'package:testfirebase/core/utils/app_fonts.dart';
 
 ThemeData appTheme() {
   return ThemeData(
@@ -16,6 +17,7 @@ ThemeData appTheme() {
       ),
     ),
     inputDecorationTheme: InputDecorationTheme(
+      hintStyle: AppFonts.regular16Grey,
       border: borderDecoration(),
       enabledBorder: borderDecoration(),
       errorBorder: borderDecoration(color: AppColor.red),

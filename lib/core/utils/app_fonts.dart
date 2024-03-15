@@ -13,4 +13,9 @@ abstract class AppFonts {
     fontWeight: FontWeight.normal,
     color: AppColor.white,
   );
+  static TextStyle regular16Grey = GoogleFonts.lato(
+    fontSize: 20,
+    fontWeight: FontWeight.normal,
+    color: AppColor.hitTextColor,
+  );
 }
