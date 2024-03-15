@@ -4,6 +4,7 @@ import 'package:testfirebase/core/routes/routing.dart';
 import 'package:testfirebase/features/home/presentation/view/home.dart';
 import 'package:testfirebase/features/onboarding/presentation/controller/cubit/onboarding_cubit.dart';
 import 'package:testfirebase/features/onboarding/presentation/view/onboarding.dart';
+import 'package:testfirebase/features/sign_in/presentation/controller/cubit/sign_in_cubit.dart';
 import 'package:testfirebase/features/sign_in/presentation/view/sign_in.dart';
 import 'package:testfirebase/features/sign_up/presentation/view/sign_up.dart';
 import 'package:testfirebase/features/welcome/presentation/view/welcome.dart';
@@ -34,7 +35,10 @@ class AppRouter {
 
       case Routing.signIn:
         return MaterialPageRoute(
-          builder: (_) => const SignIn(),
+          builder: (_) => BlocProvider(
+            create: (context) => SignInCubit(),
+            child:const SignIn(),
+          ),
         );
 
       default:
