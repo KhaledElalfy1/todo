@@ -6,7 +6,8 @@ import 'package:testfirebase/core/utils/app_fonts.dart';
 class OnboardingWidget extends StatelessWidget {
   const OnboardingWidget({
     super.key,
-    required this.onboarding, required this.index,
+    required this.onboarding,
+    required this.index,
   });
 
   final List<Map<String, String>> onboarding;
@@ -28,7 +29,7 @@ class OnboardingWidget extends StatelessWidget {
         Text(
           onboarding[index]['subtitle']!,
           textAlign: TextAlign.center,
-          style: AppFonts.regular16White,
+          style: AppFonts.regular20White,
         ),
       ],
     );

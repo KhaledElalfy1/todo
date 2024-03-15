@@ -26,7 +26,7 @@ class WelcomeScreen extends StatelessWidget {
               Text(
                 'Please login to your account or create new account to continue',
                 textAlign: TextAlign.center,
-                style: AppFonts.regular16White,
+                style: AppFonts.regular20White,
               ),
               const Spacer(),
               SizedBox(
@@ -37,7 +37,7 @@ class WelcomeScreen extends StatelessWidget {
                   },
                   child: Text(
                     'LOGIN',
-                    style: AppFonts.regular16White,
+                    style: AppFonts.regular20White,
                   ),
                 ),
               ),
@@ -60,7 +60,7 @@ class WelcomeScreen extends StatelessWidget {
                   ),
                   child: Text(
                     'CREATE ACCOUNT',
-                    style: AppFonts.regular16White,
+                    style: AppFonts.regular20White,
                   ),
                 ),
               ),

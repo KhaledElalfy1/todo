@@ -8,9 +8,14 @@ abstract class AppFonts {
     fontWeight: FontWeight.bold,
     color: AppColor.white,
   );
-  static TextStyle regular16White = GoogleFonts.lato(
+  static TextStyle regular20White = GoogleFonts.lato(
     fontSize: 20,
     fontWeight: FontWeight.normal,
     color: AppColor.white,
+  );
+  static TextStyle regular16Grey = GoogleFonts.lato(
+    fontSize: 16,
+    fontWeight: FontWeight.normal,
+    color: AppColor.hitTextColor,
   );
 }
