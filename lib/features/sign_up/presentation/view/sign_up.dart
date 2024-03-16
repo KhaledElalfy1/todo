@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 import 'package:testfirebase/core/utils/app_fonts.dart';
+import 'package:testfirebase/core/widgets/loading_widget.dart';
 import 'package:testfirebase/features/sign_in/presentation/view/widgets/or_section.dart';
 import 'package:testfirebase/features/sign_in/presentation/view/widgets/social_sign_in_section.dart';
 import 'package:testfirebase/features/sign_up/presentation/controller/cubit/sign_up_cubit.dart';
@@ -32,17 +35,33 @@ class SignUp extends StatelessWidget {
               Gap(30.h),
               const SignUpForm(),
               Gap(30.h),
-              ElevatedButton(
-                onPressed: () {
-                  if (SignUpCubit.get(context)
-                      .formKey
-                      .currentState!
-                      .validate()) {}
+              BlocConsumer<SignUpCubit, SignUpState>(
+                listener: (context, state) {
+                  if (state is SignUpSuccess) {
+                    SignUpCubit.get(context).logger.i('Success Login');
+                  }
+                  if (state is SignUpFailure) {
+                     SignUpCubit.get(context).logger.w(state.eMessage);
+                  }
                 },
-                child: Text(
-                  'Register',
-                  style: AppFonts.regular20White,
-                ),
+                builder: (context, state) {
+                  return ElevatedButton(
+                    onPressed: () {
+                      if (SignUpCubit.get(context)
+                          .formKey
+                          .currentState!
+                          .validate()) {
+                        SignUpCubit.get(context).signUp();
+                      }
+                    },
+                    child: state is SignUpLoading
+                        ? const LoadingWidget()
+                        : Text(
+                            'Register',
+                            style: AppFonts.regular20White,
+                          ),
+                  );
+                },
               ),
               Gap(20.h),
               const OrSection(),

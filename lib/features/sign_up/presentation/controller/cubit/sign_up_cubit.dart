@@ -1,19 +1,25 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
+import 'package:testfirebase/core/service/service_locator.dart';
+import 'package:testfirebase/features/sign_up/data/repo/sign_up_repo.dart';
+import 'package:logger/logger.dart';
 part 'sign_up_state.dart';
 
 class SignUpCubit extends Cubit<SignUpState> {
   SignUpCubit() : super(SignUpInitial());
   static SignUpCubit get(context) => BlocProvider.of(context);
-  TextEditingController emailController = TextEditingController();
-  TextEditingController passwordController = TextEditingController();
+
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
   TextEditingController confirmPasswordController = TextEditingController();
+
   GlobalKey<FormState> formKey = GlobalKey();
   bool isPasswordVisible = true;
   bool isConfirmPasswordVisible = true;
   Icon passwordVisibility = const Icon(Icons.visibility_off);
   Icon confirmPasswordVisibility = const Icon(Icons.visibility_off);
+  var logger = Logger();
   @override
   Future<void> close() {
     emailController.dispose();
@@ -62,5 +68,23 @@ class SignUpCubit extends Cubit<SignUpState> {
     }
 
     return null;
+  }
+
+  Future<void> signUp() async {
+    emit(SignUpLoading());
+    try {
+      await getIt<SignUpRepo>().signIn(
+          email: emailController.text, password: passwordController.text);
+      emit(SignUpSuccess());
+    } on FirebaseAuthException catch (e) {
+      emit(SignUpFailure(eMessage: e.toString()));
+      if (e.code == 'weak-password') {
+        logger.w('The password provided is too weak.');
+      } else if (e.code == 'email-already-in-use') {
+        logger.w('The account already exists for that email.');
+      }
+    } catch (e) {
+      logger.w(e.toString());
+    }
   }
 }
