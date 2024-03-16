@@ -37,7 +37,9 @@ class SignIn extends StatelessWidget {
                   if (SignInCubit.get(context)
                       .formKey
                       .currentState!
-                      .validate()) {}
+                      .validate()) {
+                    print(SignInCubit.get(context).emailController.text);
+                  }
                 },
                 child: Text(
                   'Login',

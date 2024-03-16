@@ -10,11 +10,12 @@ import 'package:device_preview/device_preview.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  setup();
+
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
   Bloc.observer = MyBlocObserver();
+  setup();
   runApp(
     DevicePreview(
       builder: (context) => TodoApp(

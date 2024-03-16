@@ -22,7 +22,8 @@ class SignUpForm extends StatelessWidget {
           ),
           Gap(10.h),
           CustomTextFormFiled(
-            validator: (value) => SignUpCubit.get(context).emailValidator(value),
+            validator: (value) =>
+                SignUpCubit.get(context).emailValidator(value),
             textEditingController: SignUpCubit.get(context).emailController,
             hintText: 'Enter your e-mail',
           ),
@@ -35,7 +36,8 @@ class SignUpForm extends StatelessWidget {
           BlocBuilder<SignUpCubit, SignUpState>(
             builder: (context, state) {
               return CustomTextFormFiled(
-                validator: (value) =>SignUpCubit.get(context).passwordValidator(value) ,
+                validator: (value) =>
+                    SignUpCubit.get(context).passwordValidator(value),
                 obscureText: SignUpCubit.get(context).isPasswordVisible,
                 textEditingController:
                     SignUpCubit.get(context).passwordController,
@@ -56,7 +58,8 @@ class SignUpForm extends StatelessWidget {
           BlocBuilder<SignUpCubit, SignUpState>(
             builder: (context, state) {
               return CustomTextFormFiled(
-                validator: (value) =>SignUpCubit.get(context).confirmPasswordValidator(value) ,
+                validator: (value) =>
+                    SignUpCubit.get(context).confirmPasswordValidator(value),
                 obscureText: SignUpCubit.get(context).isConfirmPasswordVisible,
                 textEditingController:
                     SignUpCubit.get(context).confirmPasswordController,

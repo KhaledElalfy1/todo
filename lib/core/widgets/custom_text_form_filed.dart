@@ -17,6 +17,7 @@ class CustomTextFormFiled extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      controller: textEditingController,
       validator: validator,
       obscureText: obscureText,
       decoration: InputDecoration(
