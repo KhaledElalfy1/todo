@@ -1,9 +1,8 @@
-import 'package:firebase_auth/firebase_auth.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:testfirebase/core/service/service_locator.dart';
 import 'package:testfirebase/features/sign_up/data/repo/sign_up_repo.dart';
-import 'package:logger/logger.dart';
 part 'sign_up_state.dart';
 
 class SignUpCubit extends Cubit<SignUpState> {
@@ -71,19 +70,16 @@ class SignUpCubit extends Cubit<SignUpState> {
 
   Future<void> signUp() async {
     emit(SignUpLoading());
-    try {
-      await getIt<SignUpRepo>().signIn(
-          email: emailController.text, password: passwordController.text);
-      emit(SignUpSuccess());
-    } on FirebaseAuthException catch (e) {
-      emit(SignUpFailure(eMessage: e.toString()));
-      if (e.code == 'weak-password') {
-       getIt<Logger>().w('The password provided is too weak.');
-      } else if (e.code == 'email-already-in-use') {
-       getIt<Logger>().w('The account already exists for that email.');
-      }
-    } catch (e) {
-     getIt<Logger>().w(e.toString());
-    }
+    final result = await getIt<SignUpRepo>()
+        .signIn(email: emailController.text, password: passwordController.text);
+
+    result.fold(
+      (eMessage) => emit(
+        SignUpFailure(eMessage: eMessage),
+      ),
+      (sMessage) => emit(
+        SignUpSuccess(sMessage: sMessage),
+      ),
+    );
   }
 }

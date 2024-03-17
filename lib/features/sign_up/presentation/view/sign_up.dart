@@ -39,10 +39,10 @@ class SignUp extends StatelessWidget {
               BlocConsumer<SignUpCubit, SignUpState>(
                 listener: (context, state) {
                   if (state is SignUpSuccess) {
-                    getIt<Logger>().i('Success Login');
+                    getIt<Logger>().i(state.sMessage);
                   }
                   if (state is SignUpFailure) {
-                     getIt<Logger>().w(state.eMessage);
+                    getIt<Logger>().w(state.eMessage);
                   }
                 },
                 builder: (context, state) {
