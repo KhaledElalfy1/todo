@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
+import 'package:logger/logger.dart';
+import 'package:testfirebase/core/service/service_locator.dart';
 import 'package:testfirebase/core/utils/app_fonts.dart';
+import 'package:testfirebase/core/widgets/loading_widget.dart';
 import 'package:testfirebase/features/sign_in/presentation/controller/cubit/sign_in_cubit.dart';
 import 'package:testfirebase/features/sign_in/presentation/view/widgets/dont_have_account_section.dart';
 import 'package:testfirebase/features/sign_in/presentation/view/widgets/or_section.dart';
@@ -32,19 +36,32 @@ class SignIn extends StatelessWidget {
               Gap(50.h),
               const SignInForm(),
               Gap(50.h),
-              ElevatedButton(
-                onPressed: () {
-                  if (SignInCubit.get(context)
-                      .formKey
-                      .currentState!
-                      .validate()) {
-                    print(SignInCubit.get(context).emailController.text);
+              BlocConsumer<SignInCubit, SignInState>(
+                listener: (context, state) {
+                  if (state is SignInSuccess) {
+                    getIt<Logger>().i(state.sMessage);
+                  } else if (state is SignInFailure) {
+                    getIt<Logger>().i(state.eMessage);
                   }
                 },
-                child: Text(
-                  'Login',
-                  style: AppFonts.regular20White,
-                ),
+                builder: (context, state) {
+                  return ElevatedButton(
+                    onPressed: () {
+                      if (SignInCubit.get(context)
+                          .formKey
+                          .currentState!
+                          .validate()) {
+                        SignInCubit.get(context).signIn();
+                      }
+                    },
+                    child: state is SignInLoading
+                        ? const LoadingWidget()
+                        : Text(
+                            'Login',
+                            style: AppFonts.regular20White,
+                          ),
+                  );
+                },
               ),
               Gap(20.h),
               const OrSection(),

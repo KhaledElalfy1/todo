@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:testfirebase/core/service/service_locator.dart';
+import 'package:testfirebase/features/sign_in/data/repo/sign_in_repo.dart';
 
 part 'sign_in_state.dart';
 
@@ -38,10 +40,26 @@ class SignInCubit extends Cubit<SignInState> {
     }
     return null;
   }
+
   String? passwordValidator(String? value) {
-    if (value!.length<8) {
+    if (value!.length < 8) {
       return 'password can\'t be less than 8 character';
     }
     return null;
+  }
+
+  void signIn() async {
+    emit(SignInLoading());
+    final result = await getIt<SignInRepo>()
+        .signIn(email: emailController.text, password: passwordController.text);
+
+    result.fold(
+      (eMessage) => emit(
+        SignInFailure(eMessage: eMessage),
+      ),
+      (sMessage) => emit(
+        SignInSuccess(sMessage: sMessage),
+      ),
+    );
   }
 }

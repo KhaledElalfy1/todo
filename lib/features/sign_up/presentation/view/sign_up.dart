@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
+import 'package:logger/logger.dart';
+import 'package:testfirebase/core/service/service_locator.dart';
 import 'package:testfirebase/core/utils/app_fonts.dart';
 import 'package:testfirebase/core/widgets/loading_widget.dart';
 import 'package:testfirebase/features/sign_in/presentation/view/widgets/or_section.dart';
@@ -38,10 +39,10 @@ class SignUp extends StatelessWidget {
               BlocConsumer<SignUpCubit, SignUpState>(
                 listener: (context, state) {
                   if (state is SignUpSuccess) {
-                    SignUpCubit.get(context).logger.i('Success Login');
+                    getIt<Logger>().i(state.sMessage);
                   }
                   if (state is SignUpFailure) {
-                     SignUpCubit.get(context).logger.w(state.eMessage);
+                    getIt<Logger>().w(state.eMessage);
                   }
                 },
                 builder: (context, state) {
