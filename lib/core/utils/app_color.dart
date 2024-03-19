@@ -8,4 +8,6 @@ abstract class AppColor {
   static const Color hitTextColor = Color(0xff535353);
   static const Color white = Colors.white;
   static const Color red = Colors.red;
+  static const Color black = Colors.black;
+  static const Color green = Colors.green;
 }

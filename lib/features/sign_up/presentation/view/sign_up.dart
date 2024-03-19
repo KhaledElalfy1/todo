@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
-import 'package:logger/logger.dart';
-import 'package:testfirebase/core/service/service_locator.dart';
+import 'package:testfirebase/core/helpers/extentions.dart';
 import 'package:testfirebase/core/utils/app_fonts.dart';
 import 'package:testfirebase/core/widgets/loading_widget.dart';
+import 'package:testfirebase/core/widgets/popup_window.dart';
 import 'package:testfirebase/features/sign_in/presentation/view/widgets/or_section.dart';
 import 'package:testfirebase/features/sign_in/presentation/view/widgets/social_sign_in_section.dart';
 import 'package:testfirebase/features/sign_up/presentation/controller/cubit/sign_up_cubit.dart';
@@ -39,10 +39,30 @@ class SignUp extends StatelessWidget {
               BlocConsumer<SignUpCubit, SignUpState>(
                 listener: (context, state) {
                   if (state is SignUpSuccess) {
-                    getIt<Logger>().i(state.sMessage);
+                    showDialog(
+                      context: context,
+                      builder: (context) => PopupWindow(
+                        type: 'Success',
+                        title: 'Success!',
+                        content: state.sMessage,
+                        ok: () {
+                          context.pop();
+                        },
+                      ),
+                    );
                   }
                   if (state is SignUpFailure) {
-                    getIt<Logger>().w(state.eMessage);
+                    showDialog(
+                      context: context,
+                      builder: (context) => PopupWindow(
+                        type: 'Warning',
+                        title: 'Warning!',
+                        content: state.eMessage,
+                        ok: () {
+                          context.pop();
+                        },
+                      ),
+                    );
                   }
                 },
                 builder: (context, state) {

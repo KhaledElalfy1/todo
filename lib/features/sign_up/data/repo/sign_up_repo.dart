@@ -5,11 +5,13 @@ class SignUpRepo {
   Future<Either<String, String>> signIn(
       {required String email, required String password}) async {
     try {
-      await FirebaseAuth.instance.createUserWithEmailAndPassword(
+      final credential =
+          await FirebaseAuth.instance.createUserWithEmailAndPassword(
         email: email,
         password: password,
       );
-      return right('Success sign up');
+     await credential.user?.sendEmailVerification();
+      return right('Congratulations! You\'ve successfully signed up. Please verify your account to continue.');
     } on FirebaseAuthException catch (e) {
       if (e.code == 'weak-password') {
         return left('The password provided is too weak.');
