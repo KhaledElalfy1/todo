@@ -18,4 +18,19 @@ abstract class AppFonts {
     fontWeight: FontWeight.normal,
     color: AppColor.hitTextColor,
   );
+  static TextStyle bold16black = GoogleFonts.lato(
+    fontSize: 16,
+    fontWeight: FontWeight.bold,
+    color: AppColor.black,
+  );
+  static TextStyle dialogContent = GoogleFonts.lato(
+    fontSize: 16,
+    fontWeight: FontWeight.normal,
+    color: AppColor.white,
+  );
+  static TextStyle dialogTitle = GoogleFonts.lato(
+    color: AppColor.green,
+    fontSize: 20.0,
+    fontWeight: FontWeight.bold,
+  );
 }
