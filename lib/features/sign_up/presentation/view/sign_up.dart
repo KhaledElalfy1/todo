@@ -42,7 +42,7 @@ class SignUp extends StatelessWidget {
                     showDialog(
                       context: context,
                       builder: (context) => PopupWindow(
-                        type: 'Success',
+                        type: 's',
                         title: 'Success!',
                         content: state.sMessage,
                         ok: () {
