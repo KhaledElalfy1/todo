@@ -2,7 +2,7 @@
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <application
-        android:label="testfirebase"
+        android:label="UpTodo"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
