@@ -1,11 +1,12 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
-import 'package:logger/logger.dart';
-import 'package:testfirebase/core/service/service_locator.dart';
+import 'package:testfirebase/core/helpers/extentions.dart';
 import 'package:testfirebase/core/utils/app_fonts.dart';
 import 'package:testfirebase/core/widgets/loading_widget.dart';
+import 'package:testfirebase/core/widgets/popup_window.dart';
 import 'package:testfirebase/features/sign_in/presentation/controller/cubit/sign_in_cubit.dart';
 import 'package:testfirebase/features/sign_in/presentation/view/widgets/dont_have_account_section.dart';
 import 'package:testfirebase/features/sign_in/presentation/view/widgets/or_section.dart';
@@ -39,9 +40,34 @@ class SignIn extends StatelessWidget {
               BlocConsumer<SignInCubit, SignInState>(
                 listener: (context, state) {
                   if (state is SignInSuccess) {
-                    getIt<Logger>().i(state.sMessage);
+                    if (!FirebaseAuth.instance.currentUser!.emailVerified) {
+                      showDialog(
+                        context: context,
+                        builder: (context) => PopupWindow(
+                          title: 'Warning',
+                          content: 'Please verify your account ',
+                          type: 'f',
+                          ok: () {
+                            context.pop();
+                          },
+                        ),
+                      );
+                    } else {
+                      // TODO add navigation
+                      debugPrint('sssssssss');
+                    }
                   } else if (state is SignInFailure) {
-                    getIt<Logger>().i(state.eMessage);
+                    showDialog(
+                      context: context,
+                      builder: (context) => PopupWindow(
+                        title: 'Warning',
+                        content: state.eMessage,
+                        type: 'type',
+                        ok: () {
+                          context.pop();
+                        },
+                      ),
+                    );
                   }
                 },
                 builder: (context, state) {

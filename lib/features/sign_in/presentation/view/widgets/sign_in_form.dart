@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
+import 'package:testfirebase/core/helpers/extentions.dart';
+import 'package:testfirebase/core/routes/routing.dart';
 import 'package:testfirebase/core/utils/app_fonts.dart';
 import 'package:testfirebase/core/widgets/custom_text_form_filed.dart';
 import 'package:testfirebase/features/sign_in/presentation/controller/cubit/sign_in_cubit.dart';
@@ -22,7 +24,8 @@ class SignInForm extends StatelessWidget {
           ),
           Gap(10.h),
           CustomTextFormFiled(
-            validator: (value) => SignInCubit.get(context).emailValidator(value),
+            validator: (value) =>
+                SignInCubit.get(context).emailValidator(value),
             textEditingController: SignInCubit.get(context).emailController,
             hintText: 'Enter your e-mail',
           ),
@@ -35,7 +38,8 @@ class SignInForm extends StatelessWidget {
           BlocBuilder<SignInCubit, SignInState>(
             builder: (context, state) {
               return CustomTextFormFiled(
-                validator: (value) => SignInCubit.get(context).passwordValidator(value),
+                validator: (value) =>
+                    SignInCubit.get(context).passwordValidator(value),
                 obscureText: SignInCubit.get(context).isVisable,
                 textEditingController:
                     SignInCubit.get(context).passwordController,
@@ -51,7 +55,9 @@ class SignInForm extends StatelessWidget {
           Align(
             alignment: Alignment.centerRight,
             child: TextButton(
-              onPressed: () {},
+              onPressed: () {
+                context.pushNamed(Routing.resetPassword);
+              },
               child: Text(
                 'forget Password?',
                 style: AppFonts.regular16Grey,

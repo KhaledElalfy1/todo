@@ -21,7 +21,7 @@ class PopupWindow extends StatelessWidget {
       title: Text(
         title,
         textAlign: TextAlign.center,
-        style:title=='Success'? AppFonts.dialogTitle:AppFonts.dialogTitle.copyWith(color: AppColor.red),
+        style:type=='s'? AppFonts.dialogTitle:AppFonts.dialogTitle.copyWith(color: AppColor.red),
       ),
       content: Text(
         content,
