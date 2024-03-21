@@ -17,7 +17,7 @@ class SocialSignIn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomTransparentButton(
-      onPressed: () {},
+      onPressed:onPressed,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [

@@ -7,10 +7,10 @@ import 'package:testfirebase/core/utils/app_fonts.dart';
 import 'package:testfirebase/core/widgets/loading_widget.dart';
 import 'package:testfirebase/core/widgets/popup_window.dart';
 import 'package:testfirebase/features/sign_in/presentation/view/widgets/or_section.dart';
-import 'package:testfirebase/features/sign_in/presentation/view/widgets/social_sign_in_section.dart';
 import 'package:testfirebase/features/sign_up/presentation/controller/cubit/sign_up_cubit.dart';
 import 'package:testfirebase/features/sign_up/presentation/view/widgets/already_have_account.dart';
 import 'package:testfirebase/features/sign_up/presentation/view/widgets/sign_up_form.dart';
+import 'package:testfirebase/features/sign_up/presentation/view/widgets/social_sign_up_section.dart';
 
 class SignUp extends StatelessWidget {
   const SignUp({super.key});
@@ -86,7 +86,7 @@ class SignUp extends StatelessWidget {
               ),
               Gap(20.h),
               const OrSection(),
-              const SocialSignInSection(),
+              const SocialSignUpSection(),
               Gap(20.h),
               const AlreadyHaveAccount(),
             ],

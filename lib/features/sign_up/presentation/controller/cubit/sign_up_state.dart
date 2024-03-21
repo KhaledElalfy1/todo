@@ -4,7 +4,6 @@ sealed class SignUpState {}
 
 final class SignUpInitial extends SignUpState {}
 
-final class SignUpChangePasswordVisibility extends SignUpState {}
 
 final class SignUpChangeConfirmPasswordVisibility extends SignUpState {}
 
@@ -21,3 +20,16 @@ final class SignUpFailure extends SignUpState {
 
   SignUpFailure({required this.eMessage});
 }
+
+
+final class GoogleSignUpLoading extends SignUpState {}
+final class GoogleSignUpSuccess extends SignUpState {}
+final class GoogleSignUpFailure extends SignUpState {
+    final String eMessage;
+
+  GoogleSignUpFailure({required this.eMessage});
+}
+
+
+
+final class SignUpChangePasswordVisibility extends SignUpState {}

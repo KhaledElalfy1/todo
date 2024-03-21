@@ -1,7 +1,7 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:testfirebase/core/service/service_locator.dart';
+import 'package:testfirebase/features/sign_in/data/repo/sign_in_repo.dart';
 import 'package:testfirebase/features/sign_up/data/repo/sign_up_repo.dart';
 part 'sign_up_state.dart';
 
@@ -79,6 +79,20 @@ class SignUpCubit extends Cubit<SignUpState> {
       ),
       (sMessage) => emit(
         SignUpSuccess(sMessage: sMessage),
+      ),
+    );
+  }
+
+  void googleSignUp() async {
+    emit(GoogleSignUpLoading());
+    final result = await getIt<SignInRepo>().signInWithGoogle();
+
+    result.fold(
+      (eMessage) => emit(
+        GoogleSignUpFailure(eMessage: eMessage),
+      ),
+      (r) => emit(
+        GoogleSignUpSuccess(),
       ),
     );
   }
