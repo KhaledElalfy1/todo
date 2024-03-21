@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
+import 'package:testfirebase/core/helpers/extentions.dart';
 import 'package:testfirebase/core/widgets/popup_window.dart';
 import 'package:testfirebase/core/widgets/social_sign_in.dart';
 import 'package:testfirebase/features/sign_in/presentation/controller/cubit/sign_in_cubit.dart';
@@ -24,6 +25,7 @@ class SocialSignInSection extends StatelessWidget {
                 title: 'Failure!',
                 content: state.eMessage,
                 type: 'e',
+                ok: () => context.pop(),
               );
             }
           },
