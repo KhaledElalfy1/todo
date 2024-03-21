@@ -62,4 +62,17 @@ class SignInCubit extends Cubit<SignInState> {
       ),
     );
   }
+
+  void googleSignIn() async {
+    emit(GoogleSignInLoading());
+    final result = await getIt<SignInRepo>().signInWithGoogle();
+    result.fold(
+      (eMessage) => emit(
+       GoogleSignInFailure(eMessage: eMessage)
+      ),
+      (r) => emit(
+       GoogleSignInSuccess(),
+      ),
+    );
+  }
 }

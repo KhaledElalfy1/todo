@@ -18,4 +18,14 @@ final class SignInFailure extends SignInState {
   SignInFailure({required this.eMessage});
 }
 
+final class GoogleSignInLoading extends SignInState {}
+
+final class GoogleSignInSuccess extends SignInState {}
+
+final class GoogleSignInFailure extends SignInState {
+  final String eMessage;
+
+  GoogleSignInFailure({required this.eMessage});
+}
+
 final class SignInChangeIcon extends SignInState {}

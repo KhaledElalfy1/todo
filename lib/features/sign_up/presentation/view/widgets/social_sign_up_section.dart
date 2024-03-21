@@ -15,13 +15,13 @@ class SocialSignUpSection extends StatelessWidget {
         SocialSignIn(
           onPressed: () {},
           iconPath: 'assets/icons/google.svg',
-          text: 'Login with Google',
+          text: 'Register with Google',
         ),
         Gap(10.h),
         SocialSignIn(
           onPressed: () {},
           iconPath: 'assets/icons/apple.svg',
-          text: 'Login with Apple',
+          text: 'Register with Apple',
         ),
       ],
     );
