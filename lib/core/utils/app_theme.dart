@@ -4,6 +4,9 @@ import 'package:testfirebase/core/utils/app_fonts.dart';
 
 ThemeData appTheme() {
   return ThemeData(
+    appBarTheme: const AppBarTheme(
+      centerTitle: true,
+    ),
     brightness: Brightness.dark,
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ButtonStyle(

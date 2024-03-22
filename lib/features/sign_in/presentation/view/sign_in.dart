@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 import 'package:testfirebase/core/helpers/extentions.dart';
+import 'package:testfirebase/core/routes/routing.dart';
 import 'package:testfirebase/core/utils/app_fonts.dart';
 import 'package:testfirebase/core/widgets/loading_widget.dart';
 import 'package:testfirebase/core/widgets/popup_window.dart';
@@ -53,8 +54,8 @@ class SignIn extends StatelessWidget {
                         ),
                       );
                     } else {
-                      // TODO add navigation
-                      debugPrint('sssssssss');
+                      context.pushNamedAndRemoveUntil(Routing.home,
+                          predicate: (routing) => false);
                     }
                   } else if (state is SignInFailure) {
                     showDialog(

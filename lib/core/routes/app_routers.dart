@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:testfirebase/core/routes/routing.dart';
+import 'package:testfirebase/features/home/presentation/controller/home/home_cubit.dart';
 import 'package:testfirebase/features/home/presentation/view/home.dart';
 import 'package:testfirebase/features/onboarding/presentation/controller/cubit/onboarding_cubit.dart';
 import 'package:testfirebase/features/onboarding/presentation/view/onboarding.dart';
@@ -25,7 +26,10 @@ class AppRouter {
         );
       case Routing.home:
         return MaterialPageRoute(
-          builder: (_) => const Home(),
+          builder: (_) => BlocProvider(
+            create: (context) => HomeCubit(),
+            child:const Home(),
+          ),
         );
       case Routing.welcomeScreen:
         return MaterialPageRoute(
@@ -35,7 +39,7 @@ class AppRouter {
         return MaterialPageRoute(
           builder: (_) => BlocProvider(
             create: (context) => ResetPasswordCubit(),
-            child:const ResetPassword(),
+            child: const ResetPassword(),
           ),
         );
       case Routing.signUp:
