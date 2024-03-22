@@ -4,7 +4,6 @@ import 'package:testfirebase/core/utils/app_color.dart';
 import 'package:testfirebase/core/utils/app_fonts.dart';
 import 'package:testfirebase/features/home/presentation/view/widgets/nav_bar.dart';
 import 'package:testfirebase/features/home/presentation/view/widgets/no_data_section.dart';
-
 class Home extends StatelessWidget {
   const Home({super.key});
 
