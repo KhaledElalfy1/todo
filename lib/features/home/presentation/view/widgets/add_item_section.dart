@@ -17,7 +17,7 @@ class AddItemSection extends StatelessWidget {
           child: CircleAvatar(
             radius: 35.r,
             backgroundColor: AppColor.primaryColor,
-            child: state is AddItemLoading
+            child: state is AddTaskLoading
                 ? const LoadingWidget()
                 : const Icon(
                     Icons.add,

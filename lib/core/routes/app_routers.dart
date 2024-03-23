@@ -27,7 +27,7 @@ class AppRouter {
       case Routing.home:
         return MaterialPageRoute(
           builder: (_) => BlocProvider(
-            create: (context) => HomeCubit(),
+            create: (context) => HomeCubit()..getTasks(),
             child:const Home(),
           ),
         );

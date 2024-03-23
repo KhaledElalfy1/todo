@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:testfirebase/core/utils/app_color.dart';
 import 'package:testfirebase/core/utils/app_fonts.dart';
+import 'package:testfirebase/features/home/presentation/controller/home/home_cubit.dart';
 import 'package:testfirebase/features/home/presentation/view/widgets/nav_bar.dart';
-import 'package:testfirebase/features/home/presentation/view/widgets/no_data_section.dart';
+import 'package:testfirebase/features/home/presentation/view/widgets/success_body.dart';
+
 class Home extends StatelessWidget {
   const Home({super.key});
 
@@ -30,14 +33,25 @@ class Home extends StatelessWidget {
         ],
       ),
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 24.0.w),
-        child: ListView(
-          children: const [
-            NoDataBody(),
-          ],
-        ),
-      ),
+          padding: EdgeInsets.symmetric(horizontal: 24.0.w),
+          child: BlocBuilder<HomeCubit, HomeState>(
+            builder: (context, state) {
+              if (state is GetTaskSuccess) {
+                return SuccessBody(tasks: state.tasks,);
+              } else if (state is GetTaskFailure) {
+                return Center(
+                  child: Text(state.eMessage),
+                );
+              } else {
+                return const Center(
+                  child: CircularProgressIndicator(),
+                );
+              }
+            },
+          )),
       bottomNavigationBar: const CustomButtonNavBar(),
     );
   }
 }
+
+
