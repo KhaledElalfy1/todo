@@ -5,6 +5,7 @@ import 'package:testfirebase/core/utils/app_color.dart';
 import 'package:testfirebase/core/utils/app_fonts.dart';
 import 'package:testfirebase/features/home/presentation/controller/home/home_cubit.dart';
 import 'package:testfirebase/features/home/presentation/view/widgets/nav_bar.dart';
+import 'package:testfirebase/features/home/presentation/view/widgets/no_data_section.dart';
 import 'package:testfirebase/features/home/presentation/view/widgets/success_body.dart';
 
 class Home extends StatelessWidget {
@@ -37,7 +38,12 @@ class Home extends StatelessWidget {
           child: BlocBuilder<HomeCubit, HomeState>(
             builder: (context, state) {
               if (state is GetTaskSuccess) {
-                return SuccessBody(tasks: state.tasks,);
+                if (state.tasks.isEmpty) {
+                  return const NoDataBody();
+                }
+                return SuccessBody(
+                  tasks: state.tasks,
+                );
               } else if (state is GetTaskFailure) {
                 return Center(
                   child: Text(state.eMessage),
@@ -53,5 +59,3 @@ class Home extends StatelessWidget {
     );
   }
 }
-
-
