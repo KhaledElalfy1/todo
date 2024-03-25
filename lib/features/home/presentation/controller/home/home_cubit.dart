@@ -9,31 +9,16 @@ class HomeCubit extends Cubit<HomeState> {
   HomeCubit() : super(HomeInitial());
   static HomeCubit get(context) => BlocProvider.of(context);
 
-  void addTask() async {
-    emit(AddTaskLoading());
-    final result = await getIt<HomeRepo>().addTask(task: 'task3');
-    result.fold(
-      (l) => emit(
-        AddTaskFailure(),
-      ),
-      (r) {
-        emit(
-          AddTaskSuccess(),
-        );
-        getTasks();
-      },
-    );
-  }
-
   void getTasks() async {
     emit(GetTaskLoading());
     final result = await getIt<HomeRepo>().getUerTasks();
-    result.fold((eMessage) {
-      emit(GetTaskFailure(eMessage: eMessage));
-      print(eMessage);
-    }, (tasks) {
-      emit(GetTaskSuccess(tasks: tasks));
-      print(tasks.length);
-    });
+    result.fold(
+      (eMessage) => emit(
+        GetTaskFailure(eMessage: eMessage),
+      ),
+      (tasks) => emit(
+        GetTaskSuccess(tasks: tasks),
+      ),
+    );
   }
 }

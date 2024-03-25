@@ -4,11 +4,6 @@ sealed class HomeState {}
 
 final class HomeInitial extends HomeState {}
 
-final class AddTaskLoading extends HomeState {}
-
-final class AddTaskSuccess extends HomeState {}
-
-final class AddTaskFailure extends HomeState {}
 
 final class GetTaskLoading extends HomeState {}
 

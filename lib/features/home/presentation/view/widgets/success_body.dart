@@ -6,7 +6,8 @@ import 'package:testfirebase/features/home/presentation/view/widgets/task_card.d
 
 class SuccessBody extends StatelessWidget {
   const SuccessBody({
-    super.key, required this.tasks,
+    super.key,
+    required this.tasks,
   });
   final List<TaskModel> tasks;
   @override

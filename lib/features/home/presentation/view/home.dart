@@ -34,27 +34,28 @@ class Home extends StatelessWidget {
         ],
       ),
       body: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 24.0.w),
-          child: BlocBuilder<HomeCubit, HomeState>(
-            builder: (context, state) {
-              if (state is GetTaskSuccess) {
-                if (state.tasks.isEmpty) {
-                  return const NoDataBody();
-                }
-                return SuccessBody(
-                  tasks: state.tasks,
-                );
-              } else if (state is GetTaskFailure) {
-                return Center(
-                  child: Text(state.eMessage),
-                );
-              } else {
-                return const Center(
-                  child: CircularProgressIndicator(),
-                );
+        padding: EdgeInsets.symmetric(horizontal: 24.0.w),
+        child: BlocBuilder<HomeCubit, HomeState>(
+          builder: (context, state) {
+            if (state is GetTaskSuccess) {
+              if (state.tasks.isEmpty) {
+                return const NoDataBody();
               }
-            },
-          )),
+              return SuccessBody(
+                tasks: state.tasks,
+              );
+            } else if (state is GetTaskFailure) {
+              return Center(
+                child: Text(state.eMessage),
+              );
+            } else {
+              return const Center(
+                child: CircularProgressIndicator(),
+              );
+            }
+          },
+        ),
+      ),
       bottomNavigationBar: const CustomButtonNavBar(),
     );
   }

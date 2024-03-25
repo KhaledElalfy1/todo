@@ -11,7 +11,7 @@ class HomeRepo {
     try {
       await tasks.add(
         {
-          FireStoreKeys.task: 'task3',
+          FireStoreKeys.task: task,
           FireStoreKeys.time: DateTime.now(),
           FireStoreKeys.uId: FirebaseAuth.instance.currentUser!.uid,
         },
@@ -34,7 +34,7 @@ class HomeRepo {
         tasksList.add(TaskModel.fromFirestore(doc.data()));
       }
       return right(tasksList);
-    } catch (e) {
+    } on Exception catch (e) {
       return left(e.toString());
     }
   }
