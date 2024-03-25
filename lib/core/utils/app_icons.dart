@@ -36,5 +36,10 @@ class AppIcons {
   /// Assets for iconsUser
   /// assets/icons/user.svg
   static const String iconsUser = "assets/icons/user.svg";
+  static const String iconsFlag = "assets/icons/flag.svg";
+  static const String iconsSend = "assets/icons/send.svg";
+  static const String iconsTag = "assets/icons/tag.svg";
+  static const String iconsTimer = "assets/icons/timer.svg";
+
 }
 
