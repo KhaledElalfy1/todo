@@ -13,7 +13,7 @@ import 'package:testfirebase/features/home/presentation/view/widgets/custom_task
 
 class AddTaskDialog extends StatelessWidget {
   const AddTaskDialog({super.key});
-  
+
   @override
   Widget build(BuildContext context) {
     return Dialog(
@@ -39,12 +39,13 @@ class AddTaskDialog extends StatelessWidget {
               style: AppFonts.regular16Grey,
             ),
             CustomTaskTextFiled(
-              textEditingController: AddTaskCubit.get(context).taskDetailsController,
+              textEditingController:
+                  AddTaskCubit.get(context).taskDetailsController,
             ),
             Row(
               children: [
                 IconButton(
-                  onPressed: () {},
+                  onPressed: ()=>pickDateTime(context),
                   icon: SvgPicture.asset(
                     AppIcons.iconsTimer,
                   ),
@@ -83,6 +84,26 @@ class AddTaskDialog extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+
+  Future<DateTime?> pickDate(BuildContext context) => showDatePicker(
+      context: context, firstDate: DateTime.now(), lastDate: DateTime(2050));
+
+  Future<TimeOfDay?> pickTime(BuildContext context) =>
+      showTimePicker(context: context, initialTime: TimeOfDay.now());
+
+  Future pickDateTime(BuildContext context) async {
+    DateTime? date = await pickDate(context);
+    if (date == null) return;
+    TimeOfDay? time = await pickTime(context);
+    if (time == null) return;
+    AddTaskCubit.get(context).dueDate = DateTime(
+      date.year,
+      date.month,
+      date.day,
+      time.hour,
+      time.minute,
     );
   }
 }

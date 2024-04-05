@@ -15,8 +15,10 @@ class SuccessBody extends StatelessWidget {
     return ListView.separated(
       itemCount: tasks.length,
       itemBuilder: (context, index) => TaskCard(
-          taskName: tasks[index].taskName,
-          timestamp: tasks[index].dateTime),
+        taskName: tasks[index].taskName,
+        dueDate: tasks[index].dueDate,
+        isDone: tasks[index].isDone,
+      ),
       separatorBuilder: (context, index) => Gap(10.h),
     );
   }
