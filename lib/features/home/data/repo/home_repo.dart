@@ -7,13 +7,16 @@ import 'package:testfirebase/core/model/task_model.dart';
 class HomeRepo {
   CollectionReference tasks =
       FirebaseFirestore.instance.collection(FireStoreKeys.tasksCollection);
-  Future<Either<String, String>> addTask({required String task}) async {
+  Future<Either<String, String>> addTask({required String task,required String taskDescription,required DateTime dueDate}) async {
     try {
       await tasks.add(
         {
           FireStoreKeys.task: task,
-          FireStoreKeys.time: DateTime.now(),
+          FireStoreKeys.taskDescription:taskDescription,
+          FireStoreKeys.createdAt: DateTime.now(),
           FireStoreKeys.uId: FirebaseAuth.instance.currentUser!.uid,
+          FireStoreKeys.dueDate:dueDate,
+          FireStoreKeys.isDone:false,
         },
       );
       return right('Data Added Successfully');

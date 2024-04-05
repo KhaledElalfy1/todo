@@ -13,7 +13,7 @@ class IndexSection extends StatelessWidget {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 16.h),
       width: double.infinity,
-      height: 80.h,
+      height: 88.h,
       color: AppColor.hitTextColor,
       child: Row(
         children: [

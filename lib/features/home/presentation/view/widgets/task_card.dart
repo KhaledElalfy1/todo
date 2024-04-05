@@ -1,6 +1,6 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:gap/gap.dart';
 import 'package:testfirebase/core/utils/app_color.dart';
 import 'package:testfirebase/core/utils/app_fonts.dart';
 
@@ -8,10 +8,12 @@ class TaskCard extends StatelessWidget {
   const TaskCard({
     super.key,
     required this.taskName,
-    required this.timestamp,
+    required this.dueDate,
+    required this.isDone,
   });
   final String taskName;
-  final Timestamp timestamp;
+  final DateTime dueDate;
+  final bool isDone;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -23,19 +25,25 @@ class TaskCard extends StatelessWidget {
       ),
       child: Row(
         children: [
-          Checkbox(value: false, onChanged: (value) {}),
+          Checkbox(value: isDone, onChanged: (value) {}),
           Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Text(
                 taskName,
                 style: AppFonts.dialogContent,
               ),
+              Gap(5.h),
               Text(
-                timestamp.toString().substring(0, 10),
-                style: AppFonts.regular12White.copyWith(
-                  fontSize: 14,
-                ),
+                'Due Date ${dueDate.day}/${dueDate.month}, ${dueDate.hour}:${dueDate.minute}',
+                style: DateTime.now().isAfter(dueDate)
+                    ? AppFonts.regular12White.copyWith(
+                        fontSize: 14,
+                        color: AppColor.red,
+                      )
+                    : AppFonts.regular12White.copyWith(
+                        fontSize: 14,
+                      ),
               ),
             ],
           ),
