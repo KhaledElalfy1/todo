@@ -8,22 +8,23 @@ class TaskModel {
   final DateTime createdAt;
   final DateTime dueDate;
   final bool isDone;
-
+  final String docID;
   TaskModel(
       {required this.taskName,
       required this.taskDescription,
       required this.uId,
       required this.createdAt,
       required this.dueDate,
-      required this.isDone});
-  factory TaskModel.fromFirestore(Map<String, dynamic> jsonData) {
+      required this.isDone,required this.docID});
+  factory TaskModel.fromFirestore(Map<String, dynamic> doc,String id) {
     return TaskModel(
-      taskName: jsonData[FireStoreKeys.task],
-      uId: jsonData[FireStoreKeys.uId],
-      createdAt: (jsonData[FireStoreKeys.createdAt] as Timestamp).toDate(),
-      taskDescription: jsonData[FireStoreKeys.taskDescription],
-      dueDate: (jsonData[FireStoreKeys.dueDate] as Timestamp).toDate(),
-      isDone: jsonData[FireStoreKeys.isDone],
+      taskName: doc[FireStoreKeys.task],
+      uId: doc[FireStoreKeys.uId],
+      createdAt: (doc[FireStoreKeys.createdAt] as Timestamp).toDate(),
+      taskDescription: doc[FireStoreKeys.taskDescription],
+      dueDate: (doc[FireStoreKeys.dueDate] as Timestamp).toDate(),
+      isDone: doc[FireStoreKeys.isDone],
+      docID: id
     );
   }
 }

@@ -21,4 +21,20 @@ class HomeCubit extends Cubit<HomeState> {
       ),
     );
   }
+
+  void makeTaskChecked({required String doc, required bool value}) async {
+    emit(CheckTaskLoading());
+    final result = await getIt<HomeRepo>().checkTask(doc: doc, value: value);
+    result.fold(
+      (l) {
+        emit(CheckTaskFailure());
+      },
+      (r) {
+        emit(
+          CheckTaskSuccess(),
+        );
+        getTasks();
+      },
+    );
+  }
 }

@@ -18,6 +18,7 @@ class SuccessBody extends StatelessWidget {
         taskName: tasks[index].taskName,
         dueDate: tasks[index].dueDate,
         isDone: tasks[index].isDone,
+        docID: tasks[index].docID,
       ),
       separatorBuilder: (context, index) => Gap(10.h),
     );

@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 import 'package:testfirebase/core/utils/app_color.dart';
 import 'package:testfirebase/core/utils/app_fonts.dart';
+import 'package:testfirebase/features/home/presentation/controller/home/home_cubit.dart';
 
 class TaskCard extends StatelessWidget {
   const TaskCard({
@@ -10,10 +12,12 @@ class TaskCard extends StatelessWidget {
     required this.taskName,
     required this.dueDate,
     required this.isDone,
+    required this.docID,
   });
   final String taskName;
   final DateTime dueDate;
   final bool isDone;
+  final String docID;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -25,7 +29,16 @@ class TaskCard extends StatelessWidget {
       ),
       child: Row(
         children: [
-          Checkbox(value: isDone, onChanged: (value) {}),
+          BlocBuilder<HomeCubit, HomeState>(
+            builder: (context, state) {
+              return Checkbox(
+                  value: isDone,
+                  onChanged: (value) {
+                    HomeCubit.get(context)
+                        .makeTaskChecked(doc: docID, value: !isDone);
+                  });
+            },
+          ),
           Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
