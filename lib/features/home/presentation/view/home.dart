@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:gap/gap.dart';
 import 'package:testfirebase/core/utils/app_color.dart';
 import 'package:testfirebase/core/utils/app_fonts.dart';
 import 'package:testfirebase/features/home/presentation/controller/home/home_cubit.dart';
@@ -35,25 +37,37 @@ class Home extends StatelessWidget {
       ),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 24.0.w),
-        child: BlocBuilder<HomeCubit, HomeState>(
-          builder: (context, state) {
-            if (state is GetTaskSuccess) {
-              if (state.tasks.isEmpty) {
-                return const NoDataBody();
-              }
-              return SuccessBody(
-                tasks: state.tasks,
-              );
-            } else if (state is GetTaskFailure) {
-              return Center(
-                child: Text(state.eMessage),
-              );
-            } else {
-              return const Center(
-                child: CircularProgressIndicator(),
-              );
-            }
-          },
+        child: Column(
+          children: [
+            BlocBuilder<HomeCubit, HomeState>(
+              builder: (context, state) => state is GetTaskLoading
+                  ? const LinearProgressIndicator()
+                  : const SizedBox(),
+            ),
+            Gap(20.h),
+            Expanded(
+              child: BlocBuilder<HomeCubit, HomeState>(
+                builder: (context, state) {
+                  if (state is GetTaskSuccess) {
+                    if (state.tasks.isEmpty) {
+                      return const NoDataBody();
+                    }
+                    return SuccessBody(
+                      tasks: HomeCubit.get(context).userTasks,
+                    );
+                  } else if (state is GetTaskFailure) {
+                    return Center(
+                      child: Text(state.eMessage),
+                    );
+                  } else {
+                    return SuccessBody(
+                      tasks: HomeCubit.get(context).userTasks,
+                    );
+                  }
+                },
+              ),
+            ),
+          ],
         ),
       ),
       bottomNavigationBar: const CustomButtonNavBar(),

@@ -24,7 +24,7 @@ class TaskCard extends StatelessWidget {
         children: [
           BlocBuilder<HomeCubit, HomeState>(
             builder: (context, state) {
-              return Checkbox(
+              return  Checkbox(
                   value: task.isDone,
                   onChanged: (value) {
                     HomeCubit.get(context)
@@ -37,7 +37,9 @@ class TaskCard extends StatelessWidget {
             children: [
               Text(
                 task.taskName,
-                style: AppFonts.dialogContent,
+                style: AppFonts.dialogContent.copyWith(
+                    decoration:
+                        task.isDone ? TextDecoration.lineThrough : null),
               ),
               Gap(5.h),
               Text(
