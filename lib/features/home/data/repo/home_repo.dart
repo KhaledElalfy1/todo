@@ -7,16 +7,19 @@ import 'package:testfirebase/core/model/task_model.dart';
 class HomeRepo {
   CollectionReference tasks =
       FirebaseFirestore.instance.collection(FireStoreKeys.tasksCollection);
-  Future<Either<String, String>> addTask({required String task,required String taskDescription,required DateTime dueDate}) async {
+  Future<Either<String, String>> addTask(
+      {required String task,
+      required String taskDescription,
+      required DateTime dueDate}) async {
     try {
       await tasks.add(
         {
           FireStoreKeys.task: task,
-          FireStoreKeys.taskDescription:taskDescription,
+          FireStoreKeys.taskDescription: taskDescription,
           FireStoreKeys.createdAt: DateTime.now(),
           FireStoreKeys.uId: FirebaseAuth.instance.currentUser!.uid,
-          FireStoreKeys.dueDate:dueDate,
-          FireStoreKeys.isDone:false,
+          FireStoreKeys.dueDate: dueDate,
+          FireStoreKeys.isDone: false,
         },
       );
       return right('Data Added Successfully');
@@ -34,10 +37,20 @@ class HomeRepo {
     try {
       List<TaskModel> tasksList = [];
       for (var doc in data.docs) {
-        tasksList.add(TaskModel.fromFirestore(doc.data()));
+        tasksList.add(TaskModel.fromFirestore(doc.data(),doc.id));
       }
       return right(tasksList);
     } on Exception catch (e) {
+      return left(e.toString());
+    }
+  }
+
+  Future<Either<String, String>> checkTask(
+      {required String doc, required bool value}) async {
+    try {
+      await tasks.doc(doc).update({FireStoreKeys.isDone: value});
+      return right('r');
+    } catch (e) {
       return left(e.toString());
     }
   }
