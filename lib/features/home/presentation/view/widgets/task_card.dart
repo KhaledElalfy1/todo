@@ -24,12 +24,13 @@ class TaskCard extends StatelessWidget {
         children: [
           BlocBuilder<HomeCubit, HomeState>(
             builder: (context, state) {
-              return  Checkbox(
-                  value: task.isDone,
-                  onChanged: (value) {
-                    HomeCubit.get(context)
-                        .makeTaskChecked(doc: task.docID, value: !task.isDone);
-                  });
+              return Checkbox(
+                value: task.isDone,
+                onChanged: (value) {
+                  HomeCubit.get(context)
+                      .makeTaskChecked(doc: task.docID, value: !task.isDone);
+                },
+              );
             },
           ),
           Column(
