@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 import 'package:testfirebase/core/utils/app_color.dart';
 import 'package:testfirebase/core/utils/app_fonts.dart';
+import 'package:testfirebase/core/widgets/doting_loading_indicator.dart';
 import 'package:testfirebase/features/home/presentation/controller/home/home_cubit.dart';
 import 'package:testfirebase/features/home/presentation/view/widgets/nav_bar.dart';
 import 'package:testfirebase/features/home/presentation/view/widgets/no_data_section.dart';
@@ -40,7 +41,7 @@ class Home extends StatelessWidget {
           children: [
             BlocBuilder<HomeCubit, HomeState>(
               builder: (context, state) => state is GetTaskLoading
-                  ? const LinearProgressIndicator()
+                  ? const DotingLoadingIndicator()
                   : const SizedBox(),
             ),
             Gap(20.h),
