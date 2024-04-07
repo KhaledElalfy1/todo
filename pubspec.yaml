@@ -28,6 +28,7 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  audioplayers: ^6.0.0
   cloud_firestore: ^4.15.9
   cupertino_icons: ^1.0.6
   dartz: ^0.10.1
@@ -72,6 +73,7 @@ flutter:
   assets:
     - assets/images/
     - assets/icons/
+    - assets/sounds/
   #   - images/a_dot_ham.jpeg
 flutter_assets:
   assets_path: assets/icons/
