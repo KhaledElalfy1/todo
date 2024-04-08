@@ -1,7 +1,10 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
+import 'package:testfirebase/core/helpers/extentions.dart';
+import 'package:testfirebase/core/routes/routing.dart';
 import 'package:testfirebase/core/utils/app_color.dart';
 import 'package:testfirebase/core/utils/app_fonts.dart';
 import 'package:testfirebase/core/widgets/doting_loading_indicator.dart';
@@ -18,7 +21,11 @@ class Home extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          onPressed: () {},
+          onPressed: () {
+            FirebaseAuth.instance.signOut();
+            context.pushNamedAndRemoveUntil(Routing.init,
+                predicate: (routing) => false);
+          },
           icon: const Icon(Icons.filter_list),
         ),
         title: Text(
