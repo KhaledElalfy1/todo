@@ -22,3 +22,5 @@ final class GetTaskFailure extends HomeState {
 final class CheckTaskLoading extends HomeState {}
 final class CheckTaskSuccess extends HomeState {}
 final class CheckTaskFailure extends HomeState {}
+
+final class ChangeRoute extends HomeState {}

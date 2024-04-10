@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 import 'package:testfirebase/core/utils/app_color.dart';
-import 'package:testfirebase/core/utils/app_icons.dart';
+import 'package:testfirebase/features/home/presentation/controller/home/home_cubit.dart';
 import 'package:testfirebase/features/home/presentation/view/widgets/nav_bar_index.dart';
 
 class IndexSection extends StatelessWidget {
@@ -15,40 +16,52 @@ class IndexSection extends StatelessWidget {
       width: double.infinity,
       height: 88.h,
       color: AppColor.hitTextColor,
-      child: Row(
-        children: [
-          NavBarIndex(
-            iconPath: AppIcons.iconsSelectedHome,
-            title: 'Index',
-            onTap: () {
-              debugPrint('index');
-            },
-          ),
-          Gap(30.w),
-          NavBarIndex(
-            iconPath: AppIcons.iconsUnselectedCalendar,
-            title: 'Calender',
-            onTap: () {
-              debugPrint('Calender');
-            },
-          ),
-          const Spacer(),
-          NavBarIndex(
-            iconPath: AppIcons.iconsUnselectedClock,
-            title: 'Focus',
-            onTap: () {
-              debugPrint('Focus');
-            },
-          ),
-          Gap(30.w),
-          NavBarIndex(
-            iconPath: AppIcons.iconsUser,
-            title: 'Profile',
-            onTap: () {
-              debugPrint('Profile');
-            },
-          ),
-        ],
+      child: BlocBuilder<HomeCubit, HomeState>(
+        builder: (context, state) {
+          return Row(
+            children: [
+              NavBarIndex(
+                iconPath: HomeCubit.get(context).currentRoute == 0
+                    ? HomeCubit.get(context).bottomBarItems[0]['activeIcon']
+                    : HomeCubit.get(context).bottomBarItems[0]['inactiveIcon'],
+                title: HomeCubit.get(context).bottomBarItems[0]['routeName'],
+                onTap: () {
+                  HomeCubit.get(context).changeRoute(index: 0);
+                },
+              ),
+              Gap(30.w),
+              NavBarIndex(
+                iconPath: HomeCubit.get(context).currentRoute == 1
+                    ? HomeCubit.get(context).bottomBarItems[1]['activeIcon']
+                    : HomeCubit.get(context).bottomBarItems[1]['inactiveIcon'],
+                title: HomeCubit.get(context).bottomBarItems[1]['routeName'],
+                onTap: () {
+                  HomeCubit.get(context).changeRoute(index: 1);
+                },
+              ),
+              const Spacer(),
+             NavBarIndex(
+                iconPath: HomeCubit.get(context).currentRoute == 2
+                    ? HomeCubit.get(context).bottomBarItems[2]['activeIcon']
+                    : HomeCubit.get(context).bottomBarItems[2]['inactiveIcon'],
+                title: HomeCubit.get(context).bottomBarItems[2]['routeName'],
+                onTap: () {
+                  HomeCubit.get(context).changeRoute(index: 2);
+                },
+              ),
+              Gap(30.w),
+             NavBarIndex(
+                iconPath: HomeCubit.get(context).currentRoute == 3
+                    ? HomeCubit.get(context).bottomBarItems[3]['activeIcon']
+                    : HomeCubit.get(context).bottomBarItems[3]['inactiveIcon'],
+                title: HomeCubit.get(context).bottomBarItems[3]['routeName'],
+                onTap: () {
+                  HomeCubit.get(context).changeRoute(index: 3);
+                },
+              ),
+            ],
+          );
+        },
       ),
     );
   }
