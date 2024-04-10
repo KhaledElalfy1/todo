@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:testfirebase/core/database/cache/shared_preferences.dart';
 import 'package:testfirebase/core/helpers/bloc_observer.dart';
 import 'package:testfirebase/core/routes/app_routers.dart';
 import 'package:testfirebase/core/service/service_locator.dart';
@@ -16,6 +17,7 @@ void main() async {
   );
   Bloc.observer = MyBlocObserver();
   setup();
+  getIt<CacheHelper>().init();
   runApp(
     DevicePreview(
       builder: (context) => TodoApp(
