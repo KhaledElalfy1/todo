@@ -12,7 +12,12 @@ class HomeCubit extends Cubit<HomeState> {
   HomeCubit() : super(HomeInitial());
   static HomeCubit get(context) => BlocProvider.of(context);
   List<TaskModel> userTasks = [];
-  List<Widget> routes = const [Home(), Scaffold(), Scaffold(), Scaffold()];
+  List<Widget> routes = const [
+    MainScreen(),
+    Scaffold(),
+    Scaffold(),
+    Scaffold()
+  ];
   int currentRoute = 0;
   List<Map<String, dynamic>> bottomBarItems = [
     {

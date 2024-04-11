@@ -13,8 +13,8 @@ import 'package:testfirebase/features/home/presentation/view/widgets/nav_bar.dar
 import 'package:testfirebase/features/home/presentation/view/widgets/no_data_section.dart';
 import 'package:testfirebase/features/home/presentation/view/widgets/success_body.dart';
 
-class Home extends StatelessWidget {
-  const Home({super.key});
+class MainScreen extends StatelessWidget {
+  const MainScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
