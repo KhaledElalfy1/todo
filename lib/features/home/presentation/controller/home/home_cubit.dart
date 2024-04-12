@@ -4,7 +4,7 @@ import 'package:testfirebase/core/model/task_model.dart';
 import 'package:testfirebase/core/service/service_locator.dart';
 import 'package:testfirebase/core/utils/app_icons.dart';
 import 'package:testfirebase/features/home/data/repo/home_repo.dart';
-import 'package:testfirebase/features/home/presentation/view/home.dart';
+import 'package:testfirebase/features/home/presentation/view/widgets/tasks_body.dart';
 
 part 'home_state.dart';
 
@@ -12,11 +12,19 @@ class HomeCubit extends Cubit<HomeState> {
   HomeCubit() : super(HomeInitial());
   static HomeCubit get(context) => BlocProvider.of(context);
   List<TaskModel> userTasks = [];
+  List<TaskModel> userDoneTasks = [];
+  List<TaskModel> userUndoneTasks = [];
   List<Widget> routes = const [
-    MainScreen(),
-    Scaffold(),
-    Scaffold(),
-    Scaffold()
+    TasksBody(),
+    Column(
+      children: [Text('second route')],
+    ),
+    Column(
+      children: [Text('third route')],
+    ),
+    Column(
+      children: [Text('fourth route')],
+    ),
   ];
   int currentRoute = 0;
   List<Map<String, dynamic>> bottomBarItems = [
@@ -55,6 +63,17 @@ class HomeCubit extends Cubit<HomeState> {
       (tasks) {
         userTasks = List.from(tasks);
         userTasks.sort((a, b) => a.dueDate.compareTo(b.dueDate));
+        userDoneTasks = [];
+        userUndoneTasks = [];
+        for (var element in userTasks) {
+          if (!element.isDone) {
+            userUndoneTasks.add(element);
+          } else if (element.isDone) {
+            userDoneTasks.add(element);
+          }
+        }
+        debugPrint(
+            'Done tasks ${userDoneTasks.length}\n undoneTasks ${userUndoneTasks.length}');
         emit(
           GetTaskSuccess(tasks: userTasks),
         );

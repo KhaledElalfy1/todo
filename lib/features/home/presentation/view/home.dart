@@ -2,16 +2,12 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:gap/gap.dart';
 import 'package:testfirebase/core/helpers/extentions.dart';
 import 'package:testfirebase/core/routes/routing.dart';
 import 'package:testfirebase/core/utils/app_color.dart';
 import 'package:testfirebase/core/utils/app_fonts.dart';
-import 'package:testfirebase/core/widgets/doting_loading_indicator.dart';
 import 'package:testfirebase/features/home/presentation/controller/home/home_cubit.dart';
 import 'package:testfirebase/features/home/presentation/view/widgets/nav_bar.dart';
-import 'package:testfirebase/features/home/presentation/view/widgets/no_data_section.dart';
-import 'package:testfirebase/features/home/presentation/view/widgets/success_body.dart';
 
 class MainScreen extends StatelessWidget {
   const MainScreen({super.key});
@@ -44,37 +40,9 @@ class MainScreen extends StatelessWidget {
       ),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 24.0.w),
-        child: Column(
-          children: [
-            BlocBuilder<HomeCubit, HomeState>(
-              builder: (context, state) => state is GetTaskLoading
-                  ? const DotingLoadingIndicator()
-                  : const SizedBox(),
-            ),
-            Gap(20.h),
-            Expanded(
-              child: BlocBuilder<HomeCubit, HomeState>(
-                builder: (context, state) {
-                  if (state is GetTaskSuccess) {
-                    if (state.tasks.isEmpty) {
-                      return const NoDataBody();
-                    }
-                    return SuccessBody(
-                      tasks: HomeCubit.get(context).userTasks,
-                    );
-                  } else if (state is GetTaskFailure) {
-                    return Center(
-                      child: Text(state.eMessage),
-                    );
-                  } else {
-                    return SuccessBody(
-                      tasks: HomeCubit.get(context).userTasks,
-                    );
-                  }
-                },
-              ),
-            ),
-          ],
+        child: BlocBuilder<HomeCubit, HomeState>(
+          builder: (context, state) => HomeCubit.get(context)
+              .routes[HomeCubit.get(context).currentRoute],
         ),
       ),
       bottomNavigationBar: const CustomButtonNavBar(),
