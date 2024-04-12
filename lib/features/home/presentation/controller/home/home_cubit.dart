@@ -14,6 +14,8 @@ class HomeCubit extends Cubit<HomeState> {
   List<TaskModel> userTasks = [];
   List<TaskModel> userDoneTasks = [];
   List<TaskModel> userUndoneTasks = [];
+  IconData expandedIcon = Icons.expand_more;
+  bool isExpanded = true;
   List<Widget> routes = const [
     TasksBody(),
     Column(
@@ -100,5 +102,11 @@ class HomeCubit extends Cubit<HomeState> {
   void changeRoute({required int index}) {
     currentRoute = index;
     emit(ChangeRoute());
+  }
+
+  void changeExpandedIcon() {
+    isExpanded = !isExpanded;
+    expandedIcon = isExpanded ? Icons.expand_more : Icons.chevron_right;
+    emit(ChangeExpandedIcon());
   }
 }
