@@ -31,14 +31,16 @@ class AddTaskDialog extends StatelessWidget {
             ),
             Gap(14.h),
             CustomTaskTextFiled(
+              hintText: 'Task',
               textEditingController: AddTaskCubit.get(context).taskController,
             ),
             Gap(14.h),
             Text(
               'Description',
-              style: AppFonts.regular16Grey,
+              style: AppFonts.regular20White,
             ),
             CustomTaskTextFiled(
+              hintText: 'Task Description',
               textEditingController:
                   AddTaskCubit.get(context).taskDetailsController,
             ),

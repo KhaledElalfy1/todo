@@ -1,9 +1,12 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 import 'package:testfirebase/core/model/task_model.dart';
 import 'package:testfirebase/core/utils/app_fonts.dart';
+import 'package:testfirebase/features/home/presentation/controller/home/home_cubit.dart';
 import 'package:testfirebase/features/home/presentation/view/widgets/task_card.dart';
 
 class SuccessBody extends StatelessWidget {
@@ -16,26 +19,45 @@ class SuccessBody extends StatelessWidget {
   final List<TaskModel> doneTasks;
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return ListView(
       children: [
-        Expanded(
-          child: ListView.separated(
-            itemCount: undoneTasks.length,
-            itemBuilder: (context, index) => TaskCard(
-              task: undoneTasks[index],
-            ),
-            separatorBuilder: (context, index) => Gap(10.h),
+        ListView.separated(
+          shrinkWrap: true,
+          itemCount: undoneTasks.length,
+          itemBuilder: (context, index) => TaskCard(
+            task: undoneTasks[index],
+          ),
+          separatorBuilder: (context, index) => Gap(10.h),
+        ),
+        Gap(30.h),
+        GestureDetector(
+          onTap: HomeCubit.get(context).changeExpandedIcon,
+          child: Row(
+            children: [
+              Text(
+                'Completed',
+                style: AppFonts.bold32White,
+              ),
+              BlocBuilder<HomeCubit, HomeState>(
+                builder: (context, state) {
+                  return Icon(
+                    HomeCubit.get(context).expandedIcon,
+                    size: 40,
+                  );
+                },
+              ),
+            ],
           ),
         ),
-        Align(
-          alignment: Alignment.topLeft,
-          child: Text(
-            'Completed',
-            style: AppFonts.bold32White,
-          ),
-        ),
-        Expanded(
-          child: ListView.separated(
+        Gap(15.h),
+        AnimatedCrossFade(
+          duration: const Duration(milliseconds: 300),
+          crossFadeState: HomeCubit.get(context).isExpanded
+              ? CrossFadeState.showSecond
+              : CrossFadeState.showFirst,
+          firstChild: const SizedBox(), 
+          secondChild: ListView.separated(
+            shrinkWrap: true,
             itemCount: doneTasks.length,
             itemBuilder: (context, index) => TaskCard(
               task: doneTasks[index],
@@ -43,6 +65,7 @@ class SuccessBody extends StatelessWidget {
             separatorBuilder: (context, index) => Gap(10.h),
           ),
         ),
+        Gap(20.h),
       ],
     );
   }
