@@ -45,7 +45,7 @@ class AddTaskDialog extends StatelessWidget {
             Row(
               children: [
                 IconButton(
-                  onPressed: ()=>pickDateTime(context),
+                  onPressed: () => pickDateTime(context),
                   icon: SvgPicture.asset(
                     AppIcons.iconsTimer,
                   ),
@@ -94,6 +94,7 @@ class AddTaskDialog extends StatelessWidget {
       showTimePicker(context: context, initialTime: TimeOfDay.now());
 
   Future pickDateTime(BuildContext context) async {
+    FocusScope.of(context).unfocus();
     DateTime? date = await pickDate(context);
     if (date == null) return;
     TimeOfDay? time = await pickTime(context);

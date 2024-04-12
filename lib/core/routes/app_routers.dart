@@ -28,7 +28,7 @@ class AppRouter {
         return MaterialPageRoute(
           builder: (_) => BlocProvider(
             create: (context) => HomeCubit()..getTasks(),
-            child:const Home(),
+            child: const MainScreen(),
           ),
         );
       case Routing.welcomeScreen:
