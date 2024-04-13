@@ -6,6 +6,7 @@ import 'package:testfirebase/features/reset_password/data/repo/reset_password_re
 import 'package:testfirebase/features/sign_in/data/repo/sign_in_repo.dart';
 import 'package:testfirebase/features/sign_up/data/repo/sign_up_repo.dart';
 import 'package:audioplayers/audioplayers.dart';
+import 'package:testfirebase/features/task_details/data/repo/task_details_repo.dart';
 
 final getIt = GetIt.instance;
 
@@ -15,6 +16,7 @@ void setup() {
   getIt.registerLazySingleton(() => Logger());
   getIt.registerLazySingleton(() => ResetPasswordRepo());
   getIt.registerLazySingleton(() => HomeRepo());
+  getIt.registerLazySingleton(() => TaskDetailRepo());
   getIt.registerLazySingleton(() => AudioPlayer());
   getIt.registerLazySingleton(() => CacheHelper());
 

@@ -19,7 +19,7 @@ class TaskCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        context.pushNamed(Routing.taskDetails, argument: task);
+        context.pushReplacementNamed(Routing.taskDetails, argument: task);
       },
       child: Container(
         padding: EdgeInsets.symmetric(vertical: 16.h),
