@@ -1,9 +1,5 @@
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:testfirebase/core/helpers/extentions.dart';
-import 'package:testfirebase/core/routes/routing.dart';
 import 'package:testfirebase/core/service/service_locator.dart';
-import 'package:testfirebase/features/home/presentation/view/home.dart';
 import 'package:testfirebase/features/task_details/data/repo/task_details_repo.dart';
 import 'package:testfirebase/features/task_details/presentation/controller/cubit/edit_task_state.dart';
 
@@ -19,15 +15,12 @@ class EditTaskCubit extends Cubit<EditTaskState> {
     });
   }
 
-  navigation(BuildContext context) {
-    return WillPopScope(
-      child:const MainScreen(),
-      // Wrap your widget with WillPopScope to handle back button press
-      onWillPop: () async {
-        // Navigate to another screen when back button is pressed
-        context.pushReplacementNamed(Routing.home);
-        return true; // Return true to allow the back navigation
-      },
+  void deleteTask({required String doc}) async {
+    emit(DeleteTaskLoading());
+    final result = await getIt<TaskDetailRepo>().deleteTask(doc: doc);
+    result.fold(
+      (l) => emit(DeleteTaskFailure(eMessage: l)),
+      (r) => emit(DeleteTaskSuccess()),
     );
   }
 }

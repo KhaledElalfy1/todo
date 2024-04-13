@@ -11,3 +11,12 @@ final class EditTaskFailure extends EditTaskState {
 
   EditTaskFailure({required this.eMessage});
 }
+final class DeleteTaskLoading extends EditTaskState {}
+
+final class DeleteTaskSuccess extends EditTaskState {}
+
+final class DeleteTaskFailure extends EditTaskState {
+  final String eMessage;
+
+  DeleteTaskFailure({required this.eMessage});
+}

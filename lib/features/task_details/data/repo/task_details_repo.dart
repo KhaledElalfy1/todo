@@ -15,4 +15,13 @@ class TaskDetailRepo {
       return left(e.toString());
     }
   }
+
+  Future<Either<String, String>> deleteTask({required String doc}) async {
+    try {
+      await tasks.doc(doc).delete();
+      return right('Success');
+    } catch (e) {
+      return left('Failure');
+    }
+  }
 }
