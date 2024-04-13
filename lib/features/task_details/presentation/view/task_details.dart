@@ -3,10 +3,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:gap/gap.dart';
 import 'package:testfirebase/core/model/task_model.dart';
+import 'package:testfirebase/core/utils/app_color.dart';
 import 'package:testfirebase/core/utils/app_fonts.dart';
 import 'package:testfirebase/core/utils/app_icons.dart';
 import 'package:testfirebase/features/task_details/presentation/view/widgets/custom_app_bar.dart';
 import 'package:testfirebase/features/task_details/presentation/view/widgets/task_details_card.dart';
+import 'package:testfirebase/features/task_details/presentation/view/widgets/task_due_date.dart';
 
 class TaskDetails extends StatelessWidget {
   const TaskDetails({super.key, required this.task});
@@ -24,13 +26,19 @@ class TaskDetails extends StatelessWidget {
               Gap(25.h),
               TaskDetailsCard(task: task),
               Gap(35.h),
+              TaskDueDate(task: task),
+              Gap(30.h),
               Row(
                 children: [
-                  SvgPicture.asset(AppIcons.iconsTimer),
-                  Gap(8.w),
+                  IconButton(
+                    onPressed: () {},
+                    icon: SvgPicture.asset(AppIcons.iconsTrash),
+                  ),
+                  Gap(8.h),
                   Text(
-                    'Task Time',
-                    style: AppFonts.regular16White,
+                    'Delete Task',
+                    style:
+                        AppFonts.regular18White.copyWith(color: AppColor.red),
                   ),
                 ],
               )

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:testfirebase/core/model/task_model.dart';
 import 'package:testfirebase/core/utils/app_fonts.dart';
+import 'package:testfirebase/core/utils/app_icons.dart';
 
 class TaskDetailsCard extends StatelessWidget {
   const TaskDetailsCard({
@@ -33,7 +35,10 @@ class TaskDetailsCard extends StatelessWidget {
             ),
           ],
         ),
-        IconButton(onPressed: () {}, icon: const Icon(Icons.edit)),
+        IconButton(
+          onPressed: () {},
+          icon: SvgPicture.asset(AppIcons.iconsEdit),
+        ),
       ],
     );
   }
