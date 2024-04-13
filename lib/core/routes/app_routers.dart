@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:testfirebase/core/model/task_model.dart';
 import 'package:testfirebase/core/routes/routing.dart';
+import 'package:testfirebase/features/home/presentation/controller/change_route_cubit/change_route_cubit.dart';
+import 'package:testfirebase/features/home/presentation/controller/fold_done_list_cubit/fold_done_list_cubit.dart';
 import 'package:testfirebase/features/home/presentation/controller/home/home_cubit.dart';
 import 'package:testfirebase/features/home/presentation/view/home.dart';
 import 'package:testfirebase/features/onboarding/presentation/controller/cubit/onboarding_cubit.dart';
@@ -11,6 +14,7 @@ import 'package:testfirebase/features/sign_in/presentation/controller/cubit/sign
 import 'package:testfirebase/features/sign_in/presentation/view/sign_in.dart';
 import 'package:testfirebase/features/sign_up/presentation/controller/cubit/sign_up_cubit.dart';
 import 'package:testfirebase/features/sign_up/presentation/view/sign_up.dart';
+import 'package:testfirebase/features/task_details/presentation/view/task_details.dart';
 import 'package:testfirebase/features/welcome/presentation/view/welcome.dart';
 
 class AppRouter {
@@ -26,14 +30,29 @@ class AppRouter {
         );
       case Routing.home:
         return MaterialPageRoute(
-          builder: (_) => BlocProvider(
-            create: (context) => HomeCubit()..getTasks(),
+          builder: (_) => MultiBlocProvider(
+            providers: [
+              BlocProvider(
+                create: (context) => ChangeRouteCubit(),
+              ),
+              
+              BlocProvider(
+                create: (context) => HomeCubit()..getTasks(),
+              ),
+              BlocProvider(
+                create: (context) => FoldDoneListCubit(),
+              ),
+            ],
             child: const MainScreen(),
           ),
         );
       case Routing.welcomeScreen:
         return MaterialPageRoute(
           builder: (_) => const WelcomeScreen(),
+        );
+      case Routing.taskDetails:
+        return MaterialPageRoute(
+          builder: (_) =>  TaskDetails(task: argument as TaskModel),
         );
       case Routing.resetPassword:
         return MaterialPageRoute(

@@ -6,8 +6,10 @@ import 'package:testfirebase/core/helpers/extentions.dart';
 import 'package:testfirebase/core/routes/routing.dart';
 import 'package:testfirebase/core/utils/app_color.dart';
 import 'package:testfirebase/core/utils/app_fonts.dart';
-import 'package:testfirebase/features/home/presentation/controller/home/home_cubit.dart';
+import 'package:testfirebase/features/home/presentation/controller/change_route_cubit/change_route_state.dart';
 import 'package:testfirebase/features/home/presentation/view/widgets/nav_bar.dart';
+
+import '../controller/change_route_cubit/change_route_cubit.dart';
 
 class MainScreen extends StatelessWidget {
   const MainScreen({super.key});
@@ -40,9 +42,9 @@ class MainScreen extends StatelessWidget {
       ),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 24.0.w),
-        child: BlocBuilder<HomeCubit, HomeState>(
-          builder: (context, state) => HomeCubit.get(context)
-              .routes[HomeCubit.get(context).currentRoute],
+        child: BlocBuilder<ChangeRouteCubit, ChangeRouteState>(
+          builder: (context, state) => ChangeRouteCubit.get(context)
+              .routes[ChangeRouteCubit.get(context).currentRoute],
         ),
       ),
       bottomNavigationBar: const CustomButtonNavBar(),

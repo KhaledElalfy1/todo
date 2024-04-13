@@ -6,7 +6,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 import 'package:testfirebase/core/model/task_model.dart';
 import 'package:testfirebase/core/utils/app_fonts.dart';
-import 'package:testfirebase/features/home/presentation/controller/home/home_cubit.dart';
+import 'package:testfirebase/features/home/presentation/controller/fold_done_list_cubit/fold_done_list_cubit.dart';
+import 'package:testfirebase/features/home/presentation/controller/fold_done_list_cubit/fold_done_list_state.dart';
 import 'package:testfirebase/features/home/presentation/view/widgets/task_card.dart';
 
 class SuccessBody extends StatelessWidget {
@@ -31,17 +32,17 @@ class SuccessBody extends StatelessWidget {
         ),
         Gap(30.h),
         GestureDetector(
-          onTap: HomeCubit.get(context).changeExpandedIcon,
+          onTap: FoldDoneListCubit.get(context).changeExpandedIcon,
           child: Row(
             children: [
               Text(
                 'Completed',
                 style: AppFonts.bold32White,
               ),
-              BlocBuilder<HomeCubit, HomeState>(
+              BlocBuilder<FoldDoneListCubit, FoldDoneListState>(
                 builder: (context, state) {
                   return Icon(
-                    HomeCubit.get(context).expandedIcon,
+                    FoldDoneListCubit.get(context).expandedIcon,
                     size: 40,
                   );
                 },
@@ -50,20 +51,24 @@ class SuccessBody extends StatelessWidget {
           ),
         ),
         Gap(15.h),
-        AnimatedCrossFade(
-          duration: const Duration(milliseconds: 300),
-          crossFadeState: HomeCubit.get(context).isExpanded
-              ? CrossFadeState.showSecond
-              : CrossFadeState.showFirst,
-          firstChild: const SizedBox(), 
-          secondChild: ListView.separated(
-            shrinkWrap: true,
-            itemCount: doneTasks.length,
-            itemBuilder: (context, index) => TaskCard(
-              task: doneTasks[index],
-            ),
-            separatorBuilder: (context, index) => Gap(10.h),
-          ),
+        BlocBuilder<FoldDoneListCubit, FoldDoneListState>(
+          builder: (context, state) {
+            return AnimatedCrossFade(
+              duration: const Duration(milliseconds: 300),
+              crossFadeState: FoldDoneListCubit.get(context).isExpanded
+                  ? CrossFadeState.showSecond
+                  : CrossFadeState.showFirst,
+              firstChild: const SizedBox(),
+              secondChild: ListView.separated(
+                shrinkWrap: true,
+                itemCount: doneTasks.length,
+                itemBuilder: (context, index) => TaskCard(
+                  task: doneTasks[index],
+                ),
+                separatorBuilder: (context, index) => Gap(10.h),
+              ),
+            );
+          },
         ),
         Gap(20.h),
       ],
