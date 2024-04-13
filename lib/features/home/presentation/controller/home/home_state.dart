@@ -24,4 +24,3 @@ final class CheckTaskSuccess extends HomeState {}
 final class CheckTaskFailure extends HomeState {}
 
 
-final class ChangeExpandedIcon extends HomeState {}

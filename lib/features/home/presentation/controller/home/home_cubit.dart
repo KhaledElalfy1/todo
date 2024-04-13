@@ -12,8 +12,7 @@ class HomeCubit extends Cubit<HomeState> {
   List<TaskModel> userTasks = [];
   List<TaskModel> userDoneTasks = [];
   List<TaskModel> userUndoneTasks = [];
-  IconData expandedIcon = Icons.expand_more;
-  bool isExpanded = true;
+ 
 
   void getTasks() async {
     emit(GetTaskLoading());
@@ -61,9 +60,5 @@ class HomeCubit extends Cubit<HomeState> {
 
  
 
-  void changeExpandedIcon() {
-    isExpanded = !isExpanded;
-    expandedIcon = isExpanded ? Icons.expand_more : Icons.chevron_right;
-    emit(ChangeExpandedIcon());
-  }
+
 }
