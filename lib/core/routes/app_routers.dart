@@ -14,6 +14,7 @@ import 'package:testfirebase/features/sign_in/presentation/controller/cubit/sign
 import 'package:testfirebase/features/sign_in/presentation/view/sign_in.dart';
 import 'package:testfirebase/features/sign_up/presentation/controller/cubit/sign_up_cubit.dart';
 import 'package:testfirebase/features/sign_up/presentation/view/sign_up.dart';
+import 'package:testfirebase/features/task_details/presentation/controller/cubit/edit_task_cubit.dart';
 import 'package:testfirebase/features/task_details/presentation/view/task_details.dart';
 import 'package:testfirebase/features/welcome/presentation/view/welcome.dart';
 
@@ -35,7 +36,6 @@ class AppRouter {
               BlocProvider(
                 create: (context) => ChangeRouteCubit(),
               ),
-              
               BlocProvider(
                 create: (context) => HomeCubit()..getTasks(),
               ),
@@ -52,7 +52,10 @@ class AppRouter {
         );
       case Routing.taskDetails:
         return MaterialPageRoute(
-          builder: (_) =>  TaskDetails(task: argument as TaskModel),
+          builder: (_) => BlocProvider(
+            create: (context) => EditTaskCubit(),
+            child: TaskDetails(task: argument as TaskModel),
+          ),
         );
       case Routing.resetPassword:
         return MaterialPageRoute(
