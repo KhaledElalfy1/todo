@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:testfirebase/core/utils/app_icons.dart';
 import 'package:testfirebase/features/calender/presentation/view/calender.dart';
+import 'package:testfirebase/features/foucs/presentation/view/focus.dart';
 import 'package:testfirebase/features/home/presentation/controller/change_route_cubit/change_route_state.dart';
 import 'package:testfirebase/features/home/presentation/view/widgets/tasks_body.dart';
 import 'package:testfirebase/features/profile/presentation/view/profile.dart';
@@ -13,9 +14,7 @@ class ChangeRouteCubit extends Cubit<ChangeRouteState> {
   List<Widget> routes = const [
     TasksBody(),
     Calender(),
-    Column(
-      children: [Text('third route')],
-    ),
+    FocusRoute(),
     Profile()
   ];
   int currentRoute = 0;

@@ -4,8 +4,8 @@ import 'package:gap/gap.dart';
 import 'package:testfirebase/core/utils/app_fonts.dart';
 import 'package:testfirebase/core/utils/app_images.dart';
 
-class Calender extends StatelessWidget {
-  const Calender({super.key});
+class FocusRoute extends StatelessWidget {
+  const FocusRoute({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +14,7 @@ class Calender extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Text(
-          'In The Next Next Sprint',
+          'In The Next Sprint',
           style: AppFonts.medium20White,
         ),
         Gap(20.h),

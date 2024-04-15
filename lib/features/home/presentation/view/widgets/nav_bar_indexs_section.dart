@@ -15,7 +15,7 @@ class IndexSection extends StatelessWidget {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 16.h),
       width: double.infinity,
-      height: 88.h,
+      height: 90.h,
       color: AppColor.hitTextColor,
       child: BlocBuilder<ChangeRouteCubit, ChangeRouteState>(
         builder: (context, state) {
@@ -23,9 +23,12 @@ class IndexSection extends StatelessWidget {
             children: [
               NavBarIndex(
                 iconPath: ChangeRouteCubit.get(context).currentRoute == 0
-                    ? ChangeRouteCubit.get(context).bottomBarItems[0]['activeIcon']
-                    : ChangeRouteCubit.get(context).bottomBarItems[0]['inactiveIcon'],
-                title: ChangeRouteCubit.get(context).bottomBarItems[0]['routeName'],
+                    ? ChangeRouteCubit.get(context).bottomBarItems[0]
+                        ['activeIcon']
+                    : ChangeRouteCubit.get(context).bottomBarItems[0]
+                        ['inactiveIcon'],
+                title: ChangeRouteCubit.get(context).bottomBarItems[0]
+                    ['routeName'],
                 onTap: () {
                   ChangeRouteCubit.get(context).changeRoute(index: 0);
                 },
@@ -33,29 +36,38 @@ class IndexSection extends StatelessWidget {
               Gap(30.w),
               NavBarIndex(
                 iconPath: ChangeRouteCubit.get(context).currentRoute == 1
-                    ? ChangeRouteCubit.get(context).bottomBarItems[1]['activeIcon']
-                    : ChangeRouteCubit.get(context).bottomBarItems[1]['inactiveIcon'],
-                title: ChangeRouteCubit.get(context).bottomBarItems[1]['routeName'],
+                    ? ChangeRouteCubit.get(context).bottomBarItems[1]
+                        ['activeIcon']
+                    : ChangeRouteCubit.get(context).bottomBarItems[1]
+                        ['inactiveIcon'],
+                title: ChangeRouteCubit.get(context).bottomBarItems[1]
+                    ['routeName'],
                 onTap: () {
                   ChangeRouteCubit.get(context).changeRoute(index: 1);
                 },
               ),
               const Spacer(),
-             NavBarIndex(
+              NavBarIndex(
                 iconPath: ChangeRouteCubit.get(context).currentRoute == 2
-                    ? ChangeRouteCubit.get(context).bottomBarItems[2]['activeIcon']
-                    : ChangeRouteCubit.get(context).bottomBarItems[2]['inactiveIcon'],
-                title: ChangeRouteCubit.get(context).bottomBarItems[2]['routeName'],
+                    ? ChangeRouteCubit.get(context).bottomBarItems[2]
+                        ['activeIcon']
+                    : ChangeRouteCubit.get(context).bottomBarItems[2]
+                        ['inactiveIcon'],
+                title: ChangeRouteCubit.get(context).bottomBarItems[2]
+                    ['routeName'],
                 onTap: () {
                   ChangeRouteCubit.get(context).changeRoute(index: 2);
                 },
               ),
               Gap(30.w),
-             NavBarIndex(
+              NavBarIndex(
                 iconPath: ChangeRouteCubit.get(context).currentRoute == 3
-                    ? ChangeRouteCubit.get(context).bottomBarItems[3]['activeIcon']
-                    : ChangeRouteCubit.get(context).bottomBarItems[3]['inactiveIcon'],
-                title: ChangeRouteCubit.get(context).bottomBarItems[3]['routeName'],
+                    ? ChangeRouteCubit.get(context).bottomBarItems[3]
+                        ['activeIcon']
+                    : ChangeRouteCubit.get(context).bottomBarItems[3]
+                        ['inactiveIcon'],
+                title: ChangeRouteCubit.get(context).bottomBarItems[3]
+                    ['routeName'],
                 onTap: () {
                   ChangeRouteCubit.get(context).changeRoute(index: 3);
                 },
