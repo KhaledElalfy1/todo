@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:testfirebase/core/utils/app_color.dart';
 import 'package:testfirebase/core/utils/app_fonts.dart';
 
-
 class ShowTasksStateWidget extends StatelessWidget {
   const ShowTasksStateWidget({
     super.key,
@@ -15,7 +14,7 @@ class ShowTasksStateWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 30.w, vertical: 15.h),
+      padding: EdgeInsets.symmetric(horizontal: 25.w, vertical: 12.h),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(4.r),
         color: AppColor.hitTextColor,
