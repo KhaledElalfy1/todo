@@ -96,7 +96,7 @@ class AddTaskDialog extends StatelessWidget {
       showTimePicker(context: context, initialTime: TimeOfDay.now());
 
   Future pickDateTime(BuildContext context) async {
-    FocusScope.of(context).unfocus();
+    FocusManager.instance.primaryFocus?.unfocus();
     DateTime? date = await pickDate(context);
     if (date == null) return;
     TimeOfDay? time = await pickTime(context);

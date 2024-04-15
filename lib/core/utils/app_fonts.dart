@@ -13,6 +13,11 @@ abstract class AppFonts {
     fontWeight: FontWeight.normal,
     color: AppColor.white,
   );
+  static TextStyle medium20White = GoogleFonts.lato(
+    fontSize: 20,
+    fontWeight: FontWeight.w500,
+    color: AppColor.white,
+  );
   static TextStyle regular12White = GoogleFonts.lato(
     fontSize: 12,
     fontWeight: FontWeight.normal,
