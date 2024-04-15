@@ -30,6 +30,6 @@ class TodoApp extends StatelessWidget {
     return (FirebaseAuth.instance.currentUser != null &&
             FirebaseAuth.instance.currentUser!.emailVerified)
         ? Routing.home
-        : Routing.signIn;
+        : Routing.welcomeScreen;
   }
 }

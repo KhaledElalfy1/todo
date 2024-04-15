@@ -1,6 +1,6 @@
-
 import 'package:flutter/material.dart';
 import 'package:testfirebase/core/helpers/extentions.dart';
+import 'package:testfirebase/core/routes/routing.dart';
 
 import 'app_bar_button.dart';
 
@@ -16,7 +16,7 @@ class CustomAppBar extends StatelessWidget {
       children: [
         AppBarIcon(
           onTap: () {
-            context.pop();
+            context.pushReplacementNamed(Routing.home);
           },
           icon: Icons.close,
         ),

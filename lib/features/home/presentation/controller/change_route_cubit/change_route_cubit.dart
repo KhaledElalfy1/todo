@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:testfirebase/core/utils/app_icons.dart';
 import 'package:testfirebase/features/home/presentation/controller/change_route_cubit/change_route_state.dart';
 import 'package:testfirebase/features/home/presentation/view/widgets/tasks_body.dart';
+import 'package:testfirebase/features/profile/presentation/view/profile.dart';
 
 class ChangeRouteCubit extends Cubit<ChangeRouteState> {
   ChangeRouteCubit() : super(ChangeRouteInitial());
@@ -17,9 +18,7 @@ class ChangeRouteCubit extends Cubit<ChangeRouteState> {
     Column(
       children: [Text('third route')],
     ),
-    Column(
-      children: [Text('fourth route')],
-    ),
+    Profile()
   ];
   int currentRoute = 0;
   List<Map<String, dynamic>> bottomBarItems = [
