@@ -1,8 +1,11 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 import 'package:testfirebase/core/helpers/extentions.dart';
+import 'package:testfirebase/core/routes/routing.dart';
 import 'package:testfirebase/core/widgets/popup_window.dart';
 import 'package:testfirebase/core/widgets/social_sign_in.dart';
 import 'package:testfirebase/features/sign_up/presentation/controller/cubit/sign_up_cubit.dart';
@@ -19,13 +22,16 @@ class SocialSignUpSection extends StatelessWidget {
         BlocConsumer<SignUpCubit, SignUpState>(
           listener: (context, state) {
             if (state is GoogleSignUpSuccess) {
-              debugPrint('Success');
+              context.pushReplacementNamed(Routing.home);
             } else if (state is GoogleSignUpFailure) {
-              PopupWindow(
-                title: 'Failure!',
-                content: state.eMessage,
-                type: 'f',
-                ok: () => context.pop(),
+              showDialog(
+                context: context,
+                builder: (context) => PopupWindow(
+                  title: 'Failure!',
+                  content: state.eMessage,
+                  type: 'f',
+                  ok: () => context.pop(),
+                ),
               );
             }
           },
@@ -39,7 +45,19 @@ class SocialSignUpSection extends StatelessWidget {
         ),
         Gap(10.h),
         SocialSignIn(
-          onPressed: () {},
+          onPressed: () {
+            if (Platform.isAndroid) {
+              showDialog(
+                context: context,
+                builder: (context) => PopupWindow(
+                  title: 'Failure!',
+                  content: 'You are poor android user!!!!',
+                  type: 'f',
+                  ok: () => context.pop(),
+                ),
+              );
+            }
+          },
           iconPath: 'assets/icons/apple.svg',
           text: 'Register with Apple',
         ),
