@@ -17,5 +17,6 @@ class AppImages {
   /// assets/images/splash.png
   static const String imagesSplash = "assets/images/splash.png";
   static const String imagesEmptyList = "assets/images/Checklist-rafiki 1.png";
+  static const String fromMyEye = "assets/images/from_my_eye.jpeg";
 }
 
