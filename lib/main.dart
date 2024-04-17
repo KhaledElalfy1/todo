@@ -17,11 +17,18 @@ void main() async {
   );
   Bloc.observer = MyBlocObserver();
   setup();
-  getIt<CacheHelper>().init();
+  await getIt<CacheHelper>().init();
+  bool? isFirstTime = getIt<CacheHelper>().getData(key: CacheKeys.isFirstTime);
+  if (isFirstTime == null) {
+    await getIt<CacheHelper>()
+        .saveData(key: CacheKeys.isFirstTime, value: true);
+  }
+
   runApp(
     DevicePreview(
       builder: (context) => TodoApp(
         appRouter: AppRouter(),
+        isFirstTime: isFirstTime == null,
       ),
     ),
   );

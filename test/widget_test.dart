@@ -13,7 +13,7 @@ import 'package:testfirebase/todo_app.dart';
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
-    await tester.pumpWidget( TodoApp(appRouter: AppRouter(),));
+    await tester.pumpWidget( TodoApp(appRouter: AppRouter(),isFirstTime: true,));
 
     // Verify that our counter starts at 0.
     expect(find.text('0'), findsOneWidget);
