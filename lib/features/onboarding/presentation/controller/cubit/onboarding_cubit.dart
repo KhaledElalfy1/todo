@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:testfirebase/core/helpers/extentions.dart';
 import 'package:testfirebase/core/routes/routing.dart';
+import 'package:testfirebase/core/utils/app_images.dart';
+import 'package:testfirebase/generated/l10n.dart';
 
 part 'onboarding_state.dart';
 
@@ -9,7 +11,27 @@ class OnboardingCubit extends Cubit<OnboardingState> {
   OnboardingCubit() : super(OnboardingInitial());
   static OnboardingCubit get(context) => BlocProvider.of(context);
   int indicator = 0;
-  String text = 'NEXT';
+  String text = S.current.next;
+  List<Map<String, String>> onboarding = [
+    {
+      'imagePath': AppImages.imagesOnbodrding1,
+      'title': S.current.title1,
+      'subtitle':
+          S.current.subtitle1,
+    },
+    {
+      'imagePath': AppImages.imagesOnbodrding2,
+      'title': S.current.title2,
+      'subtitle':
+          S.current.subtitle2,
+    },
+    {
+      'imagePath': AppImages.imagesOnbodrding3,
+      'title': S.current.title3,
+      'subtitle':
+          S.current.subtitle3,
+    },
+  ];
   PageController controller = PageController();
   @override
   Future<void> close() {
@@ -24,7 +46,7 @@ class OnboardingCubit extends Cubit<OnboardingState> {
   }
 
   void updateText() {
-    final newText = indicator == 2 ? 'GET START' : 'NEXT';
+    final newText = indicator == 2 ? S.current.getStart : S.current.next;
     if (newText != text) {
       text = newText;
       emit(OnboardingUpdateText());
@@ -42,7 +64,7 @@ class OnboardingCubit extends Cubit<OnboardingState> {
     updateIndicator(indicator);
   }
 
-  void getBack() {
+  void getBack(BuildContext context) {
     if (indicator == 0) {
     } else {
       indicator--;

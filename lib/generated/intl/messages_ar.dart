@@ -21,5 +21,19 @@ class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'ar';
 
   final messages = _notInlinedMessages(_notInlinedMessages);
-  static Map<String, Function> _notInlinedMessages(_) => <String, Function>{};
+  static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "back": MessageLookupByLibrary.simpleMessage("السابق"),
+        "getStart": MessageLookupByLibrary.simpleMessage("أبدأ"),
+        "next": MessageLookupByLibrary.simpleMessage("التالى"),
+        "skip": MessageLookupByLibrary.simpleMessage("تخطى"),
+        "subtitle1": MessageLookupByLibrary.simpleMessage(
+            "تستطيع دائما التحكم فى مهامك اليوميه بسهوله"),
+        "subtitle2": MessageLookupByLibrary.simpleMessage(
+            "تسطيع من خلال التطبيق إنشاء مهام يومية خاصة بك للمحافظة على الإنتاجيه"),
+        "subtitle3": MessageLookupByLibrary.simpleMessage(
+            "تسطيع ترتيب مهامك عن طريق جعل كل مجموعة من المهام فى تصنيف خاص"),
+        "title1": MessageLookupByLibrary.simpleMessage("تحكم فى مهامك"),
+        "title2": MessageLookupByLibrary.simpleMessage("قم بإنشاء مهام يومية"),
+        "title3": MessageLookupByLibrary.simpleMessage("ترتيب مهامك اليومية")
+      };
 }
