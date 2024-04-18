@@ -22,19 +22,27 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "Calender": MessageLookupByLibrary.simpleMessage("Calender"),
+        "Focus": MessageLookupByLibrary.simpleMessage("Focus"),
         "PleaseVerifyYourAccount":
             MessageLookupByLibrary.simpleMessage("Please verify your account"),
+        "Profile": MessageLookupByLibrary.simpleMessage("Profile"),
         "SignIn": MessageLookupByLibrary.simpleMessage("SignIn"),
         "WelcomeScreen": MessageLookupByLibrary.simpleMessage(
             "////////////////////////////////////////////////////////////////"),
+        "WhatDoYouWantToDoToday": MessageLookupByLibrary.simpleMessage(
+            "What do you want to do today?"),
+        "addTask": MessageLookupByLibrary.simpleMessage("Add Task"),
         "alreadyHaveAnAccount":
             MessageLookupByLibrary.simpleMessage("Already have an account?"),
         "back": MessageLookupByLibrary.simpleMessage("BACK"),
+        "completed": MessageLookupByLibrary.simpleMessage("Completed"),
         "confirmPassword":
             MessageLookupByLibrary.simpleMessage("Confirm Password"),
         "confirmYourPassword":
             MessageLookupByLibrary.simpleMessage("Confirm Your Password"),
         "createAccount": MessageLookupByLibrary.simpleMessage("CREATE ACCOUNT"),
+        "description": MessageLookupByLibrary.simpleMessage("Description"),
         "dontHaveAccount":
             MessageLookupByLibrary.simpleMessage("Don\'t have an account?"),
         "email": MessageLookupByLibrary.simpleMessage("E-mail"),
@@ -45,11 +53,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "forgetPassword":
             MessageLookupByLibrary.simpleMessage("Forget Password?"),
         "getStart": MessageLookupByLibrary.simpleMessage("GET START"),
+        "homeSection": MessageLookupByLibrary.simpleMessage(
+            "////////////////////////////////////////////////////////////////"),
+        "index": MessageLookupByLibrary.simpleMessage("index"),
         "login": MessageLookupByLibrary.simpleMessage("LOGIN"),
         "loginWithApple":
             MessageLookupByLibrary.simpleMessage("Login with Apple"),
         "loginWithGoogle":
             MessageLookupByLibrary.simpleMessage("Login with Google"),
+        "logout": MessageLookupByLibrary.simpleMessage("Log out"),
         "next": MessageLookupByLibrary.simpleMessage("NEXT"),
         "onBoardingScreenSection": MessageLookupByLibrary.simpleMessage(
             "////////////////////////////////////////////////////////////////"),
@@ -74,6 +86,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "subtitle3": MessageLookupByLibrary.simpleMessage(
             "You can organize your daily tasks by adding your tasks into separate categories"),
         "success": MessageLookupByLibrary.simpleMessage("Success!"),
+        "tapToAdd":
+            MessageLookupByLibrary.simpleMessage("Tap + to add your tasks"),
+        "task": MessageLookupByLibrary.simpleMessage("Task"),
+        "taskDescription":
+            MessageLookupByLibrary.simpleMessage("Task Description"),
+        "tasksDone": MessageLookupByLibrary.simpleMessage("Tasks Done"),
+        "tasksLeft": MessageLookupByLibrary.simpleMessage("Tasks Left"),
         "title1": MessageLookupByLibrary.simpleMessage("Manage your tasks"),
         "title2": MessageLookupByLibrary.simpleMessage("Create daily routine"),
         "title3": MessageLookupByLibrary.simpleMessage("Orgonaize your tasks"),

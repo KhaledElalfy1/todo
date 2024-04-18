@@ -9,6 +9,7 @@ import 'package:testfirebase/core/utils/app_fonts.dart';
 import 'package:testfirebase/features/home/presentation/controller/fold_done_list_cubit/fold_done_list_cubit.dart';
 import 'package:testfirebase/features/home/presentation/controller/fold_done_list_cubit/fold_done_list_state.dart';
 import 'package:testfirebase/features/home/presentation/view/widgets/task_card.dart';
+import 'package:testfirebase/generated/l10n.dart';
 
 class SuccessBody extends StatelessWidget {
   const SuccessBody({
@@ -36,7 +37,7 @@ class SuccessBody extends StatelessWidget {
           child: Row(
             children: [
               Text(
-                'Completed',
+                S.of(context).completed,
                 style: AppFonts.bold32White,
               ),
               BlocBuilder<FoldDoneListCubit, FoldDoneListState>(

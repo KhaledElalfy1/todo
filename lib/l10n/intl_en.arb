@@ -40,5 +40,22 @@
     "confirmPassword":"Confirm Password",
     "confirmYourPassword":"Confirm Your Password",
     "alreadyHaveAnAccount":"Already have an account?",
-    "SignIn":"SignIn"
+    "SignIn":"SignIn",
+
+    "homeSection":"////////////////////////////////////////////////////////////////",
+    "index":"index",
+    "Calender":"Calender",
+    "Focus":"Focus",
+    "Profile":"Profile",
+    "WhatDoYouWantToDoToday":"What do you want to do today?",
+    "tapToAdd":"Tap + to add your tasks",
+    "completed":"Completed",
+    "addTask":"Add Task",
+    "task":"Task",
+    "description":"Description",
+    "taskDescription":"Task Description",
+    "tasksLeft":"Tasks Left",
+    "tasksDone":"Tasks Done",
+    "logout":"Log out"
+
 }

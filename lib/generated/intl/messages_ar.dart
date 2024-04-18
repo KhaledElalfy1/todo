@@ -22,19 +22,27 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "Calender": MessageLookupByLibrary.simpleMessage("التقويم"),
+        "Focus": MessageLookupByLibrary.simpleMessage("تركيز"),
         "PleaseVerifyYourAccount":
             MessageLookupByLibrary.simpleMessage("من فضلك قم بتأكيد حسابك"),
+        "Profile": MessageLookupByLibrary.simpleMessage("الملف"),
         "SignIn": MessageLookupByLibrary.simpleMessage("تسجيل دخول"),
         "WelcomeScreen": MessageLookupByLibrary.simpleMessage(
             "////////////////////////////////////////////////////////////////"),
+        "WhatDoYouWantToDoToday":
+            MessageLookupByLibrary.simpleMessage("ما هى المهام لليوم؟"),
+        "addTask": MessageLookupByLibrary.simpleMessage("إضافة مهمة"),
         "alreadyHaveAnAccount":
             MessageLookupByLibrary.simpleMessage("لديك حساب بالفعل؟"),
         "back": MessageLookupByLibrary.simpleMessage("السابق"),
+        "completed": MessageLookupByLibrary.simpleMessage("مكتمل"),
         "confirmPassword":
             MessageLookupByLibrary.simpleMessage("تأكيد كلمة المرور"),
         "confirmYourPassword":
             MessageLookupByLibrary.simpleMessage("قم بتأكيد كلمة المرور"),
         "createAccount": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
+        "description": MessageLookupByLibrary.simpleMessage("الوصف"),
         "dontHaveAccount":
             MessageLookupByLibrary.simpleMessage("ليس لديك حساب؟"),
         "email": MessageLookupByLibrary.simpleMessage("البريد الإلكترونى"),
@@ -46,11 +54,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "forgetPassword":
             MessageLookupByLibrary.simpleMessage("نسيت كلمة المرور؟"),
         "getStart": MessageLookupByLibrary.simpleMessage("أبدأ"),
+        "homeSection": MessageLookupByLibrary.simpleMessage(
+            "////////////////////////////////////////////////////////////////"),
+        "index": MessageLookupByLibrary.simpleMessage("الرئيسة"),
         "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
         "loginWithApple":
             MessageLookupByLibrary.simpleMessage("تسجيل الدخول بأبل"),
         "loginWithGoogle":
             MessageLookupByLibrary.simpleMessage("تسجيل الدخول بجوجل"),
+        "logout": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
         "next": MessageLookupByLibrary.simpleMessage("التالى"),
         "onBoardingScreenSection": MessageLookupByLibrary.simpleMessage(
             "////////////////////////////////////////////////////////////////"),
@@ -74,6 +86,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "subtitle3": MessageLookupByLibrary.simpleMessage(
             "تسطيع ترتيب مهامك عن طريق جعل كل مجموعة من المهام فى تصنيف خاص"),
         "success": MessageLookupByLibrary.simpleMessage("نجاح!"),
+        "tapToAdd":
+            MessageLookupByLibrary.simpleMessage("إضغط على + للإضافة مهمات"),
+        "task": MessageLookupByLibrary.simpleMessage("المهمة"),
+        "taskDescription": MessageLookupByLibrary.simpleMessage("وصف المهمة"),
+        "tasksDone": MessageLookupByLibrary.simpleMessage("المهام المنتهية"),
+        "tasksLeft": MessageLookupByLibrary.simpleMessage("المهام المتبقية"),
         "title1": MessageLookupByLibrary.simpleMessage("تحكم فى مهامك"),
         "title2": MessageLookupByLibrary.simpleMessage("قم بإنشاء مهام يومية"),
         "title3": MessageLookupByLibrary.simpleMessage("ترتيب مهامك اليومية"),

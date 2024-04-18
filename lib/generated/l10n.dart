@@ -439,6 +439,156 @@ class S {
       args: [],
     );
   }
+
+  /// `////////////////////////////////////////////////////////////////`
+  String get homeSection {
+    return Intl.message(
+      '////////////////////////////////////////////////////////////////',
+      name: 'homeSection',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `index`
+  String get index {
+    return Intl.message(
+      'index',
+      name: 'index',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Calender`
+  String get Calender {
+    return Intl.message(
+      'Calender',
+      name: 'Calender',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Focus`
+  String get Focus {
+    return Intl.message(
+      'Focus',
+      name: 'Focus',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Profile`
+  String get Profile {
+    return Intl.message(
+      'Profile',
+      name: 'Profile',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `What do you want to do today?`
+  String get WhatDoYouWantToDoToday {
+    return Intl.message(
+      'What do you want to do today?',
+      name: 'WhatDoYouWantToDoToday',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Tap + to add your tasks`
+  String get tapToAdd {
+    return Intl.message(
+      'Tap + to add your tasks',
+      name: 'tapToAdd',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Completed`
+  String get completed {
+    return Intl.message(
+      'Completed',
+      name: 'completed',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add Task`
+  String get addTask {
+    return Intl.message(
+      'Add Task',
+      name: 'addTask',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Task`
+  String get task {
+    return Intl.message(
+      'Task',
+      name: 'task',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Description`
+  String get description {
+    return Intl.message(
+      'Description',
+      name: 'description',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Task Description`
+  String get taskDescription {
+    return Intl.message(
+      'Task Description',
+      name: 'taskDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Tasks Left`
+  String get tasksLeft {
+    return Intl.message(
+      'Tasks Left',
+      name: 'tasksLeft',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Tasks Done`
+  String get tasksDone {
+    return Intl.message(
+      'Tasks Done',
+      name: 'tasksDone',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Log out`
+  String get logout {
+    return Intl.message(
+      'Log out',
+      name: 'logout',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

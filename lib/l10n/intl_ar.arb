@@ -40,5 +40,21 @@
     "confirmPassword":"تأكيد كلمة المرور",
     "confirmYourPassword":"قم بتأكيد كلمة المرور",
     "alreadyHaveAnAccount":"لديك حساب بالفعل؟",
-    "SignIn":"تسجيل دخول"
+    "SignIn":"تسجيل دخول",
+
+    "homeSection":"////////////////////////////////////////////////////////////////",
+    "index":"الرئيسة",
+    "Calender":"التقويم",
+    "Focus":"تركيز",
+    "Profile":"الملف",
+    "WhatDoYouWantToDoToday":"ما هى المهام لليوم؟",
+    "tapToAdd":"إضغط على + للإضافة مهمات",
+    "completed":"مكتمل",
+    "addTask":"إضافة مهمة",
+    "task":"المهمة",
+    "description":"الوصف",
+    "taskDescription":"وصف المهمة",
+    "tasksLeft":"المهام المتبقية",
+    "tasksDone":"المهام المنتهية",
+    "logout":"تسجيل الخروج"
 }

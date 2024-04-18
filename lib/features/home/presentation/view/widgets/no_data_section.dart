@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 import 'package:testfirebase/core/utils/app_fonts.dart';
 import 'package:testfirebase/core/utils/app_images.dart';
+import 'package:testfirebase/generated/l10n.dart';
 
 class NoDataBody extends StatelessWidget {
   const NoDataBody({
@@ -24,12 +25,12 @@ class NoDataBody extends StatelessWidget {
         ),
         Gap(10.h),
         Text(
-          'What do you want to do today?',
+          S.of(context).WhatDoYouWantToDoToday,
           style: AppFonts.regular20White,
         ),
         Gap(10.h),
         Text(
-          'Tap + to add your tasks',
+          S.of(context).tapToAdd,
           style: AppFonts.regular20White,
         ),
       ],
