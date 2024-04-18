@@ -22,11 +22,37 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "PleaseVerifyYourAccount":
+            MessageLookupByLibrary.simpleMessage("Please verify your account"),
+        "WelcomeScreen": MessageLookupByLibrary.simpleMessage(
+            "////////////////////////////////////////////////////////////////"),
         "back": MessageLookupByLibrary.simpleMessage("BACK"),
         "createAccount": MessageLookupByLibrary.simpleMessage("CREATE ACCOUNT"),
+        "dontHaveAccount":
+            MessageLookupByLibrary.simpleMessage("Don\'t have an account?"),
+        "email": MessageLookupByLibrary.simpleMessage("E-mail"),
+        "enterEmail": MessageLookupByLibrary.simpleMessage("Enter your e-mail"),
+        "enterPassword":
+            MessageLookupByLibrary.simpleMessage("Enter your Password"),
+        "failure": MessageLookupByLibrary.simpleMessage("Failure!"),
+        "forgetPassword":
+            MessageLookupByLibrary.simpleMessage("Forget Password?"),
         "getStart": MessageLookupByLibrary.simpleMessage("GET START"),
         "login": MessageLookupByLibrary.simpleMessage("LOGIN"),
+        "loginWithApple":
+            MessageLookupByLibrary.simpleMessage("Login with Apple"),
+        "loginWithGoogle":
+            MessageLookupByLibrary.simpleMessage("Login with Google"),
         "next": MessageLookupByLibrary.simpleMessage("NEXT"),
+        "onBoardingScreen": MessageLookupByLibrary.simpleMessage(
+            "////////////////////////////////////////////////////////////////"),
+        "or": MessageLookupByLibrary.simpleMessage("or"),
+        "password": MessageLookupByLibrary.simpleMessage("Password"),
+        "poorAndroid": MessageLookupByLibrary.simpleMessage(
+            "You are poor android user!!!!"),
+        "register": MessageLookupByLibrary.simpleMessage("Register"),
+        "signIn": MessageLookupByLibrary.simpleMessage(
+            "////////////////////////////////////////////////////////////////"),
         "skip": MessageLookupByLibrary.simpleMessage("SKIP"),
         "subtitle1": MessageLookupByLibrary.simpleMessage(
             "You can easily manage all of your daily tasks in DoMe for free"),
@@ -37,6 +63,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "title1": MessageLookupByLibrary.simpleMessage("Manage your tasks"),
         "title2": MessageLookupByLibrary.simpleMessage("Create daily routine"),
         "title3": MessageLookupByLibrary.simpleMessage("Orgonaize your tasks"),
+        "warning": MessageLookupByLibrary.simpleMessage("Warning"),
         "welcomeTitle": MessageLookupByLibrary.simpleMessage(
             "Please login to your account or create new account to continue"),
         "welcomeToUpTodo":

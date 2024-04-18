@@ -15,5 +15,21 @@
     "welcomeToUpTodo":"مرحبا فى UpTodo",
     "welcomeTitle":"من فضلك قم بتسجيل الدخول أو إنشاء حساب جديد",
     "login":"تسجيل الدخول",
-    "createAccount":"إنشاء حساب"
+    "createAccount":"إنشاء حساب",
+
+    "signIn":"////////////////////////////////////////////////////////////////",
+    "warning":"تحذير",
+    "PleaseVerifyYourAccount":"من فضلك قم بتأكيد حسابك",
+    "or":"أو",
+    "failure":"فشل!",
+    "loginWithGoogle":"تسجيل الدخول بجوجل",
+    "poorAndroid":"أندرويد فقير",
+    "loginWithApple":"تسجيل الدخول بأبل",
+    "dontHaveAccount":"ليس لديك حساب",
+    "register":"تسجيل",
+    "email":"البريد الإلكترونى",
+    "enterEmail":"قم بإدخال بريدك الإلكترونى",
+    "password":"كلمة المرور",
+    "enterPassword":"قم بإدخال كلمة المرور",
+    "forgetPassword":"نسيت كلمة المرور؟"
 }

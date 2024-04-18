@@ -17,9 +17,10 @@ class SocialSignIn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomTransparentButton(
-      onPressed:onPressed,
+      onPressed: onPressed,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
+        textDirection: TextDirection.ltr,
         children: [
           SvgPicture.asset(iconPath),
           Gap(10.w),

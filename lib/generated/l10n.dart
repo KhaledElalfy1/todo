@@ -50,6 +50,16 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
+  /// `////////////////////////////////////////////////////////////////`
+  String get onBoardingScreen {
+    return Intl.message(
+      '////////////////////////////////////////////////////////////////',
+      name: 'onBoardingScreen',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `SKIP`
   String get skip {
     return Intl.message(
@@ -150,6 +160,16 @@ class S {
     );
   }
 
+  /// `////////////////////////////////////////////////////////////////`
+  String get WelcomeScreen {
+    return Intl.message(
+      '////////////////////////////////////////////////////////////////',
+      name: 'WelcomeScreen',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Welcome to UpTodo`
   String get welcomeToUpTodo {
     return Intl.message(
@@ -185,6 +205,156 @@ class S {
     return Intl.message(
       'CREATE ACCOUNT',
       name: 'createAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `////////////////////////////////////////////////////////////////`
+  String get signIn {
+    return Intl.message(
+      '////////////////////////////////////////////////////////////////',
+      name: 'signIn',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Warning`
+  String get warning {
+    return Intl.message(
+      'Warning',
+      name: 'warning',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please verify your account`
+  String get PleaseVerifyYourAccount {
+    return Intl.message(
+      'Please verify your account',
+      name: 'PleaseVerifyYourAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `or`
+  String get or {
+    return Intl.message(
+      'or',
+      name: 'or',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Failure!`
+  String get failure {
+    return Intl.message(
+      'Failure!',
+      name: 'failure',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Login with Google`
+  String get loginWithGoogle {
+    return Intl.message(
+      'Login with Google',
+      name: 'loginWithGoogle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You are poor android user!!!!`
+  String get poorAndroid {
+    return Intl.message(
+      'You are poor android user!!!!',
+      name: 'poorAndroid',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Login with Apple`
+  String get loginWithApple {
+    return Intl.message(
+      'Login with Apple',
+      name: 'loginWithApple',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Don't have an account?`
+  String get dontHaveAccount {
+    return Intl.message(
+      'Don\'t have an account?',
+      name: 'dontHaveAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Register`
+  String get register {
+    return Intl.message(
+      'Register',
+      name: 'register',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `E-mail`
+  String get email {
+    return Intl.message(
+      'E-mail',
+      name: 'email',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter your e-mail`
+  String get enterEmail {
+    return Intl.message(
+      'Enter your e-mail',
+      name: 'enterEmail',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password`
+  String get password {
+    return Intl.message(
+      'Password',
+      name: 'password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter your Password`
+  String get enterPassword {
+    return Intl.message(
+      'Enter your Password',
+      name: 'enterPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Forget Password?`
+  String get forgetPassword {
+    return Intl.message(
+      'Forget Password?',
+      name: 'forgetPassword',
       desc: '',
       args: [],
     );

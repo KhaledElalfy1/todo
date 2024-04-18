@@ -7,6 +7,7 @@ import 'package:testfirebase/core/routes/routing.dart';
 import 'package:testfirebase/core/utils/app_fonts.dart';
 import 'package:testfirebase/core/widgets/custom_text_form_filed.dart';
 import 'package:testfirebase/features/sign_in/presentation/controller/cubit/sign_in_cubit.dart';
+import 'package:testfirebase/generated/l10n.dart';
 
 class SignInForm extends StatelessWidget {
   const SignInForm({super.key});
@@ -19,7 +20,7 @@ class SignInForm extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'E-mail',
+            S.of(context).email,
             style: AppFonts.regular20White,
           ),
           Gap(10.h),
@@ -27,11 +28,11 @@ class SignInForm extends StatelessWidget {
             validator: (value) =>
                 SignInCubit.get(context).emailValidator(value),
             textEditingController: SignInCubit.get(context).emailController,
-            hintText: 'Enter your e-mail',
+            hintText: S.of(context).enterEmail,
           ),
           Gap(25.h),
           Text(
-            'Password',
+            S.of(context).password,
             style: AppFonts.regular20White,
           ),
           Gap(10.h),
@@ -47,7 +48,7 @@ class SignInForm extends StatelessWidget {
                   onPressed: SignInCubit.get(context).changeVisibility,
                   icon: SignInCubit.get(context).visibility,
                 ),
-                hintText: 'Enter your Password',
+                hintText: S.of(context).enterPassword,
               );
             },
           ),
@@ -59,7 +60,7 @@ class SignInForm extends StatelessWidget {
                 context.pushNamed(Routing.resetPassword);
               },
               child: Text(
-                'forget Password?',
+                S.of(context).forgetPassword,
                 style: AppFonts.regular16Grey,
               ),
             ),

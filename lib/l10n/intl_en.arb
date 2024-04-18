@@ -1,4 +1,5 @@
 {
+    "onBoardingScreen":"////////////////////////////////////////////////////////////////",
     "skip":"SKIP",
     "back":"BACK",
     "next":"NEXT",
@@ -10,10 +11,26 @@
     "title3":"Orgonaize your tasks",
     "subtitle3":"You can organize your daily tasks by adding your tasks into separate categories",
 
-
+    "WelcomeScreen":"////////////////////////////////////////////////////////////////",
     "welcomeToUpTodo":"Welcome to UpTodo",
     "welcomeTitle":"Please login to your account or create new account to continue",
     "login":"LOGIN",
-    "createAccount":"CREATE ACCOUNT"
+    "createAccount":"CREATE ACCOUNT",
+
+    "signIn":"////////////////////////////////////////////////////////////////",
+    "warning":"Warning",
+    "PleaseVerifyYourAccount":"Please verify your account",
+    "or":"or",
+    "failure":"Failure!",
+    "loginWithGoogle":"Login with Google",
+    "poorAndroid":"You are poor android user!!!!",
+    "loginWithApple":"Login with Apple",
+    "dontHaveAccount":"Don't have an account?",
+    "register":"Register",
+    "email":"E-mail",
+    "enterEmail":"Enter your e-mail",
+    "password":"Password",
+    "enterPassword":"Enter your Password",
+    "forgetPassword":"Forget Password?"
 
 }

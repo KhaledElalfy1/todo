@@ -22,11 +22,37 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "PleaseVerifyYourAccount":
+            MessageLookupByLibrary.simpleMessage("من فضلك قم بتأكيد حسابك"),
+        "WelcomeScreen": MessageLookupByLibrary.simpleMessage(
+            "////////////////////////////////////////////////////////////////"),
         "back": MessageLookupByLibrary.simpleMessage("السابق"),
         "createAccount": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
+        "dontHaveAccount":
+            MessageLookupByLibrary.simpleMessage("ليس لديك حساب"),
+        "email": MessageLookupByLibrary.simpleMessage("البريد الإلكترونى"),
+        "enterEmail":
+            MessageLookupByLibrary.simpleMessage("قم بإدخال بريدك الإلكترونى"),
+        "enterPassword":
+            MessageLookupByLibrary.simpleMessage("قم بإدخال كلمة المرور"),
+        "failure": MessageLookupByLibrary.simpleMessage("فشل!"),
+        "forgetPassword":
+            MessageLookupByLibrary.simpleMessage("نسيت كلمة المرور؟"),
         "getStart": MessageLookupByLibrary.simpleMessage("أبدأ"),
         "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
+        "loginWithApple":
+            MessageLookupByLibrary.simpleMessage("تسجيل الدخول بأبل"),
+        "loginWithGoogle":
+            MessageLookupByLibrary.simpleMessage("تسجيل الدخول بجوجل"),
         "next": MessageLookupByLibrary.simpleMessage("التالى"),
+        "onBoardingScreen": MessageLookupByLibrary.simpleMessage(
+            "////////////////////////////////////////////////////////////////"),
+        "or": MessageLookupByLibrary.simpleMessage("أو"),
+        "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
+        "poorAndroid": MessageLookupByLibrary.simpleMessage("أندرويد فقير"),
+        "register": MessageLookupByLibrary.simpleMessage("تسجيل"),
+        "signIn": MessageLookupByLibrary.simpleMessage(
+            "////////////////////////////////////////////////////////////////"),
         "skip": MessageLookupByLibrary.simpleMessage("تخطى"),
         "subtitle1": MessageLookupByLibrary.simpleMessage(
             "تستطيع دائما التحكم فى مهامك اليوميه بسهوله"),
@@ -37,6 +63,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "title1": MessageLookupByLibrary.simpleMessage("تحكم فى مهامك"),
         "title2": MessageLookupByLibrary.simpleMessage("قم بإنشاء مهام يومية"),
         "title3": MessageLookupByLibrary.simpleMessage("ترتيب مهامك اليومية"),
+        "warning": MessageLookupByLibrary.simpleMessage("تحذير"),
         "welcomeTitle": MessageLookupByLibrary.simpleMessage(
             "من فضلك قم بتسجيل الدخول أو إنشاء حساب جديد"),
         "welcomeToUpTodo":
