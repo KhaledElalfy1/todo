@@ -23,7 +23,9 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "back": MessageLookupByLibrary.simpleMessage("BACK"),
+        "createAccount": MessageLookupByLibrary.simpleMessage("CREATE ACCOUNT"),
         "getStart": MessageLookupByLibrary.simpleMessage("GET START"),
+        "login": MessageLookupByLibrary.simpleMessage("LOGIN"),
         "next": MessageLookupByLibrary.simpleMessage("NEXT"),
         "skip": MessageLookupByLibrary.simpleMessage("SKIP"),
         "subtitle1": MessageLookupByLibrary.simpleMessage(
@@ -34,6 +36,10 @@ class MessageLookup extends MessageLookupByLibrary {
             "You can organize your daily tasks by adding your tasks into separate categories"),
         "title1": MessageLookupByLibrary.simpleMessage("Manage your tasks"),
         "title2": MessageLookupByLibrary.simpleMessage("Create daily routine"),
-        "title3": MessageLookupByLibrary.simpleMessage("Orgonaize your tasks")
+        "title3": MessageLookupByLibrary.simpleMessage("Orgonaize your tasks"),
+        "welcomeTitle": MessageLookupByLibrary.simpleMessage(
+            "Please login to your account or create new account to continue"),
+        "welcomeToUpTodo":
+            MessageLookupByLibrary.simpleMessage("Welcome to UpTodo")
       };
 }

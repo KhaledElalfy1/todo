@@ -149,6 +149,46 @@ class S {
       args: [],
     );
   }
+
+  /// `Welcome to UpTodo`
+  String get welcomeToUpTodo {
+    return Intl.message(
+      'Welcome to UpTodo',
+      name: 'welcomeToUpTodo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please login to your account or create new account to continue`
+  String get welcomeTitle {
+    return Intl.message(
+      'Please login to your account or create new account to continue',
+      name: 'welcomeTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `LOGIN`
+  String get login {
+    return Intl.message(
+      'LOGIN',
+      name: 'login',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `CREATE ACCOUNT`
+  String get createAccount {
+    return Intl.message(
+      'CREATE ACCOUNT',
+      name: 'createAccount',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

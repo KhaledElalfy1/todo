@@ -5,6 +5,7 @@ import 'package:testfirebase/core/helpers/extentions.dart';
 import 'package:testfirebase/core/routes/routing.dart';
 import 'package:testfirebase/core/utils/app_color.dart';
 import 'package:testfirebase/core/utils/app_fonts.dart';
+import 'package:testfirebase/generated/l10n.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
@@ -19,12 +20,12 @@ class WelcomeScreen extends StatelessWidget {
             children: [
               Gap(60.h),
               Text(
-                'Welcome to UpTodo',
+                S.of(context).welcomeToUpTodo,
                 style: AppFonts.bold32White,
               ),
               Gap(20.h),
               Text(
-                'Please login to your account or create new account to continue',
+                S.of(context).welcomeTitle,
                 textAlign: TextAlign.center,
                 style: AppFonts.regular20White,
               ),
@@ -36,7 +37,7 @@ class WelcomeScreen extends StatelessWidget {
                     context.pushNamed(Routing.signIn);
                   },
                   child: Text(
-                    'LOGIN',
+                    S.of(context).login,
                     style: AppFonts.regular20White,
                   ),
                 ),
@@ -59,7 +60,7 @@ class WelcomeScreen extends StatelessWidget {
                     ),
                   ),
                   child: Text(
-                    'CREATE ACCOUNT',
+                    S.of(context).createAccount,
                     style: AppFonts.regular20White,
                   ),
                 ),
