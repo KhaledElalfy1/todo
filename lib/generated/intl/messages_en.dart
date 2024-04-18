@@ -24,9 +24,16 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "PleaseVerifyYourAccount":
             MessageLookupByLibrary.simpleMessage("Please verify your account"),
+        "SignIn": MessageLookupByLibrary.simpleMessage("SignIn"),
         "WelcomeScreen": MessageLookupByLibrary.simpleMessage(
             "////////////////////////////////////////////////////////////////"),
+        "alreadyHaveAnAccount":
+            MessageLookupByLibrary.simpleMessage("Already have an account?"),
         "back": MessageLookupByLibrary.simpleMessage("BACK"),
+        "confirmPassword":
+            MessageLookupByLibrary.simpleMessage("Confirm Password"),
+        "confirmYourPassword":
+            MessageLookupByLibrary.simpleMessage("Confirm Your Password"),
         "createAccount": MessageLookupByLibrary.simpleMessage("CREATE ACCOUNT"),
         "dontHaveAccount":
             MessageLookupByLibrary.simpleMessage("Don\'t have an account?"),
@@ -44,14 +51,20 @@ class MessageLookup extends MessageLookupByLibrary {
         "loginWithGoogle":
             MessageLookupByLibrary.simpleMessage("Login with Google"),
         "next": MessageLookupByLibrary.simpleMessage("NEXT"),
-        "onBoardingScreen": MessageLookupByLibrary.simpleMessage(
+        "onBoardingScreenSection": MessageLookupByLibrary.simpleMessage(
             "////////////////////////////////////////////////////////////////"),
         "or": MessageLookupByLibrary.simpleMessage("or"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
         "poorAndroid": MessageLookupByLibrary.simpleMessage(
             "You are poor android user!!!!"),
-        "register": MessageLookupByLibrary.simpleMessage("Register"),
-        "signIn": MessageLookupByLibrary.simpleMessage(
+        "register": MessageLookupByLibrary.simpleMessage(" Register"),
+        "registerWithApple":
+            MessageLookupByLibrary.simpleMessage("Register with Apple"),
+        "registerWithGoogle":
+            MessageLookupByLibrary.simpleMessage("Register with Google"),
+        "signInSection": MessageLookupByLibrary.simpleMessage(
+            "////////////////////////////////////////////////////////////////"),
+        "signUpSection": MessageLookupByLibrary.simpleMessage(
             "////////////////////////////////////////////////////////////////"),
         "skip": MessageLookupByLibrary.simpleMessage("SKIP"),
         "subtitle1": MessageLookupByLibrary.simpleMessage(
@@ -60,6 +73,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "In Uptodo  you can create your personalized routine to stay productive"),
         "subtitle3": MessageLookupByLibrary.simpleMessage(
             "You can organize your daily tasks by adding your tasks into separate categories"),
+        "success": MessageLookupByLibrary.simpleMessage("Success!"),
         "title1": MessageLookupByLibrary.simpleMessage("Manage your tasks"),
         "title2": MessageLookupByLibrary.simpleMessage("Create daily routine"),
         "title3": MessageLookupByLibrary.simpleMessage("Orgonaize your tasks"),

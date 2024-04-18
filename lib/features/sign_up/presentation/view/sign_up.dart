@@ -12,6 +12,7 @@ import 'package:testfirebase/features/sign_up/presentation/controller/cubit/sign
 import 'package:testfirebase/features/sign_up/presentation/view/widgets/already_have_account.dart';
 import 'package:testfirebase/features/sign_up/presentation/view/widgets/sign_up_form.dart';
 import 'package:testfirebase/features/sign_up/presentation/view/widgets/social_sign_up_section.dart';
+import 'package:testfirebase/generated/l10n.dart';
 
 class SignUp extends StatelessWidget {
   const SignUp({super.key});
@@ -31,7 +32,7 @@ class SignUp extends StatelessWidget {
           child: ListView(
             children: [
               Text(
-                'Register',
+                S.of(context).register,
                 style: AppFonts.bold32White,
               ),
               Gap(30.h),
@@ -44,7 +45,7 @@ class SignUp extends StatelessWidget {
                       context: context,
                       builder: (context) => PopupWindow(
                         type: 's',
-                        title: 'Success!',
+                        title: S.of(context).success,
                         content: state.sMessage,
                         ok: () {
                           context.pushReplacementNamed(Routing.signIn);
@@ -57,7 +58,7 @@ class SignUp extends StatelessWidget {
                       context: context,
                       builder: (context) => PopupWindow(
                         type: 'Warning',
-                        title: 'Warning!',
+                        title: S.of(context).warning,
                         content: state.eMessage,
                         ok: () {
                           context.pop();
@@ -79,7 +80,7 @@ class SignUp extends StatelessWidget {
                     child: state is SignUpLoading
                         ? const LoadingWidget()
                         : Text(
-                            'Register',
+                            S.of(context).register,
                             style: AppFonts.regular20White,
                           ),
                   );

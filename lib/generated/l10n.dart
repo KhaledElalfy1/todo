@@ -51,10 +51,10 @@ class S {
   }
 
   /// `////////////////////////////////////////////////////////////////`
-  String get onBoardingScreen {
+  String get onBoardingScreenSection {
     return Intl.message(
       '////////////////////////////////////////////////////////////////',
-      name: 'onBoardingScreen',
+      name: 'onBoardingScreenSection',
       desc: '',
       args: [],
     );
@@ -211,10 +211,10 @@ class S {
   }
 
   /// `////////////////////////////////////////////////////////////////`
-  String get signIn {
+  String get signInSection {
     return Intl.message(
       '////////////////////////////////////////////////////////////////',
-      name: 'signIn',
+      name: 'signInSection',
       desc: '',
       args: [],
     );
@@ -300,10 +300,10 @@ class S {
     );
   }
 
-  /// `Register`
+  /// ` Register`
   String get register {
     return Intl.message(
-      'Register',
+      ' Register',
       name: 'register',
       desc: '',
       args: [],
@@ -355,6 +355,86 @@ class S {
     return Intl.message(
       'Forget Password?',
       name: 'forgetPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `////////////////////////////////////////////////////////////////`
+  String get signUpSection {
+    return Intl.message(
+      '////////////////////////////////////////////////////////////////',
+      name: 'signUpSection',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Success!`
+  String get success {
+    return Intl.message(
+      'Success!',
+      name: 'success',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Register with Google`
+  String get registerWithGoogle {
+    return Intl.message(
+      'Register with Google',
+      name: 'registerWithGoogle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Register with Apple`
+  String get registerWithApple {
+    return Intl.message(
+      'Register with Apple',
+      name: 'registerWithApple',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Confirm Password`
+  String get confirmPassword {
+    return Intl.message(
+      'Confirm Password',
+      name: 'confirmPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Confirm Your Password`
+  String get confirmYourPassword {
+    return Intl.message(
+      'Confirm Your Password',
+      name: 'confirmYourPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Already have an account?`
+  String get alreadyHaveAnAccount {
+    return Intl.message(
+      'Already have an account?',
+      name: 'alreadyHaveAnAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `SignIn`
+  String get SignIn {
+    return Intl.message(
+      'SignIn',
+      name: 'SignIn',
       desc: '',
       args: [],
     );

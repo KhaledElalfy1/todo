@@ -5,6 +5,7 @@ import 'package:gap/gap.dart';
 import 'package:testfirebase/core/utils/app_fonts.dart';
 import 'package:testfirebase/core/widgets/custom_text_form_filed.dart';
 import 'package:testfirebase/features/sign_up/presentation/controller/cubit/sign_up_cubit.dart';
+import 'package:testfirebase/generated/l10n.dart';
 
 class SignUpForm extends StatelessWidget {
   const SignUpForm({super.key});
@@ -17,7 +18,7 @@ class SignUpForm extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'E-mail',
+            S.of(context).email,
             style: AppFonts.regular20White,
           ),
           Gap(10.h),
@@ -25,11 +26,11 @@ class SignUpForm extends StatelessWidget {
             validator: (value) =>
                 SignUpCubit.get(context).emailValidator(value),
             textEditingController: SignUpCubit.get(context).emailController,
-            hintText: 'Enter your e-mail',
+            hintText: S.of(context).enterEmail,
           ),
           Gap(15.h),
           Text(
-            'Password',
+            S.of(context).password,
             style: AppFonts.regular20White,
           ),
           Gap(10.h),
@@ -45,13 +46,13 @@ class SignUpForm extends StatelessWidget {
                   onPressed: SignUpCubit.get(context).changePasswordVisibility,
                   icon: SignUpCubit.get(context).passwordVisibility,
                 ),
-                hintText: 'Enter your Password',
+                hintText: S.of(context).enterPassword,
               );
             },
           ),
           Gap(15.h),
           Text(
-            'confirm Password',
+            S.of(context).confirmPassword,
             style: AppFonts.regular20White,
           ),
           Gap(10.h),
@@ -68,7 +69,7 @@ class SignUpForm extends StatelessWidget {
                       SignUpCubit.get(context).changeConfirmPasswordVisibility,
                   icon: SignUpCubit.get(context).confirmPasswordVisibility,
                 ),
-                hintText: 'Confirm your Password',
+                hintText: S.of(context).confirmYourPassword,
               );
             },
           ),

@@ -1,5 +1,5 @@
 {
-    "onBoardingScreen":"////////////////////////////////////////////////////////////////",
+    "onBoardingScreenSection":"////////////////////////////////////////////////////////////////",
     "skip":"SKIP",
     "back":"BACK",
     "next":"NEXT",
@@ -17,7 +17,7 @@
     "login":"LOGIN",
     "createAccount":"CREATE ACCOUNT",
 
-    "signIn":"////////////////////////////////////////////////////////////////",
+    "signInSection":"////////////////////////////////////////////////////////////////",
     "warning":"Warning",
     "PleaseVerifyYourAccount":"Please verify your account",
     "or":"or",
@@ -26,11 +26,19 @@
     "poorAndroid":"You are poor android user!!!!",
     "loginWithApple":"Login with Apple",
     "dontHaveAccount":"Don't have an account?",
-    "register":"Register",
+    "register":" Register",
     "email":"E-mail",
     "enterEmail":"Enter your e-mail",
     "password":"Password",
     "enterPassword":"Enter your Password",
-    "forgetPassword":"Forget Password?"
+    "forgetPassword":"Forget Password?",
 
+    "signUpSection":"////////////////////////////////////////////////////////////////",
+    "success":"Success!",
+    "registerWithGoogle":"Register with Google",
+    "registerWithApple":"Register with Apple",
+    "confirmPassword":"Confirm Password",
+    "confirmYourPassword":"Confirm Your Password",
+    "alreadyHaveAnAccount":"Already have an account?",
+    "SignIn":"SignIn"
 }
