@@ -42,6 +42,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "confirmYourPassword":
             MessageLookupByLibrary.simpleMessage("Confirm Your Password"),
         "createAccount": MessageLookupByLibrary.simpleMessage("CREATE ACCOUNT"),
+        "deleteTask": MessageLookupByLibrary.simpleMessage("Delete Task"),
         "description": MessageLookupByLibrary.simpleMessage("Description"),
         "dontHaveAccount":
             MessageLookupByLibrary.simpleMessage("Don\'t have an account?"),

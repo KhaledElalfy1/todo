@@ -42,6 +42,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "confirmYourPassword":
             MessageLookupByLibrary.simpleMessage("قم بتأكيد كلمة المرور"),
         "createAccount": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
+        "deleteTask": MessageLookupByLibrary.simpleMessage("حذف المهمة"),
         "description": MessageLookupByLibrary.simpleMessage("الوصف"),
         "dontHaveAccount":
             MessageLookupByLibrary.simpleMessage("ليس لديك حساب؟"),

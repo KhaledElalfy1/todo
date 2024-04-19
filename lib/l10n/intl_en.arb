@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-{}
-=======
 {
     "onBoardingScreenSection":"////////////////////////////////////////////////////////////////",
     "skip":"SKIP",
@@ -59,7 +56,6 @@
     "taskDescription":"Task Description",
     "tasksLeft":"Tasks Left",
     "tasksDone":"Tasks Done",
-    "logout":"Log out"
-
+    "logout":"Log out",
+    "deleteTask":"Delete Task"
 }
->>>>>>> 6410d69523aaa27a68f42d2ce8f1a1c6193601dd
