@@ -19,13 +19,12 @@ class TaskDetailsCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // bool done = task.isDone;
+    bool done = task.isDone;
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
         BlocBuilder<EditTaskCubit, EditTaskState>(
           builder: (context, state) {
-            bool done = task.isDone;
             return Checkbox(
               shape: const CircleBorder(),
               value: done,
@@ -37,6 +36,7 @@ class TaskDetailsCard extends StatelessWidget {
                         AssetSource('sounds/done.mp3'),
                       )
                     : null;
+                done = !done;
               },
             );
           },
@@ -44,9 +44,15 @@ class TaskDetailsCard extends StatelessWidget {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              task.taskName,
-              style: AppFonts.regular20White,
+            BlocBuilder<EditTaskCubit, EditTaskState>(
+              builder: (context, state) {
+                return Text(
+                  task.taskName,
+                  style: AppFonts.regular20White.copyWith(
+                    decoration: done ? TextDecoration.lineThrough : null,
+                  ),
+                );
+              },
             ),
             Text(
               task.taskDescription,
