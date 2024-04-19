@@ -10,6 +10,7 @@ import 'package:testfirebase/core/widgets/loading_widget.dart';
 import 'package:testfirebase/features/home/presentation/controller/add_task/add_task_cubit.dart';
 
 import 'package:testfirebase/features/home/presentation/view/widgets/custom_task_text_fild.dart';
+import 'package:testfirebase/generated/l10n.dart';
 
 class AddTaskDialog extends StatelessWidget {
   const AddTaskDialog({super.key});
@@ -25,22 +26,22 @@ class AddTaskDialog extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Add Task',
+              S.of(context).addTask,
               style:
                   AppFonts.regular20White.copyWith(fontWeight: FontWeight.bold),
             ),
             Gap(14.h),
             CustomTaskTextFiled(
-              hintText: 'Task',
+              hintText: S.of(context).task,
               textEditingController: AddTaskCubit.get(context).taskController,
             ),
             Gap(14.h),
             Text(
-              'Description',
+              S.of(context).description,
               style: AppFonts.regular20White,
             ),
             CustomTaskTextFiled(
-              hintText: 'Task Description',
+              hintText: S.of(context).taskDescription,
               textEditingController:
                   AddTaskCubit.get(context).taskDetailsController,
             ),

@@ -13,6 +13,7 @@ import 'package:testfirebase/features/sign_in/presentation/view/widgets/dont_hav
 import 'package:testfirebase/features/sign_in/presentation/view/widgets/or_section.dart';
 import 'package:testfirebase/features/sign_in/presentation/view/widgets/sign_in_form.dart';
 import 'package:testfirebase/features/sign_in/presentation/view/widgets/social_sign_in_section.dart';
+import 'package:testfirebase/generated/l10n.dart';
 
 class SignIn extends StatelessWidget {
   const SignIn({super.key});
@@ -32,7 +33,7 @@ class SignIn extends StatelessWidget {
           child: ListView(
             children: [
               Text(
-                'Login',
+                S.of(context).login,
                 style: AppFonts.bold32White,
               ),
               Gap(50.h),
@@ -45,8 +46,8 @@ class SignIn extends StatelessWidget {
                       showDialog(
                         context: context,
                         builder: (context) => PopupWindow(
-                          title: 'Warning',
-                          content: 'Please verify your account ',
+                          title: S.of(context).warning,
+                          content: S.of(context).PleaseVerifyYourAccount,
                           type: 'f',
                           ok: () {
                             context.pop();
@@ -61,7 +62,7 @@ class SignIn extends StatelessWidget {
                     showDialog(
                       context: context,
                       builder: (context) => PopupWindow(
-                        title: 'Warning',
+                        title: S.of(context).warning,
                         content: state.eMessage,
                         type: 'type',
                         ok: () {
@@ -84,7 +85,7 @@ class SignIn extends StatelessWidget {
                     child: state is SignInLoading
                         ? const LoadingWidget()
                         : Text(
-                            'Login',
+                            S.of(context).login,
                             style: AppFonts.regular20White,
                           ),
                   );

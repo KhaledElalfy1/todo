@@ -5,35 +5,17 @@ import 'package:gap/gap.dart';
 import 'package:testfirebase/core/helpers/extentions.dart';
 import 'package:testfirebase/core/routes/routing.dart';
 import 'package:testfirebase/core/utils/app_fonts.dart';
-import 'package:testfirebase/core/utils/app_images.dart';
 import 'package:testfirebase/features/onboarding/presentation/controller/cubit/onboarding_cubit.dart';
 import 'package:testfirebase/features/onboarding/presentation/view/widgets/indicator.dart';
 import 'package:testfirebase/features/onboarding/presentation/view/widgets/onboarding_widget.dart';
+import 'package:testfirebase/generated/l10n.dart';
 
 class Onboarding extends StatelessWidget {
   const Onboarding({super.key});
-  final List<Map<String, String>> onboarding = const [
-    {
-      'imagePath': AppImages.imagesOnbodrding1,
-      'title': 'Manage your tasks',
-      'subtitle':
-          'You can easily manage all of your daily tasks in DoMe for free',
-    },
-    {
-      'imagePath': AppImages.imagesOnbodrding2,
-      'title': 'Create daily routine',
-      'subtitle':
-          'In Uptodo  you can create your personalized routine to stay productive',
-    },
-    {
-      'imagePath': AppImages.imagesOnbodrding3,
-      'title': 'Orgonaize your tasks',
-      'subtitle':
-          'You can organize your daily tasks by adding your tasks into separate categories',
-    },
-  ];
+  
   @override
   Widget build(BuildContext context) {
+     
     return Scaffold(
       body: SafeArea(
         child: Padding(
@@ -46,7 +28,7 @@ class Onboarding extends StatelessWidget {
                   context.pushReplacementNamed(Routing.welcomeScreen);
                 },
                 child: Text(
-                  'SKIP',
+                  S.of(context).skip,
                   style: AppFonts.regular20White,
                 ),
               ),
@@ -59,9 +41,9 @@ class Onboarding extends StatelessWidget {
                       onPageChanged: (value) {
                         OnboardingCubit.get(context).updateIndicator(value);
                       },
-                      itemCount: onboarding.length,
+                      itemCount: OnboardingCubit.get(context).onboarding.length,
                       itemBuilder: (context, index) => OnboardingWidget(
-                        onboarding: onboarding,
+                        onboarding:OnboardingCubit.get(context).onboarding,
                         index: index,
                       ),
                     ),
@@ -82,9 +64,9 @@ class Onboarding extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   TextButton(
-                    onPressed: () => OnboardingCubit.get(context).getBack(),
+                    onPressed: () => OnboardingCubit.get(context).getBack(context),
                     child: Text(
-                      'BACK',
+                      S.of(context).back,
                       style: AppFonts.regular20White,
                     ),
                   ),

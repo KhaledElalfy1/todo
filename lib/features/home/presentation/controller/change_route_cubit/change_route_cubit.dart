@@ -6,6 +6,7 @@ import 'package:testfirebase/features/foucs/presentation/view/focus.dart';
 import 'package:testfirebase/features/home/presentation/controller/change_route_cubit/change_route_state.dart';
 import 'package:testfirebase/features/home/presentation/view/widgets/tasks_body.dart';
 import 'package:testfirebase/features/profile/presentation/view/profile.dart';
+import 'package:testfirebase/generated/l10n.dart';
 
 class ChangeRouteCubit extends Cubit<ChangeRouteState> {
   ChangeRouteCubit() : super(ChangeRouteInitial());
@@ -20,25 +21,25 @@ class ChangeRouteCubit extends Cubit<ChangeRouteState> {
   int currentRoute = 0;
   List<Map<String, dynamic>> bottomBarItems = [
     {
-      'routeName': 'index',
+      'routeName': S.current.index,
       'index': 0,
       'activeIcon': AppIcons.iconsSelectedHome,
       'inactiveIcon': AppIcons.iconsUnselectedHome,
     },
     {
-      'routeName': 'Calender',
+      'routeName': S.current.Calender,
       'index': 1,
       'activeIcon': AppIcons.iconsSelectedCalendar,
       'inactiveIcon': AppIcons.iconsUnselectedCalendar,
     },
     {
-      'routeName': 'Focus',
+      'routeName': S.current.Focus,
       'index': 2,
       'activeIcon': AppIcons.iconsSelectedClock,
       'inactiveIcon': AppIcons.iconsUnselectedClock,
     },
     {
-      'routeName': 'Profile',
+      'routeName': S.current.Profile,
       'index': 3,
       'activeIcon': AppIcons.iconsUser,
       'inactiveIcon': AppIcons.iconsUser,

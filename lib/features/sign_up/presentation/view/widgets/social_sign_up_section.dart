@@ -6,9 +6,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 import 'package:testfirebase/core/helpers/extentions.dart';
 import 'package:testfirebase/core/routes/routing.dart';
+import 'package:testfirebase/core/utils/app_icons.dart';
 import 'package:testfirebase/core/widgets/popup_window.dart';
 import 'package:testfirebase/core/widgets/social_sign_in.dart';
 import 'package:testfirebase/features/sign_up/presentation/controller/cubit/sign_up_cubit.dart';
+import 'package:testfirebase/generated/l10n.dart';
 
 class SocialSignUpSection extends StatelessWidget {
   const SocialSignUpSection({
@@ -27,7 +29,7 @@ class SocialSignUpSection extends StatelessWidget {
               showDialog(
                 context: context,
                 builder: (context) => PopupWindow(
-                  title: 'Failure!',
+                  title: S.of(context).failure,
                   content: state.eMessage,
                   type: 'f',
                   ok: () => context.pop(),
@@ -38,8 +40,8 @@ class SocialSignUpSection extends StatelessWidget {
           builder: (context, state) {
             return SocialSignIn(
               onPressed: SignUpCubit.get(context).googleSignUp,
-              iconPath: 'assets/icons/google.svg',
-              text: 'Register with Google',
+              iconPath: AppIcons.iconsGoogle,
+              text: S.of(context).registerWithGoogle,
             );
           },
         ),
@@ -50,16 +52,16 @@ class SocialSignUpSection extends StatelessWidget {
               showDialog(
                 context: context,
                 builder: (context) => PopupWindow(
-                  title: 'Failure!',
-                  content: 'You are poor android user!!!!',
+                  title: S.of(context).warning,
+                  content: S.of(context).poorAndroid,
                   type: 'f',
                   ok: () => context.pop(),
                 ),
               );
             }
           },
-          iconPath: 'assets/icons/apple.svg',
-          text: 'Register with Apple',
+          iconPath: AppIcons.iconsApple,
+          text: S.of(context).registerWithApple,
         ),
       ],
     );
