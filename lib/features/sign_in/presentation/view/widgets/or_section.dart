@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:testfirebase/core/utils/app_color.dart';
 import 'package:testfirebase/core/utils/app_fonts.dart';
+import 'package:testfirebase/generated/l10n.dart';
 
 class OrSection extends StatelessWidget {
   const OrSection({
@@ -20,7 +21,7 @@ class OrSection extends StatelessWidget {
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 4.w),
           child: Text(
-            'or',
+            S.of(context).or,
             style: AppFonts.regular20White,
           ),
         ),

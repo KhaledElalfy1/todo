@@ -1,9 +1,11 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:testfirebase/core/routes/app_routers.dart';
 import 'package:testfirebase/core/routes/routing.dart';
 import 'package:testfirebase/core/utils/app_theme.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:testfirebase/generated/l10n.dart';
 
 class TodoApp extends StatelessWidget {
   const TodoApp(
@@ -15,6 +17,14 @@ class TodoApp extends StatelessWidget {
     return ScreenUtilInit(
       designSize: const Size(375, 812),
       child: MaterialApp(
+        locale: const Locale('en'),
+        localizationsDelegates: const [
+          S.delegate,
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+          GlobalCupertinoLocalizations.delegate,
+        ],
+        supportedLocales: S.delegate.supportedLocales,
         initialRoute: getInitRoute(),
         debugShowCheckedModeBanner: false,
         onGenerateRoute: appRouter.generateRoute,

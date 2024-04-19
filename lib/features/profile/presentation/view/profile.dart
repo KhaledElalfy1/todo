@@ -10,6 +10,7 @@ import 'package:testfirebase/core/utils/app_color.dart';
 import 'package:testfirebase/core/utils/app_icons.dart';
 import 'package:testfirebase/features/home/presentation/controller/home/home_cubit.dart';
 import 'package:testfirebase/features/profile/presentation/view/widgets/Show_tasks_state_widget.dart';
+import 'package:testfirebase/generated/l10n.dart';
 
 import '../../../../core/utils/app_fonts.dart';
 
@@ -22,7 +23,7 @@ class Profile extends StatelessWidget {
       children: [
         Gap(20.h),
         Text(
-          'Profile',
+          S.of(context).Profile,
           style: AppFonts.regular20White,
           textAlign: TextAlign.center,
         ),
@@ -43,11 +44,11 @@ class Profile extends StatelessWidget {
           children: [
             ShowTasksStateWidget(
               numberOfTasks: HomeCubit.get(context).userUndoneTasks.length,
-              status: 'Tasks Left',
+              status: S.of(context).tasksLeft,
             ),
             ShowTasksStateWidget(
               numberOfTasks: HomeCubit.get(context).userDoneTasks.length,
-              status: 'Tasks Done',
+              status: S.of(context).tasksDone,
             ),
           ],
         ),
@@ -64,7 +65,7 @@ class Profile extends StatelessWidget {
               icon: SvgPicture.asset(AppIcons.iconsLogOut),
             ),
             Text(
-              'Log out',
+              S.of(context).logout,
               style: AppFonts.medium20White.copyWith(color: AppColor.red),
             )
           ],

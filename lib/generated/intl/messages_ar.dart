@@ -1,0 +1,104 @@
+// DO NOT EDIT. This is code generated via package:intl/generate_localized.dart
+// This is a library that provides messages for a ar locale. All the
+// messages from the main program should be duplicated here with the same
+// function name.
+
+// Ignore issues from commonly used lints in this file.
+// ignore_for_file:unnecessary_brace_in_string_interps, unnecessary_new
+// ignore_for_file:prefer_single_quotes,comment_references, directives_ordering
+// ignore_for_file:annotate_overrides,prefer_generic_function_type_aliases
+// ignore_for_file:unused_import, file_names, avoid_escaping_inner_quotes
+// ignore_for_file:unnecessary_string_interpolations, unnecessary_string_escapes
+
+import 'package:intl/intl.dart';
+import 'package:intl/message_lookup_by_library.dart';
+
+final messages = new MessageLookup();
+
+typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
+
+class MessageLookup extends MessageLookupByLibrary {
+  String get localeName => 'ar';
+
+  final messages = _notInlinedMessages(_notInlinedMessages);
+  static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "Calender": MessageLookupByLibrary.simpleMessage("التقويم"),
+        "Focus": MessageLookupByLibrary.simpleMessage("تركيز"),
+        "PleaseVerifyYourAccount":
+            MessageLookupByLibrary.simpleMessage("من فضلك قم بتأكيد حسابك"),
+        "Profile": MessageLookupByLibrary.simpleMessage("الملف"),
+        "SignIn": MessageLookupByLibrary.simpleMessage("تسجيل دخول"),
+        "WelcomeScreen": MessageLookupByLibrary.simpleMessage(
+            "////////////////////////////////////////////////////////////////"),
+        "WhatDoYouWantToDoToday":
+            MessageLookupByLibrary.simpleMessage("ما هى المهام لليوم؟"),
+        "addTask": MessageLookupByLibrary.simpleMessage("إضافة مهمة"),
+        "alreadyHaveAnAccount":
+            MessageLookupByLibrary.simpleMessage("لديك حساب بالفعل؟"),
+        "back": MessageLookupByLibrary.simpleMessage("السابق"),
+        "completed": MessageLookupByLibrary.simpleMessage("مكتمل"),
+        "confirmPassword":
+            MessageLookupByLibrary.simpleMessage("تأكيد كلمة المرور"),
+        "confirmYourPassword":
+            MessageLookupByLibrary.simpleMessage("قم بتأكيد كلمة المرور"),
+        "createAccount": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
+        "description": MessageLookupByLibrary.simpleMessage("الوصف"),
+        "dontHaveAccount":
+            MessageLookupByLibrary.simpleMessage("ليس لديك حساب؟"),
+        "email": MessageLookupByLibrary.simpleMessage("البريد الإلكترونى"),
+        "enterEmail":
+            MessageLookupByLibrary.simpleMessage("قم بإدخال بريدك الإلكترونى"),
+        "enterPassword":
+            MessageLookupByLibrary.simpleMessage("قم بإدخال كلمة المرور"),
+        "failure": MessageLookupByLibrary.simpleMessage("فشل!"),
+        "forgetPassword":
+            MessageLookupByLibrary.simpleMessage("نسيت كلمة المرور؟"),
+        "getStart": MessageLookupByLibrary.simpleMessage("أبدأ"),
+        "homeSection": MessageLookupByLibrary.simpleMessage(
+            "////////////////////////////////////////////////////////////////"),
+        "index": MessageLookupByLibrary.simpleMessage("الرئيسة"),
+        "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
+        "loginWithApple":
+            MessageLookupByLibrary.simpleMessage("تسجيل الدخول بأبل"),
+        "loginWithGoogle":
+            MessageLookupByLibrary.simpleMessage("تسجيل الدخول بجوجل"),
+        "logout": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
+        "next": MessageLookupByLibrary.simpleMessage("التالى"),
+        "onBoardingScreenSection": MessageLookupByLibrary.simpleMessage(
+            "////////////////////////////////////////////////////////////////"),
+        "or": MessageLookupByLibrary.simpleMessage("أو"),
+        "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
+        "poorAndroid": MessageLookupByLibrary.simpleMessage("أندرويد فقير"),
+        "register": MessageLookupByLibrary.simpleMessage(" تسجيل"),
+        "registerWithApple":
+            MessageLookupByLibrary.simpleMessage("تسجيل الدخول بأبل"),
+        "registerWithGoogle":
+            MessageLookupByLibrary.simpleMessage("تسجيل الدخول بجوجل"),
+        "signInSection": MessageLookupByLibrary.simpleMessage(
+            "////////////////////////////////////////////////////////////////"),
+        "signUpSection": MessageLookupByLibrary.simpleMessage(
+            "////////////////////////////////////////////////////////////////"),
+        "skip": MessageLookupByLibrary.simpleMessage("تخطى"),
+        "subtitle1": MessageLookupByLibrary.simpleMessage(
+            "تستطيع دائما التحكم فى مهامك اليوميه بسهوله"),
+        "subtitle2": MessageLookupByLibrary.simpleMessage(
+            "تسطيع من خلال التطبيق إنشاء مهام يومية خاصة بك للمحافظة على الإنتاجيه"),
+        "subtitle3": MessageLookupByLibrary.simpleMessage(
+            "تسطيع ترتيب مهامك عن طريق جعل كل مجموعة من المهام فى تصنيف خاص"),
+        "success": MessageLookupByLibrary.simpleMessage("نجاح!"),
+        "tapToAdd":
+            MessageLookupByLibrary.simpleMessage("إضغط على + للإضافة مهمات"),
+        "task": MessageLookupByLibrary.simpleMessage("المهمة"),
+        "taskDescription": MessageLookupByLibrary.simpleMessage("وصف المهمة"),
+        "tasksDone": MessageLookupByLibrary.simpleMessage("المهام المنتهية"),
+        "tasksLeft": MessageLookupByLibrary.simpleMessage("المهام المتبقية"),
+        "title1": MessageLookupByLibrary.simpleMessage("تحكم فى مهامك"),
+        "title2": MessageLookupByLibrary.simpleMessage("قم بإنشاء مهام يومية"),
+        "title3": MessageLookupByLibrary.simpleMessage("ترتيب مهامك اليومية"),
+        "warning": MessageLookupByLibrary.simpleMessage("تحذير"),
+        "welcomeTitle": MessageLookupByLibrary.simpleMessage(
+            "من فضلك قم بتسجيل الدخول أو إنشاء حساب جديد"),
+        "welcomeToUpTodo":
+            MessageLookupByLibrary.simpleMessage("مرحبا فى UpTodo")
+      };
+}
