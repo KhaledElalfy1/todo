@@ -16,7 +16,8 @@ class TasksBody extends StatelessWidget {
     return SafeArea(
       child: Column(
         children: [
-        const  CustomIndexAppBar(),
+          Gap(10.h),
+          const CustomIndexAppBar(),
           BlocBuilder<HomeCubit, HomeState>(
             builder: (context, state) => state is GetTaskLoading
                 ? const DotingLoadingIndicator()
@@ -47,4 +48,3 @@ class TasksBody extends StatelessWidget {
     );
   }
 }
-

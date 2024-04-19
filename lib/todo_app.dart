@@ -17,7 +17,7 @@ class TodoApp extends StatelessWidget {
     return ScreenUtilInit(
       designSize: const Size(375, 812),
       child: MaterialApp(
-        locale: const Locale('ar'),
+        locale: const Locale('en'),
         localizationsDelegates: const [
           S.delegate,
           GlobalMaterialLocalizations.delegate,
@@ -25,7 +25,7 @@ class TodoApp extends StatelessWidget {
           GlobalCupertinoLocalizations.delegate,
         ],
         supportedLocales: S.delegate.supportedLocales,
-        initialRoute: Routing.init,
+        initialRoute: getInitRoute(),
         debugShowCheckedModeBanner: false,
         onGenerateRoute: appRouter.generateRoute,
         theme: appTheme(),

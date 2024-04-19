@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:testfirebase/core/utils/app_color.dart';
 import 'package:testfirebase/core/utils/app_fonts.dart';
+import 'package:testfirebase/generated/l10n.dart';
+
 class CustomIndexAppBar extends StatelessWidget {
   const CustomIndexAppBar({
     super.key,
@@ -16,7 +18,10 @@ class CustomIndexAppBar extends StatelessWidget {
           onPressed: () {},
           icon: const Icon(Icons.filter_list),
         ),
-        Text('Index', style: AppFonts.regular20White),
+        Text(
+          S.of(context).index,
+          style: AppFonts.regular20White,
+        ),
         CircleAvatar(
           radius: 20.r,
           backgroundColor: AppColor.lightGrey,

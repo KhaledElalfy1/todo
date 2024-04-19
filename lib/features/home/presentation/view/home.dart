@@ -12,7 +12,6 @@ class MainScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 24.0.w),
         child: BlocBuilder<ChangeRouteCubit, ChangeRouteState>(
