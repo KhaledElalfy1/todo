@@ -56,6 +56,6 @@
     "taskDescription":"Task Description",
     "tasksLeft":"Tasks Left",
     "tasksDone":"Tasks Done",
-    "logout":"Log out"
-
+    "logout":"Log out",
+    "deleteTask":"Delete Task"
 }

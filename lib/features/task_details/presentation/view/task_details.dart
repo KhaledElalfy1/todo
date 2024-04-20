@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -16,6 +17,7 @@ import 'package:testfirebase/features/task_details/presentation/controller/cubit
 import 'package:testfirebase/features/task_details/presentation/view/widgets/custom_app_bar.dart';
 import 'package:testfirebase/features/task_details/presentation/view/widgets/task_details_card.dart';
 import 'package:testfirebase/features/task_details/presentation/view/widgets/task_due_date.dart';
+import 'package:testfirebase/generated/l10n.dart';
 
 class TaskDetails extends StatelessWidget {
   const TaskDetails({super.key, required this.task});
@@ -40,41 +42,43 @@ class TaskDetails extends StatelessWidget {
                 Gap(35.h),
                 TaskDueDate(task: task),
                 Gap(30.h),
-                Row(
-                  children: [
-                    BlocConsumer<EditTaskCubit, EditTaskState>(
-                      listener: (context, state) {
-                        if (state is DeleteTaskSuccess) {
-                          context.pushReplacementNamed(Routing.home);
-                        } else if (state is DeleteTaskFailure) {
-                          showDialog(
-                            context: context,
-                            builder: (context) => PopupWindow(
-                                title: 'Failure',
-                                content: state.eMessage,
-                                type: 'type'),
-                          );
-                        }
-                      },
-                      builder: (context, state) {
-                        return IconButton(
-                          onPressed: () {
-                            EditTaskCubit.get(context)
-                                .deleteTask(doc: task.docID);
-                          },
-                          icon: state is EditTaskLoading
+                GestureDetector(
+                  onTap: () {
+                    EditTaskCubit.get(context).deleteTask(doc: task.docID);
+                  },
+                  child: Row(
+                    children: [
+                      BlocConsumer<EditTaskCubit, EditTaskState>(
+                        listener: (context, state) {
+                          if (state is DeleteTaskSuccess) {
+                            context.pushReplacementNamed(Routing.home);
+                          } else if (state is DeleteTaskFailure) {
+                            showDialog(
+                              context: context,
+                              builder: (context) => PopupWindow(
+                                  title: S.of(context).failure,
+                                  content: state.eMessage,
+                                  type: 'type'),
+                            );
+                          }
+                        },
+                        builder: (context, state) {
+                          return state is DeleteTaskLoading
                               ? const LoadingWidget()
-                              : SvgPicture.asset(AppIcons.iconsTrash),
-                        );
-                      },
-                    ),
-                    Gap(8.h),
-                    Text(
-                      'Delete Task',
-                      style:
-                          AppFonts.regular18White.copyWith(color: AppColor.red),
-                    ),
-                  ],
+                              : IconButton(
+                                  onPressed: () {},
+                                  icon: SvgPicture.asset(AppIcons.iconsTrash),
+                                );
+                        },
+                      ),
+                      Gap(8.h),
+                      Text(
+                        S.of(context).deleteTask,
+                        style: AppFonts.regular18White
+                            .copyWith(color: AppColor.red),
+                      ),
+                    ],
+                  ),
                 )
               ],
             ),

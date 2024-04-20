@@ -3,9 +3,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 import 'package:testfirebase/core/utils/app_color.dart';
+import 'package:testfirebase/core/utils/app_icons.dart';
 import 'package:testfirebase/features/home/presentation/controller/change_route_cubit/change_route_cubit.dart';
 import 'package:testfirebase/features/home/presentation/controller/change_route_cubit/change_route_state.dart';
 import 'package:testfirebase/features/home/presentation/view/widgets/nav_bar_index.dart';
+import 'package:testfirebase/generated/l10n.dart';
 
 class IndexSection extends StatelessWidget {
   const IndexSection({super.key});
@@ -23,12 +25,9 @@ class IndexSection extends StatelessWidget {
             children: [
               NavBarIndex(
                 iconPath: ChangeRouteCubit.get(context).currentRoute == 0
-                    ? ChangeRouteCubit.get(context).bottomBarItems[0]
-                        ['activeIcon']
-                    : ChangeRouteCubit.get(context).bottomBarItems[0]
-                        ['inactiveIcon'],
-                title: ChangeRouteCubit.get(context).bottomBarItems[0]
-                    ['routeName'],
+                    ? AppIcons.iconsSelectedHome
+                    :  AppIcons.iconsUnselectedHome,
+                title: S.of(context).index,
                 onTap: () {
                   ChangeRouteCubit.get(context).changeRoute(index: 0);
                 },
@@ -36,12 +35,9 @@ class IndexSection extends StatelessWidget {
               Gap(30.w),
               NavBarIndex(
                 iconPath: ChangeRouteCubit.get(context).currentRoute == 1
-                    ? ChangeRouteCubit.get(context).bottomBarItems[1]
-                        ['activeIcon']
-                    : ChangeRouteCubit.get(context).bottomBarItems[1]
-                        ['inactiveIcon'],
-                title: ChangeRouteCubit.get(context).bottomBarItems[1]
-                    ['routeName'],
+                    ? AppIcons.iconsSelectedCalendar
+                    :  AppIcons.iconsUnselectedCalendar,
+                title: S.of(context).Calender,
                 onTap: () {
                   ChangeRouteCubit.get(context).changeRoute(index: 1);
                 },
@@ -49,25 +45,17 @@ class IndexSection extends StatelessWidget {
               const Spacer(),
               NavBarIndex(
                 iconPath: ChangeRouteCubit.get(context).currentRoute == 2
-                    ? ChangeRouteCubit.get(context).bottomBarItems[2]
-                        ['activeIcon']
-                    : ChangeRouteCubit.get(context).bottomBarItems[2]
-                        ['inactiveIcon'],
-                title: ChangeRouteCubit.get(context).bottomBarItems[2]
-                    ['routeName'],
+                    ?  AppIcons.iconsSelectedClock
+                    : AppIcons.iconsUnselectedClock,
+                title: S.of(context).Focus,
                 onTap: () {
                   ChangeRouteCubit.get(context).changeRoute(index: 2);
                 },
               ),
               Gap(30.w),
               NavBarIndex(
-                iconPath: ChangeRouteCubit.get(context).currentRoute == 3
-                    ? ChangeRouteCubit.get(context).bottomBarItems[3]
-                        ['activeIcon']
-                    : ChangeRouteCubit.get(context).bottomBarItems[3]
-                        ['inactiveIcon'],
-                title: ChangeRouteCubit.get(context).bottomBarItems[3]
-                    ['routeName'],
+                iconPath: AppIcons.iconsUser,
+                title: S.of(context).Profile,
                 onTap: () {
                   ChangeRouteCubit.get(context).changeRoute(index: 3);
                 },

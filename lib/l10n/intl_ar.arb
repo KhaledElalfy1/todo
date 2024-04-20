@@ -56,5 +56,6 @@
     "taskDescription":"وصف المهمة",
     "tasksLeft":"المهام المتبقية",
     "tasksDone":"المهام المنتهية",
-    "logout":"تسجيل الخروج"
+    "logout":"تسجيل الخروج",
+    "deleteTask":"حذف المهمة"
 }
