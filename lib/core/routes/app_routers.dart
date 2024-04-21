@@ -42,6 +42,7 @@ class AppRouter {
               BlocProvider(
                 create: (context) => FoldDoneListCubit(),
               ),
+               
             ],
             child: const MainScreen(),
           ),
