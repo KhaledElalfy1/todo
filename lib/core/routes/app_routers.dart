@@ -34,15 +34,14 @@ class AppRouter {
           builder: (_) => MultiBlocProvider(
             providers: [
               BlocProvider(
-                create: (context) => ChangeRouteCubit(),
+                create: (context) => HomeCubit()..getTasks(),
               ),
               BlocProvider(
-                create: (context) => HomeCubit()..getTasks(),
+                create: (context) => ChangeRouteCubit(),
               ),
               BlocProvider(
                 create: (context) => FoldDoneListCubit(),
               ),
-               
             ],
             child: const MainScreen(),
           ),
