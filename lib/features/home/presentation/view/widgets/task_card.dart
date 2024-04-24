@@ -17,6 +17,7 @@ class TaskCard extends StatelessWidget {
   final TaskModel task;
   @override
   Widget build(BuildContext context) {
+    bool isDone = task.isDone;
     return GestureDetector(
       onTap: () {
         context.pushReplacementNamed(Routing.taskDetails, argument: task);
@@ -34,15 +35,17 @@ class TaskCard extends StatelessWidget {
               builder: (context, state) {
                 return Checkbox(
                   shape: const CircleBorder(),
-                  value: task.isDone,
+                  value: isDone,
                   onChanged: (value) async {
                     HomeCubit.get(context)
                         .makeTaskChecked(doc: task.docID, value: !task.isDone);
+
                     !task.isDone
                         ? await getIt<AudioPlayer>().play(
                             AssetSource('sounds/done.mp3'),
                           )
                         : null;
+                    isDone = !isDone;
                   },
                 );
               },
@@ -50,11 +53,15 @@ class TaskCard extends StatelessWidget {
             Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                Text(
-                  task.taskName,
-                  style: AppFonts.dialogContent.copyWith(
-                      decoration:
-                          task.isDone ? TextDecoration.lineThrough : null),
+                BlocBuilder<HomeCubit, HomeState>(
+                  builder: (context, state) {
+                    return Text(
+                      task.taskName,
+                      style: AppFonts.dialogContent.copyWith(
+                          decoration:
+                              isDone ? TextDecoration.lineThrough : null),
+                    );
+                  },
                 ),
                 Gap(5.h),
                 Text(

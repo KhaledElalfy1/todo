@@ -6,9 +6,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 import 'package:testfirebase/core/model/task_model.dart';
 import 'package:testfirebase/core/utils/app_fonts.dart';
+import 'package:testfirebase/core/widgets/list_of_tasks.dart';
 import 'package:testfirebase/features/home/presentation/controller/fold_done_list_cubit/fold_done_list_cubit.dart';
 import 'package:testfirebase/features/home/presentation/controller/fold_done_list_cubit/fold_done_list_state.dart';
-import 'package:testfirebase/features/home/presentation/view/widgets/task_card.dart';
+
 import 'package:testfirebase/generated/l10n.dart';
 
 class SuccessBody extends StatelessWidget {
@@ -23,14 +24,7 @@ class SuccessBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView(
       children: [
-        ListView.separated(
-          shrinkWrap: true,
-          itemCount: undoneTasks.length,
-          itemBuilder: (context, index) => TaskCard(
-            task: undoneTasks[index],
-          ),
-          separatorBuilder: (context, index) => Gap(10.h),
-        ),
+        ListOfTasks(tasks: undoneTasks),
         Gap(30.h),
         GestureDetector(
           onTap: FoldDoneListCubit.get(context).changeExpandedIcon,
@@ -60,14 +54,7 @@ class SuccessBody extends StatelessWidget {
                   ? CrossFadeState.showSecond
                   : CrossFadeState.showFirst,
               firstChild: const SizedBox(),
-              secondChild: ListView.separated(
-                shrinkWrap: true,
-                itemCount: doneTasks.length,
-                itemBuilder: (context, index) => TaskCard(
-                  task: doneTasks[index],
-                ),
-                separatorBuilder: (context, index) => Gap(10.h),
-              ),
+              secondChild: ListOfTasks(tasks: doneTasks),
             );
           },
         ),
