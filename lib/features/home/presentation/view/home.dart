@@ -11,15 +11,19 @@ class MainScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 24.0.w),
-        child: BlocBuilder<ChangeRouteCubit, ChangeRouteState>(
-          builder: (context, state) => ChangeRouteCubit.get(context)
-              .routes[ChangeRouteCubit.get(context).currentRoute],
+    return PopScope(
+      canPop: false,
+      onPopInvoked: (didPop)=>ChangeRouteCubit.get(context).handleBackButton(),
+      child: Scaffold(
+        body: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 24.0.w),
+          child: BlocBuilder<ChangeRouteCubit, ChangeRouteState>(
+            builder: (context, state) => ChangeRouteCubit.get(context)
+                .routes[ChangeRouteCubit.get(context).currentRoute],
+          ),
         ),
+        bottomNavigationBar: const CustomButtonNavBar(),
       ),
-      bottomNavigationBar: const CustomButtonNavBar(),
     );
   }
 }
