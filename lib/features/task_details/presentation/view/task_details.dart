@@ -24,10 +24,10 @@ class TaskDetails extends StatelessWidget {
   final TaskModel task;
   @override
   Widget build(BuildContext context) {
-    return WillPopScope(
-      onWillPop: () async {
+    return PopScope(
+      canPop: false,
+      onPopInvoked: (didPop) async {
         context.pushReplacementNamed(Routing.home);
-        return true;
       },
       child: SafeArea(
         child: Scaffold(

@@ -9,7 +9,7 @@ import 'package:testfirebase/core/routes/routing.dart';
 import 'package:testfirebase/core/utils/app_color.dart';
 import 'package:testfirebase/core/utils/app_icons.dart';
 import 'package:testfirebase/features/home/presentation/controller/home/home_cubit.dart';
-import 'package:testfirebase/features/profile/presentation/view/widgets/Show_tasks_state_widget.dart';
+import 'package:testfirebase/features/profile/presentation/view/widgets/show_tasks_state_widget.dart';
 import 'package:testfirebase/generated/l10n.dart';
 
 import '../../../../core/utils/app_fonts.dart';
