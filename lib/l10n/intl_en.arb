@@ -57,5 +57,19 @@
     "tasksLeft":"Tasks Left",
     "tasksDone":"Tasks Done",
     "logout":"Log out",
-    "deleteTask":"Delete Task"
+    "deleteTask":"Delete Task",
+    "profileSection":"////////////////////////////////////////////////////////////////",
+    "changePassword":"Change Password",
+    "cancel":"Cancel",
+    "edit":"Edit",
+    "changeAccountPassword":"Change Account Password",
+    "enterOldPassword":"Enter Old Password",
+    "enterNewPassword":"Enter New Password",
+    "oldPassword":"Old Password ",
+    "newPassword":"New Password ",
+    "filedRequired":"this filed is required",
+    "passwordShort":"Password length is less than 8",
+    "passwordSame":"Two password can't be the same",
+    "passwordChangedSuccessfully":"Password Changed Successfully",
+    "passwordChangedFailure":"Password Changed Failure"
 }

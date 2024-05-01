@@ -599,6 +599,146 @@ class S {
       args: [],
     );
   }
+
+  /// `////////////////////////////////////////////////////////////////`
+  String get profileSection {
+    return Intl.message(
+      '////////////////////////////////////////////////////////////////',
+      name: 'profileSection',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Change Password`
+  String get changePassword {
+    return Intl.message(
+      'Change Password',
+      name: 'changePassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cancel`
+  String get cancel {
+    return Intl.message(
+      'Cancel',
+      name: 'cancel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Edit`
+  String get edit {
+    return Intl.message(
+      'Edit',
+      name: 'edit',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Change Account Password`
+  String get changeAccountPassword {
+    return Intl.message(
+      'Change Account Password',
+      name: 'changeAccountPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter Old Password`
+  String get enterOldPassword {
+    return Intl.message(
+      'Enter Old Password',
+      name: 'enterOldPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter New Password`
+  String get enterNewPassword {
+    return Intl.message(
+      'Enter New Password',
+      name: 'enterNewPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Old Password `
+  String get oldPassword {
+    return Intl.message(
+      'Old Password ',
+      name: 'oldPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `New Password `
+  String get newPassword {
+    return Intl.message(
+      'New Password ',
+      name: 'newPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `this filed is required`
+  String get filedRequired {
+    return Intl.message(
+      'this filed is required',
+      name: 'filedRequired',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password length is less than 8`
+  String get passwordShort {
+    return Intl.message(
+      'Password length is less than 8',
+      name: 'passwordShort',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Two password can't be the same`
+  String get passwordSame {
+    return Intl.message(
+      'Two password can\'t be the same',
+      name: 'passwordSame',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password Changed Successfully`
+  String get passwordChangedSuccessfully {
+    return Intl.message(
+      'Password Changed Successfully',
+      name: 'passwordChangedSuccessfully',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password Changed Failure`
+  String get passwordChangedFailure {
+    return Intl.message(
+      'Password Changed Failure',
+      name: 'passwordChangedFailure',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

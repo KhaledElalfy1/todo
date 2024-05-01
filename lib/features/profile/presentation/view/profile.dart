@@ -1,8 +1,13 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 import 'package:testfirebase/core/utils/app_color.dart';
+import 'package:testfirebase/core/utils/app_icons.dart';
+import 'package:testfirebase/features/profile/presentation/controller/change_password_cubit/change_password_cubit.dart';
+import 'package:testfirebase/features/profile/presentation/view/widgets/change_password_dialog.dart';
+import 'package:testfirebase/features/profile/presentation/view/widgets/options_row.dart';
 import 'package:testfirebase/features/profile/presentation/view/widgets/sign_out_section.dart';
 import 'package:testfirebase/features/profile/presentation/view/widgets/user_task_section.dart';
 import 'package:testfirebase/generated/l10n.dart';
@@ -34,7 +39,21 @@ class Profile extends StatelessWidget {
           textAlign: TextAlign.center,
         ),
         Gap(25.h),
-       const UserTasksSection(),
+        const UserTasksSection(),
+        Gap(15.h),
+        OptionSection(
+          iconPath: AppIcons.iconsKey,
+          title: S.of(context).changePassword,
+          onTap: () {
+            showDialog(
+              context: context,
+              builder: (context) => BlocProvider(
+                create: (context) => ChangePasswordCubit(),
+                child:const ChangePasswordDialog(),
+              ),
+            );
+          },
+        ),
         Gap(30.h),
         const SignOutSection()
       ],
