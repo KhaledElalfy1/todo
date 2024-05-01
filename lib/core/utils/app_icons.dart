@@ -45,6 +45,8 @@ class AppIcons {
   static const String iconsHierarchy = "assets/icons/hierarchy.svg";
   static const String iconsTrash = "assets/icons/trash.svg";
   static const String iconsLogOut = "assets/icons/logout.svg";
+  static const String iconsKey = "assets/icons/key.svg";
+  static const String iconsSetting = "assets/icons/setting.svg";
 
 }
 
