@@ -36,6 +36,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "alreadyHaveAnAccount":
             MessageLookupByLibrary.simpleMessage("Already have an account?"),
         "back": MessageLookupByLibrary.simpleMessage("BACK"),
+        "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
+        "changeAccountPassword":
+            MessageLookupByLibrary.simpleMessage("Change Account Password"),
+        "changePassword":
+            MessageLookupByLibrary.simpleMessage("Change Password"),
         "completed": MessageLookupByLibrary.simpleMessage("Completed"),
         "confirmPassword":
             MessageLookupByLibrary.simpleMessage("Confirm Password"),
@@ -46,11 +51,18 @@ class MessageLookup extends MessageLookupByLibrary {
         "description": MessageLookupByLibrary.simpleMessage("Description"),
         "dontHaveAccount":
             MessageLookupByLibrary.simpleMessage("Don\'t have an account?"),
+        "edit": MessageLookupByLibrary.simpleMessage("Edit"),
         "email": MessageLookupByLibrary.simpleMessage("E-mail"),
         "enterEmail": MessageLookupByLibrary.simpleMessage("Enter your e-mail"),
+        "enterNewPassword":
+            MessageLookupByLibrary.simpleMessage("Enter New Password"),
+        "enterOldPassword":
+            MessageLookupByLibrary.simpleMessage("Enter Old Password"),
         "enterPassword":
             MessageLookupByLibrary.simpleMessage("Enter your Password"),
         "failure": MessageLookupByLibrary.simpleMessage("Failure!"),
+        "filedRequired":
+            MessageLookupByLibrary.simpleMessage("this filed is required"),
         "forgetPassword":
             MessageLookupByLibrary.simpleMessage("Forget Password?"),
         "getStart": MessageLookupByLibrary.simpleMessage("GET START"),
@@ -63,13 +75,25 @@ class MessageLookup extends MessageLookupByLibrary {
         "loginWithGoogle":
             MessageLookupByLibrary.simpleMessage("Login with Google"),
         "logout": MessageLookupByLibrary.simpleMessage("Log out"),
+        "newPassword": MessageLookupByLibrary.simpleMessage("New Password "),
         "next": MessageLookupByLibrary.simpleMessage("NEXT"),
+        "oldPassword": MessageLookupByLibrary.simpleMessage("Old Password "),
         "onBoardingScreenSection": MessageLookupByLibrary.simpleMessage(
             "////////////////////////////////////////////////////////////////"),
         "or": MessageLookupByLibrary.simpleMessage("or"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
+        "passwordChangedFailure":
+            MessageLookupByLibrary.simpleMessage("Password Changed Failure"),
+        "passwordChangedSuccessfully": MessageLookupByLibrary.simpleMessage(
+            "Password Changed Successfully"),
+        "passwordSame": MessageLookupByLibrary.simpleMessage(
+            "Two password can\'t be the same"),
+        "passwordShort": MessageLookupByLibrary.simpleMessage(
+            "Password length is less than 8"),
         "poorAndroid": MessageLookupByLibrary.simpleMessage(
             "You are poor android user!!!!"),
+        "profileSection": MessageLookupByLibrary.simpleMessage(
+            "////////////////////////////////////////////////////////////////"),
         "register": MessageLookupByLibrary.simpleMessage(" Register"),
         "registerWithApple":
             MessageLookupByLibrary.simpleMessage("Register with Apple"),
@@ -97,10 +121,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "title1": MessageLookupByLibrary.simpleMessage("Manage your tasks"),
         "title2": MessageLookupByLibrary.simpleMessage("Create daily routine"),
         "title3": MessageLookupByLibrary.simpleMessage("Orgonaize your tasks"),
+        "unexpectedError": MessageLookupByLibrary.simpleMessage(
+            "Unexpected Error, Please Try Again Latter"),
         "warning": MessageLookupByLibrary.simpleMessage("Warning"),
         "welcomeTitle": MessageLookupByLibrary.simpleMessage(
             "Please login to your account or create new account to continue"),
         "welcomeToUpTodo":
-            MessageLookupByLibrary.simpleMessage("Welcome to UpTodo")
+            MessageLookupByLibrary.simpleMessage("Welcome to UpTodo"),
+        "wrongPassword":
+            MessageLookupByLibrary.simpleMessage("Password is Wrong")
       };
 }

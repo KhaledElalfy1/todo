@@ -36,6 +36,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "alreadyHaveAnAccount":
             MessageLookupByLibrary.simpleMessage("لديك حساب بالفعل؟"),
         "back": MessageLookupByLibrary.simpleMessage("السابق"),
+        "cancel": MessageLookupByLibrary.simpleMessage("إلغاء"),
+        "changeAccountPassword": MessageLookupByLibrary.simpleMessage(
+            "تغير كلمة السر الخاصة بالحساب"),
+        "changePassword":
+            MessageLookupByLibrary.simpleMessage("تغير كلمة السر"),
         "completed": MessageLookupByLibrary.simpleMessage("مكتمل"),
         "confirmPassword":
             MessageLookupByLibrary.simpleMessage("تأكيد كلمة المرور"),
@@ -46,12 +51,19 @@ class MessageLookup extends MessageLookupByLibrary {
         "description": MessageLookupByLibrary.simpleMessage("الوصف"),
         "dontHaveAccount":
             MessageLookupByLibrary.simpleMessage("ليس لديك حساب؟"),
+        "edit": MessageLookupByLibrary.simpleMessage("تعديل"),
         "email": MessageLookupByLibrary.simpleMessage("البريد الإلكترونى"),
         "enterEmail":
             MessageLookupByLibrary.simpleMessage("قم بإدخال بريدك الإلكترونى"),
+        "enterNewPassword": MessageLookupByLibrary.simpleMessage(
+            "قم بإدخال كلمة السر الجديدة "),
+        "enterOldPassword":
+            MessageLookupByLibrary.simpleMessage("قم بإدخال كلمة السر الحالية"),
         "enterPassword":
             MessageLookupByLibrary.simpleMessage("قم بإدخال كلمة المرور"),
         "failure": MessageLookupByLibrary.simpleMessage("فشل!"),
+        "filedRequired": MessageLookupByLibrary.simpleMessage(
+            "هذا الحقل لا يمكن أن يكون فارغ"),
         "forgetPassword":
             MessageLookupByLibrary.simpleMessage("نسيت كلمة المرور؟"),
         "getStart": MessageLookupByLibrary.simpleMessage("أبدأ"),
@@ -64,12 +76,26 @@ class MessageLookup extends MessageLookupByLibrary {
         "loginWithGoogle":
             MessageLookupByLibrary.simpleMessage("تسجيل الدخول بجوجل"),
         "logout": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
+        "newPassword":
+            MessageLookupByLibrary.simpleMessage("كلمة السر الجديدة"),
         "next": MessageLookupByLibrary.simpleMessage("التالى"),
+        "oldPassword":
+            MessageLookupByLibrary.simpleMessage("كلمة السر الحالية"),
         "onBoardingScreenSection": MessageLookupByLibrary.simpleMessage(
             "////////////////////////////////////////////////////////////////"),
         "or": MessageLookupByLibrary.simpleMessage("أو"),
         "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
+        "passwordChangedFailure": MessageLookupByLibrary.simpleMessage(
+            "حدث خطأ اثناء تغير كملة السر"),
+        "passwordChangedSuccessfully":
+            MessageLookupByLibrary.simpleMessage("تم تغير كلمة السر بنجاح"),
+        "passwordSame": MessageLookupByLibrary.simpleMessage(
+            "كملتا السر لا يمكن أن يكونا متطابقين"),
+        "passwordShort":
+            MessageLookupByLibrary.simpleMessage("كملة السر أقل من 8 احرف"),
         "poorAndroid": MessageLookupByLibrary.simpleMessage("أندرويد فقير"),
+        "profileSection": MessageLookupByLibrary.simpleMessage(
+            "////////////////////////////////////////////////////////////////"),
         "register": MessageLookupByLibrary.simpleMessage(" تسجيل"),
         "registerWithApple":
             MessageLookupByLibrary.simpleMessage("تسجيل الدخول بأبل"),
@@ -96,10 +122,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "title1": MessageLookupByLibrary.simpleMessage("تحكم فى مهامك"),
         "title2": MessageLookupByLibrary.simpleMessage("قم بإنشاء مهام يومية"),
         "title3": MessageLookupByLibrary.simpleMessage("ترتيب مهامك اليومية"),
+        "unexpectedError": MessageLookupByLibrary.simpleMessage(
+            "خطأ غير متوقع, من فضلك حاول مجدداً"),
         "warning": MessageLookupByLibrary.simpleMessage("تحذير"),
         "welcomeTitle": MessageLookupByLibrary.simpleMessage(
             "من فضلك قم بتسجيل الدخول أو إنشاء حساب جديد"),
         "welcomeToUpTodo":
-            MessageLookupByLibrary.simpleMessage("مرحبا فى UpTodo")
+            MessageLookupByLibrary.simpleMessage("مرحبا فى UpTodo"),
+        "wrongPassword": MessageLookupByLibrary.simpleMessage("كملة السر خطأ")
       };
 }

@@ -57,5 +57,21 @@
     "tasksLeft":"المهام المتبقية",
     "tasksDone":"المهام المنتهية",
     "logout":"تسجيل الخروج",
-    "deleteTask":"حذف المهمة"
+    "deleteTask":"حذف المهمة",
+    "profileSection":"////////////////////////////////////////////////////////////////",
+    "changePassword":"تغير كلمة السر",
+    "cancel":"إلغاء",
+    "edit":"تعديل",
+    "changeAccountPassword":"تغير كلمة السر الخاصة بالحساب",
+    "enterOldPassword":"قم بإدخال كلمة السر الحالية",
+    "enterNewPassword":"قم بإدخال كلمة السر الجديدة ",
+    "oldPassword":"كلمة السر الحالية",
+    "newPassword":"كلمة السر الجديدة",
+    "filedRequired":"هذا الحقل لا يمكن أن يكون فارغ",
+    "passwordShort":"كملة السر أقل من 8 احرف",
+    "passwordSame":"كملتا السر لا يمكن أن يكونا متطابقين",
+    "passwordChangedSuccessfully":"تم تغير كلمة السر بنجاح",
+    "passwordChangedFailure":"حدث خطأ اثناء تغير كملة السر",
+    "wrongPassword":"كملة السر خطأ",
+    "unexpectedError":"خطأ غير متوقع, من فضلك حاول مجدداً"
 }
