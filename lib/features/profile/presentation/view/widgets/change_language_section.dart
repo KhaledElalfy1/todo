@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:testfirebase/core/database/cache/shared_preferences.dart';
 import 'package:testfirebase/core/global_controller/change_language_cubit/change_language_cubit.dart';
+import 'package:testfirebase/core/service/service_locator.dart';
 
 class ChangeLanguageSection extends StatelessWidget {
   const ChangeLanguageSection({
@@ -15,7 +17,7 @@ class ChangeLanguageSection extends StatelessWidget {
         Icons.language_sharp,
         size: 35,
       ),
-      initialSelection: ChangeLanguageCubit.get(context).currentLan,
+      initialSelection: getIt<CacheHelper>().getCurrentLanguage()??"English",
       dropdownMenuEntries: ChangeLanguageCubit.get(context)
           .languages
           .keys
