@@ -6,6 +6,7 @@ import 'package:gap/gap.dart';
 import 'package:testfirebase/core/utils/app_color.dart';
 import 'package:testfirebase/core/utils/app_icons.dart';
 import 'package:testfirebase/features/profile/presentation/controller/change_password_cubit/change_password_cubit.dart';
+import 'package:testfirebase/features/profile/presentation/controller/change_visibility_cubit/change_visibility_cubit.dart';
 import 'package:testfirebase/features/profile/presentation/view/widgets/change_password_dialog.dart';
 import 'package:testfirebase/features/profile/presentation/view/widgets/options_row.dart';
 import 'package:testfirebase/features/profile/presentation/view/widgets/sign_out_section.dart';
@@ -47,9 +48,16 @@ class Profile extends StatelessWidget {
           onTap: () {
             showDialog(
               context: context,
-              builder: (context) => BlocProvider(
-                create: (context) => ChangePasswordCubit(),
-                child:const ChangePasswordDialog(),
+              builder: (context) => MultiBlocProvider(
+                providers: [
+                  BlocProvider(
+                    create: (context) => ChangePasswordCubit(),
+                  ),
+                  BlocProvider(
+                    create: (context) => ChangeVisibilityCubit(),
+                  )
+                ],
+                child: const ChangePasswordDialog(),
               ),
             );
           },
@@ -60,4 +68,3 @@ class Profile extends StatelessWidget {
     );
   }
 }
-
