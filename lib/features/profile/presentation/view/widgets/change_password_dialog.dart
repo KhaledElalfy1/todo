@@ -63,7 +63,8 @@ class ChangePasswordDialog extends StatelessWidget {
                           .currentState!
                           .validate()) {
                         FocusScope.of(context).unfocus();
-                        ChangePasswordCubit.get(context).reauth();
+                        ChangePasswordCubit.get(context)
+                            .reauthenticateAndChangePassword();
                       }
                     },
                     child:

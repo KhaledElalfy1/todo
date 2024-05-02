@@ -32,13 +32,13 @@ class ChangePasswordCubit extends Cubit<ChangePasswordState> {
     return null;
   }
 
-  void reauth() {
+  void reauthenticateAndChangePassword() {
     final user = FirebaseAuth.instance.currentUser!;
     final cred = EmailAuthProvider.credential(
         email: user.email!, password: oldPasswordController.text);
     user
         .reauthenticateWithCredential(cred)
-        .then((value) => changePassword())
+        .then((value) => _changePassword())
         .catchError(
       (e) {
         emit(ChangePasswordFailure());
@@ -46,7 +46,7 @@ class ChangePasswordCubit extends Cubit<ChangePasswordState> {
     );
   }
 
-  void changePassword() async {
+  void _changePassword() async {
     emit(ChangePasswordLoading());
 
     try {
