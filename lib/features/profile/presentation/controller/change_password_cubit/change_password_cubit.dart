@@ -41,7 +41,8 @@ class ChangePasswordCubit extends Cubit<ChangePasswordState> {
         .then((value) => _changePassword())
         .catchError(
       (e) {
-        emit(ChangePasswordFailure());
+        emit(ChangePasswordFailure(eMessage:S.current.wrongPassword ));
+        debugPrint(e.toString());
       },
     );
   }
@@ -54,8 +55,8 @@ class ChangePasswordCubit extends Cubit<ChangePasswordState> {
           .updatePassword(newPasswordController.text);
       emit(ChangePasswordSuccess());
     } catch (e) {
-      emit(ChangePasswordFailure());
-      print(e.toString());
+      emit(ChangePasswordFailure(eMessage: S.current.unexpectedError));
+      debugPrint(e.toString());
     }
   }
 }

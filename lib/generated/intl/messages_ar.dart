@@ -122,10 +122,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "title1": MessageLookupByLibrary.simpleMessage("تحكم فى مهامك"),
         "title2": MessageLookupByLibrary.simpleMessage("قم بإنشاء مهام يومية"),
         "title3": MessageLookupByLibrary.simpleMessage("ترتيب مهامك اليومية"),
+        "unexpectedError": MessageLookupByLibrary.simpleMessage(
+            "خطأ غير متوقع, من فضلك حاول مجدداً"),
         "warning": MessageLookupByLibrary.simpleMessage("تحذير"),
         "welcomeTitle": MessageLookupByLibrary.simpleMessage(
             "من فضلك قم بتسجيل الدخول أو إنشاء حساب جديد"),
         "welcomeToUpTodo":
-            MessageLookupByLibrary.simpleMessage("مرحبا فى UpTodo")
+            MessageLookupByLibrary.simpleMessage("مرحبا فى UpTodo"),
+        "wrongPassword": MessageLookupByLibrary.simpleMessage("كملة السر خطأ")
       };
 }

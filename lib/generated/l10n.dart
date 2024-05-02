@@ -739,6 +739,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Password is Wrong`
+  String get wrongPassword {
+    return Intl.message(
+      'Password is Wrong',
+      name: 'wrongPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Unexpected Error, Please Try Again Latter`
+  String get unexpectedError {
+    return Intl.message(
+      'Unexpected Error, Please Try Again Latter',
+      name: 'unexpectedError',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

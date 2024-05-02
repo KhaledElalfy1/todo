@@ -71,5 +71,7 @@
     "passwordShort":"Password length is less than 8",
     "passwordSame":"Two password can't be the same",
     "passwordChangedSuccessfully":"Password Changed Successfully",
-    "passwordChangedFailure":"Password Changed Failure"
+    "passwordChangedFailure":"Password Changed Failure",
+    "wrongPassword":"Password is Wrong",
+    "unexpectedError":"Unexpected Error, Please Try Again Latter"
 }

@@ -121,10 +121,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "title1": MessageLookupByLibrary.simpleMessage("Manage your tasks"),
         "title2": MessageLookupByLibrary.simpleMessage("Create daily routine"),
         "title3": MessageLookupByLibrary.simpleMessage("Orgonaize your tasks"),
+        "unexpectedError": MessageLookupByLibrary.simpleMessage(
+            "Unexpected Error, Please Try Again Latter"),
         "warning": MessageLookupByLibrary.simpleMessage("Warning"),
         "welcomeTitle": MessageLookupByLibrary.simpleMessage(
             "Please login to your account or create new account to continue"),
         "welcomeToUpTodo":
-            MessageLookupByLibrary.simpleMessage("Welcome to UpTodo")
+            MessageLookupByLibrary.simpleMessage("Welcome to UpTodo"),
+        "wrongPassword":
+            MessageLookupByLibrary.simpleMessage("Password is Wrong")
       };
 }
