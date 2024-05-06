@@ -11,6 +11,7 @@ class ListOfTasks extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView.separated(
       shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
       itemCount: tasks.length,
       itemBuilder: (context, index) => TaskCard(
         task: tasks[index],
