@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:gap/gap.dart';
-import 'package:testfirebase/core/helpers/extentions.dart';
 import 'package:testfirebase/core/utils/app_fonts.dart';
 import 'package:testfirebase/core/utils/app_icons.dart';
 import 'package:testfirebase/core/widgets/loading_widget.dart';
@@ -69,8 +68,9 @@ class AddTaskDialog extends StatelessWidget {
                 ),
                 const Spacer(),
                 BlocConsumer<AddTaskCubit, AddTaskState>(
-                  listener: (context, state) =>
-                      state is AddTaskSuccess ? context.pop() : null,
+                  listener: (context, state) => state is AddTaskSuccess
+                      ? Navigator.pop(context, 1)
+                      : null,
                   builder: (context, state) {
                     return IconButton(
                       onPressed: AddTaskCubit.get(context).addTask,

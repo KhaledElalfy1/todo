@@ -19,7 +19,11 @@ class AddItemSection extends StatelessWidget {
             create: (context) => AddTaskCubit(),
             child: const AddTaskDialog(),
           ),
-        ).then((value) => HomeCubit.get(context).getTasks());
+        ).then((value) {
+          if (value != null) {
+            HomeCubit.get(context).getTasks();
+          }
+        });
       },
       child: CircleAvatar(
         radius: 35.r,
