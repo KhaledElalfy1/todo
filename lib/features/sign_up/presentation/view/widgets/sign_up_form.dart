@@ -23,6 +23,7 @@ class SignUpForm extends StatelessWidget {
           ),
           Gap(10.h),
           CustomTextFormFiled(
+             keyboardType: TextInputType.emailAddress,
             validator: (value) =>
                 SignUpCubit.get(context).emailValidator(value),
             textEditingController: SignUpCubit.get(context).emailController,
