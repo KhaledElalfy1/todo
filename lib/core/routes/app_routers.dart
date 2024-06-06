@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:testfirebase/core/model/task_model.dart';
 import 'package:testfirebase/core/routes/routing.dart';
+import 'package:testfirebase/features/foucs/presentation/view/counter_cubit/counter_cubit.dart';
 import 'package:testfirebase/features/home/presentation/controller/change_route_cubit/change_route_cubit.dart';
 import 'package:testfirebase/features/home/presentation/controller/fold_done_list_cubit/fold_done_list_cubit.dart';
 import 'package:testfirebase/features/home/presentation/controller/home/home_cubit.dart';
@@ -42,6 +43,9 @@ class AppRouter {
               BlocProvider(
                 create: (context) => FoldDoneListCubit(),
               ),
+              BlocProvider(
+                create: (context) => CounterCubit(),
+              )
             ],
             child: const MainScreen(),
           ),

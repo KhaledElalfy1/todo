@@ -49,6 +49,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "createAccount": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
         "deleteTask": MessageLookupByLibrary.simpleMessage("حذف المهمة"),
         "description": MessageLookupByLibrary.simpleMessage("الوصف"),
+        "done": MessageLookupByLibrary.simpleMessage("تم"),
         "dontHaveAccount":
             MessageLookupByLibrary.simpleMessage("ليس لديك حساب؟"),
         "edit": MessageLookupByLibrary.simpleMessage("تعديل"),
@@ -64,6 +65,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("فشل!"),
         "filedRequired": MessageLookupByLibrary.simpleMessage(
             "هذا الحقل لا يمكن أن يكون فارغ"),
+        "focusTimer": MessageLookupByLibrary.simpleMessage("وضع التركيز"),
         "forgetPassword":
             MessageLookupByLibrary.simpleMessage("نسيت كلمة المرور؟"),
         "getStart": MessageLookupByLibrary.simpleMessage("أبدأ"),
@@ -76,6 +78,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "loginWithGoogle":
             MessageLookupByLibrary.simpleMessage("تسجيل الدخول بجوجل"),
         "logout": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
+        "minutes": MessageLookupByLibrary.simpleMessage("دقائق"),
         "newPassword":
             MessageLookupByLibrary.simpleMessage("كلمة السر الجديدة"),
         "next": MessageLookupByLibrary.simpleMessage("التالى"),
@@ -93,6 +96,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "كملتا السر لا يمكن أن يكونا متطابقين"),
         "passwordShort":
             MessageLookupByLibrary.simpleMessage("كملة السر أقل من 8 احرف"),
+        "pause": MessageLookupByLibrary.simpleMessage("توقف"),
         "poorAndroid": MessageLookupByLibrary.simpleMessage("أندرويد فقير"),
         "profileSection": MessageLookupByLibrary.simpleMessage(
             "////////////////////////////////////////////////////////////////"),
@@ -101,11 +105,15 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("تسجيل الدخول بأبل"),
         "registerWithGoogle":
             MessageLookupByLibrary.simpleMessage("تسجيل الدخول بجوجل"),
+        "reset": MessageLookupByLibrary.simpleMessage("إعادة تعيين"),
+        "seconds": MessageLookupByLibrary.simpleMessage("ثوانى"),
+        "setTimer": MessageLookupByLibrary.simpleMessage("تعيين الوقت"),
         "signInSection": MessageLookupByLibrary.simpleMessage(
             "////////////////////////////////////////////////////////////////"),
         "signUpSection": MessageLookupByLibrary.simpleMessage(
             "////////////////////////////////////////////////////////////////"),
         "skip": MessageLookupByLibrary.simpleMessage("تخطى"),
+        "start": MessageLookupByLibrary.simpleMessage("إبدأ"),
         "subtitle1": MessageLookupByLibrary.simpleMessage(
             "تستطيع دائما التحكم فى مهامك اليوميه بسهوله"),
         "subtitle2": MessageLookupByLibrary.simpleMessage(

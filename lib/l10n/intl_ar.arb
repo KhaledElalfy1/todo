@@ -73,5 +73,13 @@
     "passwordChangedSuccessfully":"تم تغير كلمة السر بنجاح",
     "passwordChangedFailure":"حدث خطأ اثناء تغير كملة السر",
     "wrongPassword":"كملة السر خطأ",
-    "unexpectedError":"خطأ غير متوقع, من فضلك حاول مجدداً"
+    "unexpectedError":"خطأ غير متوقع, من فضلك حاول مجدداً",
+    "focusTimer":"وضع التركيز",
+    "setTimer":"تعيين الوقت",
+    "pause":"توقف",
+    "start":"إبدأ",
+    "reset":"إعادة تعيين",
+    "done":"تم",
+    "minutes":"دقائق",
+    "seconds":"ثوانى"
 }

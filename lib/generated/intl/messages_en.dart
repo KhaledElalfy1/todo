@@ -49,6 +49,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "createAccount": MessageLookupByLibrary.simpleMessage("CREATE ACCOUNT"),
         "deleteTask": MessageLookupByLibrary.simpleMessage("Delete Task"),
         "description": MessageLookupByLibrary.simpleMessage("Description"),
+        "done": MessageLookupByLibrary.simpleMessage("Done"),
         "dontHaveAccount":
             MessageLookupByLibrary.simpleMessage("Don\'t have an account?"),
         "edit": MessageLookupByLibrary.simpleMessage("Edit"),
@@ -63,6 +64,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("Failure!"),
         "filedRequired":
             MessageLookupByLibrary.simpleMessage("this filed is required"),
+        "focusTimer": MessageLookupByLibrary.simpleMessage("Focus Mood"),
         "forgetPassword":
             MessageLookupByLibrary.simpleMessage("Forget Password?"),
         "getStart": MessageLookupByLibrary.simpleMessage("GET START"),
@@ -75,6 +77,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "loginWithGoogle":
             MessageLookupByLibrary.simpleMessage("Login with Google"),
         "logout": MessageLookupByLibrary.simpleMessage("Log out"),
+        "minutes": MessageLookupByLibrary.simpleMessage("Minutes"),
         "newPassword": MessageLookupByLibrary.simpleMessage("New Password "),
         "next": MessageLookupByLibrary.simpleMessage("NEXT"),
         "oldPassword": MessageLookupByLibrary.simpleMessage("Old Password "),
@@ -90,6 +93,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Two password can\'t be the same"),
         "passwordShort": MessageLookupByLibrary.simpleMessage(
             "Password length is less than 8"),
+        "pause": MessageLookupByLibrary.simpleMessage("Pause"),
         "poorAndroid": MessageLookupByLibrary.simpleMessage(
             "You are poor android user!!!!"),
         "profileSection": MessageLookupByLibrary.simpleMessage(
@@ -99,11 +103,15 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Register with Apple"),
         "registerWithGoogle":
             MessageLookupByLibrary.simpleMessage("Register with Google"),
+        "reset": MessageLookupByLibrary.simpleMessage("Reset"),
+        "seconds": MessageLookupByLibrary.simpleMessage("Seconds"),
+        "setTimer": MessageLookupByLibrary.simpleMessage("Set Timer"),
         "signInSection": MessageLookupByLibrary.simpleMessage(
             "////////////////////////////////////////////////////////////////"),
         "signUpSection": MessageLookupByLibrary.simpleMessage(
             "////////////////////////////////////////////////////////////////"),
         "skip": MessageLookupByLibrary.simpleMessage("SKIP"),
+        "start": MessageLookupByLibrary.simpleMessage("Start"),
         "subtitle1": MessageLookupByLibrary.simpleMessage(
             "You can easily manage all of your daily tasks in DoMe for free"),
         "subtitle2": MessageLookupByLibrary.simpleMessage(
