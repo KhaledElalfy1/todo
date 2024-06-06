@@ -73,5 +73,13 @@
     "passwordChangedSuccessfully":"Password Changed Successfully",
     "passwordChangedFailure":"Password Changed Failure",
     "wrongPassword":"Password is Wrong",
-    "unexpectedError":"Unexpected Error, Please Try Again Latter"
+    "unexpectedError":"Unexpected Error, Please Try Again Latter",
+    "focusTimer":"Focus Mood",
+    "setTimer":"Set Timer",
+    "pause":"Pause",
+    "start":"Start",
+    "reset":"Reset",
+    "done":"Done",
+    "minutes":"Minutes",
+    "seconds":"Seconds"
 }
