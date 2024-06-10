@@ -1,6 +1,11 @@
 # UpTodo <img src="assets/images/app_icon.png" align="right" width="55"/>  
+
+
 ## description
 UpTodo is a sleek and intuitive to-do list app designed to enhance your productivity. With UpTodo, you can effortlessly organize your daily tasks, set timely reminders, and monitor your progress.
+
+
+![Static Badge](https://img.shields.io/badge/flutter-v3.22-blue)
 
 Key features include:
 
