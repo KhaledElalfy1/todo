@@ -6,7 +6,7 @@ class FoldDoneListCubit extends Cubit<FoldDoneListState> {
   FoldDoneListCubit() : super(FoldDoneListInitial());
   static FoldDoneListCubit get(context) => BlocProvider.of(context);
     IconData expandedIcon = Icons.expand_more;
-  bool isExpanded = true;
+  bool isExpanded = false;
 
    void changeExpandedIcon() {
     isExpanded = !isExpanded;
