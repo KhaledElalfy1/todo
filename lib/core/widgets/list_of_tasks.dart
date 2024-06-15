@@ -9,9 +9,7 @@ class ListOfTasks extends StatelessWidget {
   final List<TaskModel> tasks;
   @override
   Widget build(BuildContext context) {
-    return ListView.separated(
-      shrinkWrap: true,
-      physics: const NeverScrollableScrollPhysics(),
+    return SliverList.separated(
       itemCount: tasks.length,
       itemBuilder: (context, index) => TaskCard(
         task: tasks[index],

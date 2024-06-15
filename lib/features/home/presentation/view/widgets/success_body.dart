@@ -22,43 +22,50 @@ class SuccessBody extends StatelessWidget {
   final List<TaskModel> doneTasks;
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      children: [
-        ListOfTasks(tasks: undoneTasks),
-        Gap(30.h),
-        GestureDetector(
-          onTap: FoldDoneListCubit.get(context).changeExpandedIcon,
-          child: Row(
-            children: [
-              Text(
-                S.of(context).completed,
-                style: AppFonts.bold32White,
-              ),
-              BlocBuilder<FoldDoneListCubit, FoldDoneListState>(
-                builder: (context, state) {
-                  return Icon(
-                    FoldDoneListCubit.get(context).expandedIcon,
-                    size: 40,
-                  );
-                },
-              ),
-            ],
+    return CustomScrollView(
+      slivers: [
+        ListOfTasks(
+          tasks: undoneTasks,
+        ),
+        SliverToBoxAdapter(
+          child: Gap(30.h),
+        ),
+        SliverToBoxAdapter(
+          child: GestureDetector(
+            onTap: FoldDoneListCubit.get(context).changeExpandedIcon,
+            child: Row(
+              children: [
+                Text(
+                  S.of(context).completed,
+                  style: AppFonts.bold32White,
+                ),
+                BlocBuilder<FoldDoneListCubit, FoldDoneListState>(
+                  builder: (context, state) {
+                    return Icon(
+                      FoldDoneListCubit.get(context).expandedIcon,
+                      size: 40,
+                    );
+                  },
+                ),
+              ],
+            ),
           ),
         ),
-        Gap(15.h),
+        SliverToBoxAdapter(
+          child: Gap(15.h),
+        ),
         BlocBuilder<FoldDoneListCubit, FoldDoneListState>(
           builder: (context, state) {
-            return AnimatedCrossFade(
-              duration: const Duration(milliseconds: 300),
-              crossFadeState: FoldDoneListCubit.get(context).isExpanded
-                  ? CrossFadeState.showSecond
-                  : CrossFadeState.showFirst,
-              firstChild: const SizedBox(),
-              secondChild: ListOfTasks(tasks: doneTasks),
-            );
+            return FoldDoneListCubit.get(context).isExpanded
+                ? ListOfTasks(tasks: doneTasks)
+                : const SliverToBoxAdapter(
+                    child: SizedBox(),
+                  );
           },
         ),
-        Gap(20.h),
+        SliverToBoxAdapter(
+          child: Gap(20.h),
+        ),
       ],
     );
   }
