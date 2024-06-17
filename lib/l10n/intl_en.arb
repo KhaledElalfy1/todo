@@ -81,5 +81,7 @@
     "reset":"Reset",
     "done":"Done",
     "minutes":"Minutes",
-    "seconds":"Seconds"
+    "seconds":"Seconds",
+    "delete":"Delete",
+    "areYouSure":"Are you sure you want to delete this task?"
 }

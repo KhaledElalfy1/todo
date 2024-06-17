@@ -35,6 +35,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "addTask": MessageLookupByLibrary.simpleMessage("Add Task"),
         "alreadyHaveAnAccount":
             MessageLookupByLibrary.simpleMessage("Already have an account?"),
+        "areYouSure": MessageLookupByLibrary.simpleMessage(
+            "Are you sure you want to delete this task?"),
         "back": MessageLookupByLibrary.simpleMessage("BACK"),
         "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
         "changeAccountPassword":
@@ -47,6 +49,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "confirmYourPassword":
             MessageLookupByLibrary.simpleMessage("Confirm Your Password"),
         "createAccount": MessageLookupByLibrary.simpleMessage("CREATE ACCOUNT"),
+        "delete": MessageLookupByLibrary.simpleMessage("Delete"),
         "deleteTask": MessageLookupByLibrary.simpleMessage("Delete Task"),
         "description": MessageLookupByLibrary.simpleMessage("Description"),
         "done": MessageLookupByLibrary.simpleMessage("Done"),

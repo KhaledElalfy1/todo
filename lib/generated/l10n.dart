@@ -839,6 +839,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Delete`
+  String get delete {
+    return Intl.message(
+      'Delete',
+      name: 'delete',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Are you sure you want to delete this task?`
+  String get areYouSure {
+    return Intl.message(
+      'Are you sure you want to delete this task?',
+      name: 'areYouSure',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
