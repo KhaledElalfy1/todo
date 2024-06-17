@@ -35,6 +35,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "addTask": MessageLookupByLibrary.simpleMessage("إضافة مهمة"),
         "alreadyHaveAnAccount":
             MessageLookupByLibrary.simpleMessage("لديك حساب بالفعل؟"),
+        "areYouSure": MessageLookupByLibrary.simpleMessage(
+            "هل أنت متأكد من حذف هذه المهمه؟"),
         "back": MessageLookupByLibrary.simpleMessage("السابق"),
         "cancel": MessageLookupByLibrary.simpleMessage("إلغاء"),
         "changeAccountPassword": MessageLookupByLibrary.simpleMessage(
@@ -47,6 +49,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "confirmYourPassword":
             MessageLookupByLibrary.simpleMessage("قم بتأكيد كلمة المرور"),
         "createAccount": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
+        "delete": MessageLookupByLibrary.simpleMessage("حذف"),
         "deleteTask": MessageLookupByLibrary.simpleMessage("حذف المهمة"),
         "description": MessageLookupByLibrary.simpleMessage("الوصف"),
         "done": MessageLookupByLibrary.simpleMessage("تم"),
