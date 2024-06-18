@@ -51,8 +51,8 @@ class WelcomeScreen extends StatelessWidget {
                   },
                   style: const ButtonStyle(
                     backgroundColor:
-                        MaterialStatePropertyAll(Colors.transparent),
-                    side: MaterialStatePropertyAll(
+                        WidgetStatePropertyAll(Colors.transparent),
+                    side: WidgetStatePropertyAll(
                       BorderSide(
                         color: AppColor.primaryColor,
                         width: 2,

@@ -37,7 +37,7 @@ class HomeRepo {
     try {
       List<TaskModel> tasksList = [];
       for (var doc in data.docs) {
-        tasksList.add(TaskModel.fromFirestore(doc.data(),doc.id));
+        tasksList.add(TaskModel.fromFirestore(doc.data(), doc.id));
       }
       return right(tasksList);
     } on Exception catch (e) {
@@ -49,6 +49,21 @@ class HomeRepo {
       {required String doc, required bool value}) async {
     try {
       await tasks.doc(doc).update({FireStoreKeys.isDone: value});
+      return right('r');
+    } catch (e) {
+      return left(e.toString());
+    }
+  }
+
+  Future<Either<String, String>> editTaskDetails(
+      {required String doc,
+      required String taskTitle,
+      required String taskDetails}) async {
+    try {
+      await tasks.doc(doc).update({
+        FireStoreKeys.task: taskTitle,
+        FireStoreKeys.taskDescription: taskDetails,
+      });
       return right('r');
     } catch (e) {
       return left(e.toString());

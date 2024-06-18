@@ -83,5 +83,7 @@
     "minutes":"Minutes",
     "seconds":"Seconds",
     "delete":"Delete",
-    "areYouSure":"Are you sure you want to delete this task?"
+    "areYouSure":"Are you sure you want to delete this task?",
+    "ok":"Ok",
+    "editTask":"Edit Task"
 }

@@ -859,6 +859,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Ok`
+  String get ok {
+    return Intl.message(
+      'Ok',
+      name: 'ok',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Edit Task`
+  String get editTask {
+    return Intl.message(
+      'Edit Task',
+      name: 'editTask',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
