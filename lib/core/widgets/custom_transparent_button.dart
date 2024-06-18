@@ -11,8 +11,8 @@ class CustomTransparentButton extends StatelessWidget {
     return ElevatedButton(
       onPressed: onPressed,
       style: const ButtonStyle(
-        backgroundColor: MaterialStatePropertyAll(Colors.transparent),
-        side: MaterialStatePropertyAll(
+        backgroundColor: WidgetStatePropertyAll(Colors.transparent),
+        side: WidgetStatePropertyAll(
           BorderSide(
             color: AppColor.primaryColor,
             width: 2,

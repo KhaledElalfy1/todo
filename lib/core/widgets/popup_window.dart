@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 import 'package:testfirebase/core/utils/app_color.dart';
 import 'package:testfirebase/core/utils/app_fonts.dart';
+import 'package:testfirebase/generated/l10n.dart';
 
 class PopupWindow extends StatelessWidget {
   const PopupWindow({
@@ -38,7 +39,7 @@ class PopupWindow extends StatelessWidget {
                 backgroundColor: AppColor.green,
               ),
               child: Text(
-                'OK',
+                S.of(context).ok,
                 style: AppFonts.bold16black,
               ),
             ),
@@ -50,7 +51,7 @@ class PopupWindow extends StatelessWidget {
                       backgroundColor: AppColor.red,
                     ),
                     child: Text(
-                      'Cancel',
+                      S.of(context).cancel,
                       style: AppFonts.bold16black,
                     ),
                   )

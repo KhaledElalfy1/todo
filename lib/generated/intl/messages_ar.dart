@@ -56,6 +56,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "dontHaveAccount":
             MessageLookupByLibrary.simpleMessage("ليس لديك حساب؟"),
         "edit": MessageLookupByLibrary.simpleMessage("تعديل"),
+        "editTask": MessageLookupByLibrary.simpleMessage("التعديل على المهمة"),
         "email": MessageLookupByLibrary.simpleMessage("البريد الإلكترونى"),
         "enterEmail":
             MessageLookupByLibrary.simpleMessage("قم بإدخال بريدك الإلكترونى"),
@@ -85,6 +86,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "newPassword":
             MessageLookupByLibrary.simpleMessage("كلمة السر الجديدة"),
         "next": MessageLookupByLibrary.simpleMessage("التالى"),
+        "ok": MessageLookupByLibrary.simpleMessage("حسنا"),
         "oldPassword":
             MessageLookupByLibrary.simpleMessage("كلمة السر الحالية"),
         "onBoardingScreenSection": MessageLookupByLibrary.simpleMessage(

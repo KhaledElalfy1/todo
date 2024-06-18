@@ -10,9 +10,9 @@ ThemeData appTheme() {
     brightness: Brightness.dark,
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ButtonStyle(
-        minimumSize: const MaterialStatePropertyAll(Size(90, 56)),
-        backgroundColor: const MaterialStatePropertyAll(AppColor.primaryColor),
-        shape: MaterialStatePropertyAll(
+        minimumSize: const WidgetStatePropertyAll(Size(90, 56)),
+        backgroundColor: const WidgetStatePropertyAll(AppColor.primaryColor),
+        shape: WidgetStatePropertyAll(
           RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(4),
           ),

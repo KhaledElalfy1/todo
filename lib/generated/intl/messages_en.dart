@@ -56,6 +56,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "dontHaveAccount":
             MessageLookupByLibrary.simpleMessage("Don\'t have an account?"),
         "edit": MessageLookupByLibrary.simpleMessage("Edit"),
+        "editTask": MessageLookupByLibrary.simpleMessage("Edit Task"),
         "email": MessageLookupByLibrary.simpleMessage("E-mail"),
         "enterEmail": MessageLookupByLibrary.simpleMessage("Enter your e-mail"),
         "enterNewPassword":
@@ -83,6 +84,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "minutes": MessageLookupByLibrary.simpleMessage("Minutes"),
         "newPassword": MessageLookupByLibrary.simpleMessage("New Password "),
         "next": MessageLookupByLibrary.simpleMessage("NEXT"),
+        "ok": MessageLookupByLibrary.simpleMessage("Ok"),
         "oldPassword": MessageLookupByLibrary.simpleMessage("Old Password "),
         "onBoardingScreenSection": MessageLookupByLibrary.simpleMessage(
             "////////////////////////////////////////////////////////////////"),

@@ -10,9 +10,10 @@ import 'package:testfirebase/core/routes/routing.dart';
 import 'package:testfirebase/core/service/service_locator.dart';
 import 'package:testfirebase/core/utils/app_color.dart';
 import 'package:testfirebase/core/utils/app_fonts.dart';
-import 'package:testfirebase/core/widgets/popup_window.dart';
+import 'package:testfirebase/features/home/presentation/controller/edit_task_details_cubit/edit_task_details_cubit.dart';
 import 'package:testfirebase/features/home/presentation/controller/home/home_cubit.dart';
 import 'package:testfirebase/features/home/presentation/view/widgets/delete_task_dialog.dart';
+import 'package:testfirebase/features/home/presentation/view/widgets/edit_task_dialog.dart';
 import 'package:testfirebase/features/task_details/presentation/controller/cubit/edit_task_cubit.dart';
 import 'package:testfirebase/generated/l10n.dart';
 
@@ -54,14 +55,18 @@ class TaskCard extends StatelessWidget {
             onPressed: (_) {
               showDialog(
                 context: context,
-                builder: (context) => PopupWindow(
-                  title: 'Edit',
-                  content: 'Coming soon',
-                  type: 's',
-                  ok: () {
-                    context.pop();
-                  },
+                builder: (context) => BlocProvider(
+                  create: (context) => EditTaskDetailsCubit(task),
+                  child: EditTaskDialog(
+                    task: task,
+                  ),
                 ),
+              ).then(
+                (value) {
+                  if (value != null) {
+                    HomeCubit.get(context).getTasks();
+                  }
+                },
               );
             },
             backgroundColor: AppColor.aqua,
