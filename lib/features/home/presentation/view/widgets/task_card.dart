@@ -129,32 +129,41 @@ class TaskCard extends StatelessWidget {
                   );
                 },
               ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  BlocBuilder<HomeCubit, HomeState>(
-                    builder: (context, state) {
-                      return Text(
-                        task.taskName,
-                        style: AppFonts.dialogContent.copyWith(
-                            decoration:
-                                isDone ? TextDecoration.lineThrough : null),
-                      );
-                    },
-                  ),
-                  Gap(5.h),
-                  Text(
-                    'Due Date ${task.dueDate.day}/${task.dueDate.month}, ${task.dueDate.hour}:${task.dueDate.minute}',
-                    style: DateTime.now().isAfter(task.dueDate)
-                        ? AppFonts.regular12White.copyWith(
-                            fontSize: 14,
-                            color: AppColor.red,
-                          )
-                        : AppFonts.regular12White.copyWith(
-                            fontSize: 14,
+              Expanded(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    BlocBuilder<HomeCubit, HomeState>(
+                      builder: (context, state) {
+                        return Align(
+                          alignment: AlignmentDirectional.topStart,
+                          child: Text(
+                            task.taskName,
+                            maxLines: null,
+                            style: AppFonts.dialogContent.copyWith(
+                                decoration:
+                                    isDone ? TextDecoration.lineThrough : null),
                           ),
-                  ),
-                ],
+                        );
+                      },
+                    ),
+                    Gap(5.h),
+                    Align(
+                      alignment: AlignmentDirectional.topStart,
+                      child: Text(
+                        'Due Date ${task.dueDate.day}/${task.dueDate.month}, ${task.dueDate.hour}:${task.dueDate.minute}',
+                        style: DateTime.now().isAfter(task.dueDate)
+                            ? AppFonts.regular12White.copyWith(
+                                fontSize: 14,
+                                color: AppColor.red,
+                              )
+                            : AppFonts.regular12White.copyWith(
+                                fontSize: 14,
+                              ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ],
           ),
