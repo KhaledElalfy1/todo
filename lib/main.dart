@@ -9,7 +9,6 @@ import 'package:testfirebase/core/routes/app_routers.dart';
 import 'package:testfirebase/core/service/service_locator.dart';
 import 'package:testfirebase/todo_app.dart';
 import 'firebase_options.dart';
-import 'package:device_preview/device_preview.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -25,12 +24,10 @@ void main() async {
     () => FlutterNativeSplash.remove(),
   );
   runApp(
-    DevicePreview(
-      builder: (context) => BlocProvider(
-        create: (context) => ChangeLanguageCubit(),
-        child: TodoApp(
-          appRouter: AppRouter(),
-        ),
+    BlocProvider(
+      create: (context) => ChangeLanguageCubit(),
+      child: TodoApp(
+        appRouter: AppRouter(),
       ),
     ),
   );
