@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
+import 'package:testfirebase/core/database/cache/shared_preferences.dart';
 import 'package:testfirebase/core/helpers/extentions.dart';
 import 'package:testfirebase/core/routes/routing.dart';
+import 'package:testfirebase/core/service/service_locator.dart';
 import 'package:testfirebase/core/utils/app_fonts.dart';
 import 'package:testfirebase/features/onboarding/presentation/controller/cubit/onboarding_cubit.dart';
 import 'package:testfirebase/features/onboarding/presentation/view/widgets/indicator.dart';
@@ -12,10 +14,9 @@ import 'package:testfirebase/generated/l10n.dart';
 
 class Onboarding extends StatelessWidget {
   const Onboarding({super.key});
-  
+
   @override
   Widget build(BuildContext context) {
-     
     return Scaffold(
       body: SafeArea(
         child: Padding(
@@ -26,6 +27,8 @@ class Onboarding extends StatelessWidget {
               TextButton(
                 onPressed: () {
                   context.pushReplacementNamed(Routing.welcomeScreen);
+                  getIt<CacheHelper>()
+                      .saveData(key: CacheKeys.isFirstTime, value: false);
                 },
                 child: Text(
                   S.of(context).skip,
@@ -43,7 +46,7 @@ class Onboarding extends StatelessWidget {
                       },
                       itemCount: OnboardingCubit.get(context).onboarding.length,
                       itemBuilder: (context, index) => OnboardingWidget(
-                        onboarding:OnboardingCubit.get(context).onboarding,
+                        onboarding: OnboardingCubit.get(context).onboarding,
                         index: index,
                       ),
                     ),
@@ -64,7 +67,8 @@ class Onboarding extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   TextButton(
-                    onPressed: () => OnboardingCubit.get(context).getBack(context),
+                    onPressed: () =>
+                        OnboardingCubit.get(context).getBack(context),
                     child: Text(
                       S.of(context).back,
                       style: AppFonts.regular20White,

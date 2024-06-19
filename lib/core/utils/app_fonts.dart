@@ -81,7 +81,7 @@ double getCurrentPlatformRatio({required double currentWidth}) {
   if (currentWidth < 800) {
     return currentWidth / 380;
   } else if (currentWidth < 1200) {
-    return currentWidth / 800;
+    return currentWidth / 700;
   } else {
     return currentWidth / 1920;
   }

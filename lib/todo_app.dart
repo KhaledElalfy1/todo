@@ -14,9 +14,8 @@ import 'package:testfirebase/generated/l10n.dart';
 
 class TodoApp extends StatelessWidget {
   const TodoApp(
-      {super.key, required this.appRouter, required this.isFirstTime});
+      {super.key, required this.appRouter, });
   final AppRouter appRouter;
-  final bool isFirstTime;
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
@@ -43,7 +42,7 @@ class TodoApp extends StatelessWidget {
   }
 
   String getInitRoute() {
-    if (isFirstTime) {
+    if (getIt<CacheHelper>().getData(key: CacheKeys.isFirstTime)) {
       return Routing.init;
     }
     return (FirebaseAuth.instance.currentUser != null &&

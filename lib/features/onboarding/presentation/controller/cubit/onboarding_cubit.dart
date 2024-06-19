@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:testfirebase/core/database/cache/shared_preferences.dart';
 import 'package:testfirebase/core/helpers/extentions.dart';
 import 'package:testfirebase/core/routes/routing.dart';
+import 'package:testfirebase/core/service/service_locator.dart';
 import 'package:testfirebase/core/utils/app_images.dart';
 import 'package:testfirebase/generated/l10n.dart';
 
@@ -50,6 +52,8 @@ class OnboardingCubit extends Cubit<OnboardingState> {
     if (newText != text) {
       text = newText;
       emit(OnboardingUpdateText());
+      getIt<CacheHelper>()
+                      .saveData(key: CacheKeys.isFirstTime, value: false);
     }
   }
 

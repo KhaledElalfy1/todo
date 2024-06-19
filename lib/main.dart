@@ -20,11 +20,6 @@ void main() async {
   Bloc.observer = MyBlocObserver();
   setup();
   await getIt<CacheHelper>().init();
-  bool? isFirstTime = getIt<CacheHelper>().getData(key: CacheKeys.isFirstTime);
-  if (isFirstTime == null) {
-    await getIt<CacheHelper>()
-        .saveData(key: CacheKeys.isFirstTime, value: true);
-  }
   Future.delayed(
     const Duration(seconds: 5),
     () => FlutterNativeSplash.remove(),
@@ -35,7 +30,6 @@ void main() async {
         create: (context) => ChangeLanguageCubit(),
         child: TodoApp(
           appRouter: AppRouter(),
-          isFirstTime: isFirstTime == null,
         ),
       ),
     ),
