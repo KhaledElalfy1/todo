@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -10,6 +12,7 @@ import 'package:testfirebase/core/routes/routing.dart';
 import 'package:testfirebase/core/service/service_locator.dart';
 import 'package:testfirebase/core/utils/app_color.dart';
 import 'package:testfirebase/core/utils/app_fonts.dart';
+import 'package:testfirebase/features/calender/presentation/controller/calender_cubit/calender_cubit.dart';
 import 'package:testfirebase/features/home/presentation/controller/edit_task_details_cubit/edit_task_details_cubit.dart';
 import 'package:testfirebase/features/home/presentation/controller/home/home_cubit.dart';
 import 'package:testfirebase/features/home/presentation/view/widgets/delete_task_dialog.dart';
@@ -29,52 +32,75 @@ class TaskCard extends StatelessWidget {
         context.pushReplacementNamed(Routing.taskDetails, argument: task);
       },
       child: Slidable(
-        endActionPane: ActionPane(motion: const StretchMotion(), children: [
-          SlidableAction(
-            onPressed: (_) {
-              showDialog(
-                context: context,
-                builder: (context) => BlocProvider(
-                  create: (context) => EditTaskCubit(),
-                  child: DeleteTaskDialog(docID: task.docID),
-                ),
-              ).then(
-                (value) {
-                  if (value != null) {
-                    HomeCubit.get(context).getTasks();
-                  }
-                },
-              );
-            },
-            backgroundColor: AppColor.red,
-            foregroundColor: AppColor.white,
-            icon: Icons.delete,
-            label: S.of(context).delete,
-          ),
-          SlidableAction(
-            onPressed: (_) {
-              showDialog(
-                context: context,
-                builder: (context) => BlocProvider(
-                  create: (context) => EditTaskDetailsCubit(task),
-                  child: EditTaskDialog(
-                    task: task,
+        endActionPane: ActionPane(
+          motion: const StretchMotion(),
+          children: [
+            SlidableAction(
+              onPressed: (_) {
+                showDialog(
+                  context: context,
+                  builder: (context) => BlocProvider(
+                    create: (context) => EditTaskCubit(),
+                    child: DeleteTaskDialog(docID: task.docID),
                   ),
-                ),
-              ).then(
-                (value) {
-                  if (value != null) {
-                    HomeCubit.get(context).getTasks();
-                  }
-                },
-              );
-            },
-            backgroundColor: AppColor.aqua,
-            foregroundColor: AppColor.white,
-            icon: Icons.edit,
-            label: S.of(context).edit,
-          ),
-        ]),
+                ).then(
+                  (value) {
+                    if (value != null) {
+                      StreamSubscription? subscription;
+                      subscription = HomeCubit.get(context).stream.listen(
+                        (state) {
+                          if (state is GetTaskSuccess) {
+                            subscription?.cancel();
+                            CalenderCubit.get(context).filterTasksByDueDate(
+                                tasks: HomeCubit.get(context).userTasks);
+                          }
+                        },
+                      );
+                      HomeCubit.get(context).getTasks();
+                    }
+                  },
+                );
+              },
+              backgroundColor: AppColor.red,
+              foregroundColor: AppColor.white,
+              icon: Icons.delete,
+              label: S.of(context).delete,
+            ),
+            SlidableAction(
+              onPressed: (_) {
+                showDialog(
+                  context: context,
+                  builder: (context) => BlocProvider(
+                    create: (context) => EditTaskDetailsCubit(task),
+                    child: EditTaskDialog(
+                      task: task,
+                    ),
+                  ),
+                ).then(
+                  (value) {
+                    if (value != null) {
+                      StreamSubscription? subscription;
+                      subscription = HomeCubit.get(context).stream.listen(
+                        (state) {
+                          if (state is GetTaskSuccess) {
+                            subscription?.cancel();
+                            CalenderCubit.get(context).filterTasksByDueDate(
+                                tasks: HomeCubit.get(context).userTasks);
+                          }
+                        },
+                      );
+                      HomeCubit.get(context).getTasks();
+                    }
+                  },
+                );
+              },
+              backgroundColor: AppColor.aqua,
+              foregroundColor: AppColor.white,
+              icon: Icons.edit,
+              label: S.of(context).edit,
+            ),
+          ],
+        ),
         child: Container(
           padding: EdgeInsets.symmetric(vertical: 16.h),
           width: double.infinity,

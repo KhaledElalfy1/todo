@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:testfirebase/features/calender/presentation/controller/calender_cubit/calender_cubit.dart';
 import 'package:testfirebase/features/calender/presentation/view/calender.dart';
 import 'package:testfirebase/features/foucs/presentation/view/focus.dart';
 import 'package:testfirebase/features/home/presentation/controller/change_route_cubit/change_route_state.dart';
-import 'package:testfirebase/features/home/presentation/controller/home/home_cubit.dart';
+
 import 'package:testfirebase/features/home/presentation/view/widgets/tasks_body.dart';
 import 'package:testfirebase/features/profile/presentation/view/profile.dart';
 import 'package:testfirebase/features/task_details/presentation/controller/cubit/edit_task_cubit.dart';
@@ -15,16 +14,8 @@ class ChangeRouteCubit extends Cubit<ChangeRouteState> {
 
   List<Widget> routes = [
     const TasksBody(),
-    MultiBlocProvider(
-      providers: [
-        BlocProvider(
-          create: (context) => CalenderCubit(HomeCubit.get(context).userTasks)
-            ..filterTasksByDueDate(),
-        ),
-        BlocProvider(
-          create: (context) => EditTaskCubit(),
-        ),
-      ],
+    BlocProvider(
+      create: (context) => EditTaskCubit(),
       child: const Calender(),
     ),
     const FocusRoute(),

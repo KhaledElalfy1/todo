@@ -3,17 +3,17 @@ import 'package:testfirebase/core/model/task_model.dart';
 import 'package:testfirebase/features/calender/presentation/controller/calender_cubit/calender_state.dart';
 
 class CalenderCubit extends Cubit<CalenderState> {
-  CalenderCubit(this.tasks) : super(CalenderInitial());
-  final List<TaskModel> tasks;
+  CalenderCubit(/*this.tasks*/) : super(CalenderInitial());
+  // final List<TaskModel> tasks;
   List<TaskModel> filteredList = [];
   static CalenderCubit get(context) => BlocProvider.of(context);
   DateTime selectedDate = DateTime.now();
-  void changeSelectedDay(DateTime date) {
+  void changeSelectedDay(DateTime date,List<TaskModel> tasks) {
     selectedDate = date;
-    filterTasksByDueDate();
+    filterTasksByDueDate(tasks: tasks);
   }
 
-  void filterTasksByDueDate() {
+  void filterTasksByDueDate({required List<TaskModel> tasks}) {
     emit(FilterListLoading());
     try {
       filteredList =
