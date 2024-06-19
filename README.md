@@ -1,4 +1,4 @@
-# UpTodo <img src="assets/images/app_icon.png" align="right" width="55"/>  
+# UpTodo <img src="assets/images/icon.png" align="right" width="55"/>  
 
 
 ## description
