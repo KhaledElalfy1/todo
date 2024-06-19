@@ -10,8 +10,8 @@ class CacheHelper {
     await sharedPreferences.setBool(key, value);
   }
 
-  bool? getData({required String key}) {
-    return sharedPreferences.getBool(key);
+  bool getData({required String key}) {
+    return sharedPreferences.getBool(key)??true;
   }
 
   Future<void> setCurrentLanguageCode({required String languageCode}) async {

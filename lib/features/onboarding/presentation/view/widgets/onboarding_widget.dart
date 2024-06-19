@@ -20,12 +20,12 @@ class OnboardingWidget extends StatelessWidget {
           onboarding[index]['imagePath']!,
           height: 296.h,
         ),
-        Gap(118.h),
+        Gap(100.h),
         Text(
           onboarding[index]['title']!,
           style: AppFonts.bold32White,
         ),
-        Gap(40.h),
+        Gap(30.h),
         Text(
           onboarding[index]['subtitle']!,
           textAlign: TextAlign.center,
