@@ -4,8 +4,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 import 'package:testfirebase/core/utils/app_color.dart';
 import 'package:testfirebase/core/utils/app_icons.dart';
+import 'package:testfirebase/features/calender/presentation/controller/calender_cubit/calender_cubit.dart';
 import 'package:testfirebase/features/home/presentation/controller/change_route_cubit/change_route_cubit.dart';
 import 'package:testfirebase/features/home/presentation/controller/change_route_cubit/change_route_state.dart';
+import 'package:testfirebase/features/home/presentation/controller/home/home_cubit.dart';
 import 'package:testfirebase/features/home/presentation/view/widgets/nav_bar_index.dart';
 import 'package:testfirebase/generated/l10n.dart';
 
@@ -26,7 +28,7 @@ class IndexSection extends StatelessWidget {
               NavBarIndex(
                 iconPath: ChangeRouteCubit.get(context).currentRoute == 0
                     ? AppIcons.iconsSelectedHome
-                    :  AppIcons.iconsUnselectedHome,
+                    : AppIcons.iconsUnselectedHome,
                 title: S.of(context).index,
                 onTap: () {
                   ChangeRouteCubit.get(context).changeRoute(index: 0);
@@ -36,16 +38,18 @@ class IndexSection extends StatelessWidget {
               NavBarIndex(
                 iconPath: ChangeRouteCubit.get(context).currentRoute == 1
                     ? AppIcons.iconsSelectedCalendar
-                    :  AppIcons.iconsUnselectedCalendar,
+                    : AppIcons.iconsUnselectedCalendar,
                 title: S.of(context).Calender,
                 onTap: () {
                   ChangeRouteCubit.get(context).changeRoute(index: 1);
+                  CalenderCubit.get(context).filterTasksByDueDate(
+                      tasks: HomeCubit.get(context).userTasks);
                 },
               ),
               const Spacer(),
               NavBarIndex(
                 iconPath: ChangeRouteCubit.get(context).currentRoute == 2
-                    ?  AppIcons.iconsSelectedClock
+                    ? AppIcons.iconsSelectedClock
                     : AppIcons.iconsUnselectedClock,
                 title: S.of(context).Focus,
                 onTap: () {

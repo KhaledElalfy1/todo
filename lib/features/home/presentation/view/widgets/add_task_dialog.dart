@@ -47,7 +47,7 @@ class AddTaskDialog extends StatelessWidget {
             Row(
               children: [
                 IconButton(
-                  onPressed: () => pickDateTime(context),
+                  onPressed: () => _pickDateTime(context),
                   icon: SvgPicture.asset(
                     AppIcons.iconsTimer,
                   ),
@@ -90,17 +90,17 @@ class AddTaskDialog extends StatelessWidget {
     );
   }
 
-  Future<DateTime?> pickDate(BuildContext context) => showDatePicker(
+  Future<DateTime?> _pickDate(BuildContext context) => showDatePicker(
       context: context, firstDate: DateTime.now(), lastDate: DateTime(2050));
 
-  Future<TimeOfDay?> pickTime(BuildContext context) =>
+  Future<TimeOfDay?> _pickTime(BuildContext context) =>
       showTimePicker(context: context, initialTime: TimeOfDay.now());
 
-  Future pickDateTime(BuildContext context) async {
+  Future _pickDateTime(BuildContext context) async {
     FocusManager.instance.primaryFocus?.unfocus();
-    DateTime? date = await pickDate(context);
+    DateTime? date = await _pickDate(context);
     if (date == null) return;
-    TimeOfDay? time = await pickTime(context);
+    TimeOfDay? time = await _pickTime(context);
     if (time == null) return;
     AddTaskCubit.get(context).dueDate = DateTime(
       date.year,
