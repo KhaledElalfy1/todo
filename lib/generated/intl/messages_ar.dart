@@ -32,6 +32,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "////////////////////////////////////////////////////////////////"),
         "WhatDoYouWantToDoToday":
             MessageLookupByLibrary.simpleMessage("ما هى المهام لليوم؟"),
+        "account": MessageLookupByLibrary.simpleMessage("الحساب"),
         "addTask": MessageLookupByLibrary.simpleMessage("إضافة مهمة"),
         "alreadyHaveAnAccount":
             MessageLookupByLibrary.simpleMessage("لديك حساب بالفعل؟"),
@@ -41,6 +42,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "cancel": MessageLookupByLibrary.simpleMessage("إلغاء"),
         "changeAccountPassword": MessageLookupByLibrary.simpleMessage(
             "تغير كلمة السر الخاصة بالحساب"),
+        "changeImage": MessageLookupByLibrary.simpleMessage("تغير صورة الملف"),
+        "changeName": MessageLookupByLibrary.simpleMessage("تغير إسم المستخدم"),
         "changePassword":
             MessageLookupByLibrary.simpleMessage("تغير كلمة السر"),
         "completed": MessageLookupByLibrary.simpleMessage("مكتمل"),

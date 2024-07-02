@@ -32,6 +32,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "////////////////////////////////////////////////////////////////"),
         "WhatDoYouWantToDoToday": MessageLookupByLibrary.simpleMessage(
             "What do you want to do today?"),
+        "account": MessageLookupByLibrary.simpleMessage("Account"),
         "addTask": MessageLookupByLibrary.simpleMessage("Add Task"),
         "alreadyHaveAnAccount":
             MessageLookupByLibrary.simpleMessage("Already have an account?"),
@@ -41,6 +42,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
         "changeAccountPassword":
             MessageLookupByLibrary.simpleMessage("Change Account Password"),
+        "changeImage":
+            MessageLookupByLibrary.simpleMessage("Change account Image"),
+        "changeName":
+            MessageLookupByLibrary.simpleMessage("Change account Name"),
         "changePassword":
             MessageLookupByLibrary.simpleMessage("Change Password"),
         "completed": MessageLookupByLibrary.simpleMessage("Completed"),
