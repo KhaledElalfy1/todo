@@ -87,6 +87,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Login with Google"),
         "logout": MessageLookupByLibrary.simpleMessage("Log out"),
         "minutes": MessageLookupByLibrary.simpleMessage("Minutes"),
+        "nameIsLessThanTwo": MessageLookupByLibrary.simpleMessage(
+            "Name can\'t be less than two"),
         "newPassword": MessageLookupByLibrary.simpleMessage("New Password "),
         "next": MessageLookupByLibrary.simpleMessage("NEXT"),
         "ok": MessageLookupByLibrary.simpleMessage("Ok"),

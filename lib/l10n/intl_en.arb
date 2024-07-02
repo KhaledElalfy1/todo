@@ -89,5 +89,6 @@
     "userName":"User Name",
     "account":"Account",
     "changeImage":"Change account Image",
-    "changeName":"Change account Name"
+    "changeName":"Change account Name",
+    "nameIsLessThanTwo":"Name can't be less than two"
 }

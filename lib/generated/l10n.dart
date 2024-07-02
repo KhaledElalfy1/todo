@@ -919,6 +919,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Name can't be less than two`
+  String get nameIsLessThanTwo {
+    return Intl.message(
+      'Name can\'t be less than two',
+      name: 'nameIsLessThanTwo',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

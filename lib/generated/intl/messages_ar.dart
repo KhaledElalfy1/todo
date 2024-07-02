@@ -86,6 +86,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("تسجيل الدخول بجوجل"),
         "logout": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
         "minutes": MessageLookupByLibrary.simpleMessage("دقائق"),
+        "nameIsLessThanTwo": MessageLookupByLibrary.simpleMessage(
+            "يجب أن يكون الاسم اكبر من حرفين"),
         "newPassword":
             MessageLookupByLibrary.simpleMessage("كلمة السر الجديدة"),
         "next": MessageLookupByLibrary.simpleMessage("التالى"),

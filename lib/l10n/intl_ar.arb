@@ -89,5 +89,6 @@
     "userName":"اسم المستخدم",
     "account":"الحساب",
     "changeImage":"تغير صورة الملف",
-    "changeName":"تغير إسم المستخدم"
+    "changeName":"تغير إسم المستخدم",
+    "nameIsLessThanTwo":"يجب أن يكون الاسم اكبر من حرفين"
 }

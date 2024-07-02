@@ -1,8 +1,11 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 import 'package:testfirebase/core/widgets/cached_profile_photo.dart';
+import 'package:testfirebase/features/profile/presentation/controller/cubit/update_name_cubit.dart';
+import 'package:testfirebase/features/profile/presentation/controller/cubit/update_name_state.dart';
 import 'package:testfirebase/features/profile/presentation/view/widgets/change_account_image_section.dart';
 import 'package:testfirebase/features/profile/presentation/view/widgets/change_account_name_section.dart';
 import 'package:testfirebase/features/profile/presentation/view/widgets/change_language_section.dart';
@@ -35,10 +38,14 @@ class Profile extends StatelessWidget {
           ),
         ),
         Gap(25.h),
-        Text(
-          '${FirebaseAuth.instance.currentUser!.displayName}',
-          style: AppFonts.medium20White,
-          textAlign: TextAlign.center,
+        BlocBuilder<UpdateNameCubit, UpdateNameState>(
+          builder: (context, state) {
+            return Text(
+              '${FirebaseAuth.instance.currentUser!.displayName}',
+              style: AppFonts.medium20White,
+              textAlign: TextAlign.center,
+            );
+          },
         ),
         Gap(25.h),
         const UserTasksSection(),
