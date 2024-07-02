@@ -31,7 +31,7 @@ class Profile extends StatelessWidget {
         ),
         Gap(25.h),
         Text(
-          '${FirebaseAuth.instance.currentUser!.email}',
+          '${FirebaseAuth.instance.currentUser!.displayName}',
           style: AppFonts.medium20White,
           textAlign: TextAlign.center,
         ),
