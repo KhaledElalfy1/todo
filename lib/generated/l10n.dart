@@ -889,6 +889,36 @@ class S {
       args: [],
     );
   }
+
+  /// `Account`
+  String get account {
+    return Intl.message(
+      'Account',
+      name: 'account',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Change account Image`
+  String get changeImage {
+    return Intl.message(
+      'Change account Image',
+      name: 'changeImage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Change account Name`
+  String get changeName {
+    return Intl.message(
+      'Change account Name',
+      name: 'changeName',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
