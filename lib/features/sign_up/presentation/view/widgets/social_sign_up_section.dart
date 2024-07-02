@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -23,8 +24,12 @@ class SocialSignUpSection extends StatelessWidget {
       children: [
         BlocConsumer<SignUpCubit, SignUpState>(
           listener: (context, state) {
-            if (state is GoogleSignUpSuccess) {
+            if (state is GoogleSignUpSuccess &&
+                FirebaseAuth.instance.currentUser!.displayName != null) {
               context.pushReplacementNamed(Routing.home);
+            } else if (state is GoogleSignUpSuccess &&
+                FirebaseAuth.instance.currentUser!.displayName == null) {
+              context.pushReplacementNamed(Routing.userDetails);
             } else if (state is GoogleSignUpFailure) {
               showDialog(
                 context: context,
