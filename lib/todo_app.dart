@@ -13,8 +13,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:testfirebase/generated/l10n.dart';
 
 class TodoApp extends StatelessWidget {
-  const TodoApp(
-      {super.key, required this.appRouter, });
+  const TodoApp({
+    super.key,
+    required this.appRouter,
+  });
   final AppRouter appRouter;
   @override
   Widget build(BuildContext context) {
@@ -23,7 +25,8 @@ class TodoApp extends StatelessWidget {
       child: BlocBuilder<ChangeLanguageCubit, ChangeLanguageState>(
         builder: (context, state) {
           return MaterialApp(
-            locale: Locale(getIt<CacheHelper>().getCurrentLanguageCode()??'en'),
+            locale:
+                Locale(getIt<CacheHelper>().getCurrentLanguageCode() ?? 'en'),
             localizationsDelegates: const [
               S.delegate,
               GlobalMaterialLocalizations.delegate,
@@ -42,6 +45,7 @@ class TodoApp extends StatelessWidget {
   }
 
   String getInitRoute() {
+    return Routing.userDetails;
     if (getIt<CacheHelper>().getData(key: CacheKeys.isFirstTime)) {
       return Routing.init;
     }

@@ -136,6 +136,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "title3": MessageLookupByLibrary.simpleMessage("Orgonaize your tasks"),
         "unexpectedError": MessageLookupByLibrary.simpleMessage(
             "Unexpected Error, Please Try Again Latter"),
+        "userName": MessageLookupByLibrary.simpleMessage("User Name"),
         "warning": MessageLookupByLibrary.simpleMessage("Warning"),
         "welcomeTitle": MessageLookupByLibrary.simpleMessage(
             "Please login to your account or create new account to continue"),
