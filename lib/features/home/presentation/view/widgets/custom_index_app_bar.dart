@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:testfirebase/core/utils/app_color.dart';
 import 'package:testfirebase/core/utils/app_fonts.dart';
+import 'package:testfirebase/core/widgets/cached_profile_photo.dart';
 import 'package:testfirebase/generated/l10n.dart';
 
 class CustomIndexAppBar extends StatelessWidget {
@@ -22,9 +22,12 @@ class CustomIndexAppBar extends StatelessWidget {
           S.of(context).index,
           style: AppFonts.regular20White,
         ),
-        CircleAvatar(
-          radius: 20.r,
-          backgroundColor: AppColor.lightGrey,
+        ClipOval(
+          child: CachedProfilePhoto(
+            radius: 25.r,
+            hight: 50.h,
+            width: 50.w,
+          ),
         ),
       ],
     );

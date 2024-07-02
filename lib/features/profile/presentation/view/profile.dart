@@ -2,7 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
-import 'package:testfirebase/core/utils/app_color.dart';
+import 'package:testfirebase/core/widgets/cached_profile_photo.dart';
 import 'package:testfirebase/features/profile/presentation/view/widgets/change_language_section.dart';
 import 'package:testfirebase/features/profile/presentation/view/widgets/change_password_section.dart';
 import 'package:testfirebase/features/profile/presentation/view/widgets/sign_out_section.dart';
@@ -25,9 +25,12 @@ class Profile extends StatelessWidget {
           textAlign: TextAlign.center,
         ),
         Gap(25.h),
-        CircleAvatar(
-          radius: 45.r,
-          backgroundColor: AppColor.lightGrey,
+        ClipOval(
+          child: CachedProfilePhoto(
+            hight: 100,
+            width: 100,
+            radius: 45.r,
+          ),
         ),
         Gap(25.h),
         Text(
