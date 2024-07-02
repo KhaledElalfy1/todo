@@ -32,6 +32,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "////////////////////////////////////////////////////////////////"),
         "WhatDoYouWantToDoToday":
             MessageLookupByLibrary.simpleMessage("ما هى المهام لليوم؟"),
+        "account": MessageLookupByLibrary.simpleMessage("الحساب"),
         "addTask": MessageLookupByLibrary.simpleMessage("إضافة مهمة"),
         "alreadyHaveAnAccount":
             MessageLookupByLibrary.simpleMessage("لديك حساب بالفعل؟"),
@@ -41,6 +42,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "cancel": MessageLookupByLibrary.simpleMessage("إلغاء"),
         "changeAccountPassword": MessageLookupByLibrary.simpleMessage(
             "تغير كلمة السر الخاصة بالحساب"),
+        "changeImage": MessageLookupByLibrary.simpleMessage("تغير صورة الملف"),
+        "changeName": MessageLookupByLibrary.simpleMessage("تغير إسم المستخدم"),
         "changePassword":
             MessageLookupByLibrary.simpleMessage("تغير كلمة السر"),
         "completed": MessageLookupByLibrary.simpleMessage("مكتمل"),
@@ -83,6 +86,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("تسجيل الدخول بجوجل"),
         "logout": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
         "minutes": MessageLookupByLibrary.simpleMessage("دقائق"),
+        "nameIsLessThanTwo": MessageLookupByLibrary.simpleMessage(
+            "يجب أن يكون الاسم اكبر من حرفين"),
         "newPassword":
             MessageLookupByLibrary.simpleMessage("كلمة السر الجديدة"),
         "next": MessageLookupByLibrary.simpleMessage("التالى"),
@@ -137,6 +142,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "title3": MessageLookupByLibrary.simpleMessage("ترتيب مهامك اليومية"),
         "unexpectedError": MessageLookupByLibrary.simpleMessage(
             "خطأ غير متوقع, من فضلك حاول مجدداً"),
+        "userName": MessageLookupByLibrary.simpleMessage("اسم المستخدم"),
         "warning": MessageLookupByLibrary.simpleMessage("تحذير"),
         "welcomeTitle": MessageLookupByLibrary.simpleMessage(
             "من فضلك قم بتسجيل الدخول أو إنشاء حساب جديد"),

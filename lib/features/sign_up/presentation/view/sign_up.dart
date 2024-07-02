@@ -48,7 +48,7 @@ class SignUp extends StatelessWidget {
                         title: S.of(context).success,
                         content: state.sMessage,
                         ok: () {
-                          context.pushReplacementNamed(Routing.signIn);
+                          context.pushReplacementNamed(Routing.userDetails);
                         },
                       ),
                     );

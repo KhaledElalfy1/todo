@@ -85,5 +85,10 @@
     "delete":"Delete",
     "areYouSure":"Are you sure you want to delete this task?",
     "ok":"Ok",
-    "editTask":"Edit Task"
+    "editTask":"Edit Task",
+    "userName":"User Name",
+    "account":"Account",
+    "changeImage":"Change account Image",
+    "changeName":"Change account Name",
+    "nameIsLessThanTwo":"Name can't be less than two"
 }

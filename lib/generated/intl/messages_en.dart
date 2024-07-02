@@ -32,6 +32,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "////////////////////////////////////////////////////////////////"),
         "WhatDoYouWantToDoToday": MessageLookupByLibrary.simpleMessage(
             "What do you want to do today?"),
+        "account": MessageLookupByLibrary.simpleMessage("Account"),
         "addTask": MessageLookupByLibrary.simpleMessage("Add Task"),
         "alreadyHaveAnAccount":
             MessageLookupByLibrary.simpleMessage("Already have an account?"),
@@ -41,6 +42,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
         "changeAccountPassword":
             MessageLookupByLibrary.simpleMessage("Change Account Password"),
+        "changeImage":
+            MessageLookupByLibrary.simpleMessage("Change account Image"),
+        "changeName":
+            MessageLookupByLibrary.simpleMessage("Change account Name"),
         "changePassword":
             MessageLookupByLibrary.simpleMessage("Change Password"),
         "completed": MessageLookupByLibrary.simpleMessage("Completed"),
@@ -82,6 +87,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Login with Google"),
         "logout": MessageLookupByLibrary.simpleMessage("Log out"),
         "minutes": MessageLookupByLibrary.simpleMessage("Minutes"),
+        "nameIsLessThanTwo": MessageLookupByLibrary.simpleMessage(
+            "Name can\'t be less than two"),
         "newPassword": MessageLookupByLibrary.simpleMessage("New Password "),
         "next": MessageLookupByLibrary.simpleMessage("NEXT"),
         "ok": MessageLookupByLibrary.simpleMessage("Ok"),
@@ -136,6 +143,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "title3": MessageLookupByLibrary.simpleMessage("Orgonaize your tasks"),
         "unexpectedError": MessageLookupByLibrary.simpleMessage(
             "Unexpected Error, Please Try Again Latter"),
+        "userName": MessageLookupByLibrary.simpleMessage("User Name"),
         "warning": MessageLookupByLibrary.simpleMessage("Warning"),
         "welcomeTitle": MessageLookupByLibrary.simpleMessage(
             "Please login to your account or create new account to continue"),
