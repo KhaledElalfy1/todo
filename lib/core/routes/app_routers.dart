@@ -18,6 +18,7 @@ import 'package:testfirebase/features/sign_up/presentation/controller/cubit/sign
 import 'package:testfirebase/features/sign_up/presentation/view/sign_up.dart';
 import 'package:testfirebase/features/task_details/presentation/controller/cubit/edit_task_cubit.dart';
 import 'package:testfirebase/features/task_details/presentation/view/task_details.dart';
+import 'package:testfirebase/features/user_details/presentation/controller/show_chosen_cubit/show_chosen_image_cubit.dart';
 import 'package:testfirebase/features/user_details/presentation/controller/update_user_name_cubit/update_user_details_cubit.dart';
 import 'package:testfirebase/features/user_details/presentation/view/user_details.dart';
 import 'package:testfirebase/features/welcome/presentation/view/welcome.dart';
@@ -62,8 +63,15 @@ class AppRouter {
         );
       case Routing.userDetails:
         return MaterialPageRoute(
-          builder: (_) => BlocProvider(
-            create: (context) => UpdateUserDetailsCubit(),
+          builder: (_) => MultiBlocProvider(
+            providers: [
+              BlocProvider(
+                create: (context) => UpdateUserDetailsCubit(),
+              ),
+              BlocProvider(
+                create: (context) => ShowChosenImageCubit(),
+              ),
+            ],
             child: const UserDetails(),
           ),
         );

@@ -1,6 +1,10 @@
+import 'dart:io';
+
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:testfirebase/core/utils/app_images.dart';
 import 'package:testfirebase/features/user_details/presentation/controller/update_user_name_cubit/update_user_details_state.dart';
 import 'package:testfirebase/generated/l10n.dart';
 
@@ -9,21 +13,66 @@ class UpdateUserDetailsCubit extends Cubit<UpdateUserDetailsState> {
   static UpdateUserDetailsCubit get(context) => BlocProvider.of(context);
   TextEditingController userNameController = TextEditingController();
   final GlobalKey<FormState> globalKey = GlobalKey();
+  File? userImage;
+  late String downloadUrl;
   @override
   Future<void> close() {
     userNameController.dispose();
     return super.close();
   }
 
-  void updateUserName() {
+  void updateUserDetails() async {
+    emit(
+      UpdateUserDetailsLoading(),
+    );
     try {
-      FirebaseAuth.instance.currentUser!
-          .updateDisplayName(userNameController.text);
+      await updateUserPicture();
+      await updateUserName();
       emit(UpdateUserDetailsSuccess());
-    } on Exception catch (e) {
+    } catch (e) {
       emit(
         UpdateUserDetailsFailure(
-          eMessage: e.toString(),
+          eMessage: 'Failed to update details: $e',
+        ),
+      );
+    }
+  }
+
+  Future<void> updateUserPicture() async {
+    userImage ??= File(AppImages.defaultProfilePicture);
+
+    try {
+      final fileName = DateTime.now().millisecondsSinceEpoch.toString();
+      final Reference storageRef =
+          FirebaseStorage.instance.ref().child('profilePictures/$fileName');
+
+      final UploadTask uploadTask = storageRef.putFile(userImage!);
+
+      final TaskSnapshot taskSnapshot = await uploadTask.whenComplete(() => {});
+      downloadUrl = await taskSnapshot.ref.getDownloadURL();
+
+      debugPrint('Upload successful! Download URL: $downloadUrl');
+      await FirebaseAuth.instance.currentUser!.updatePhotoURL(downloadUrl);
+      emit(UpdateUserPictureSuccess());
+    } catch (e) {
+      debugPrint('Error uploading image: $e');
+      emit(
+        UpdateUserPictureFailure(
+          eMessage: 'Error uploading image: $e',
+        ),
+      );
+    }
+  }
+
+  Future<void> updateUserName() async {
+    try {
+      await FirebaseAuth.instance.currentUser!
+          .updateDisplayName(userNameController.text);
+      emit(UpdateUserNameSuccess());
+    } on Exception catch (e) {
+      emit(
+        UpdateUserNameFailure(
+          eMessage: 'Filed to update user name: $e',
         ),
       );
     }

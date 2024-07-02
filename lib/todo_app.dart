@@ -45,9 +45,11 @@ class TodoApp extends StatelessWidget {
   }
 
   String getInitRoute() {
-    return Routing.userDetails;
     if (getIt<CacheHelper>().getData(key: CacheKeys.isFirstTime)) {
       return Routing.init;
+    }
+    if (FirebaseAuth.instance.currentUser!.displayName==null) {
+      return Routing.userDetails;
     }
     return (FirebaseAuth.instance.currentUser != null &&
             FirebaseAuth.instance.currentUser!.emailVerified)
