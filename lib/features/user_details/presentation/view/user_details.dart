@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:gap/gap.dart';
-import 'package:testfirebase/core/utils/app_color.dart';
 import 'package:testfirebase/core/utils/app_fonts.dart';
-import 'package:testfirebase/core/utils/app_icons.dart';
 import 'package:testfirebase/core/widgets/custom_text_form_filed.dart';
+import 'package:testfirebase/features/user_details/presentation/controller/update_user_name_cubit/update_user_details_cubit.dart';
+import 'package:testfirebase/features/user_details/presentation/view/widgets/pick_profile_picture.dart';
 import 'package:testfirebase/generated/l10n.dart';
 
 class UserDetails extends StatelessWidget {
@@ -20,29 +19,8 @@ class UserDetails extends StatelessWidget {
         child: Column(
           children: [
             Gap(30.h),
-            Stack(
-              alignment: Alignment.center,
-              children: [
-                CircleAvatar(
-                  radius: 60.r,
-                  backgroundColor: AppColor.lightGrey,
-                ),
-                Positioned(
-                  bottom: -5,
-                  right: 0,
-                  child: IconButton(
-                    onPressed: () {},
-                    icon: CircleAvatar(
-                      minRadius: 18.r,
-                      backgroundColor: AppColor.primaryColor,
-                      child: SvgPicture.asset(
-                        AppIcons.iconsEdit,
-                        height: 28.h,
-                      ),
-                    ),
-                  ),
-                ),
-              ],
+            PickUserProfilePicture(
+              onPressed: () {},
             ),
             Gap(30.h),
             Align(
@@ -53,9 +31,15 @@ class UserDetails extends StatelessWidget {
               ),
             ),
             Gap(8.h),
-            CustomTextFormFiled(
-              textEditingController: TextEditingController(),
-              hintText: 'UserName',
+            Form(
+              key: UpdateUserDetailsCubit.get(context).globalKey,
+              child: CustomTextFormFiled(
+                validator: (p0) =>
+                    UpdateUserDetailsCubit.get(context).validator(p0),
+                textEditingController:
+                    UpdateUserDetailsCubit.get(context).userNameController,
+                hintText: S.of(context).userName,
+              ),
             ),
             Gap(60.h),
             SizedBox(
