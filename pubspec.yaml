@@ -29,6 +29,7 @@ environment:
 # versions available, run `flutter pub outdated`.
 dependencies:
   audioplayers: ^6.0.0
+  cached_network_image: ^3.3.1
   cloud_firestore: ^5.0.2
   cupertino_icons: ^1.0.6
   dartz: ^0.10.1
@@ -53,6 +54,7 @@ dependencies:
   logger: ^2.1.0
   percent_indicator: ^4.2.3
   shared_preferences: ^2.2.2
+  shimmer: ^3.0.0
   table_calendar: ^3.0.9
 
 dev_dependencies:
