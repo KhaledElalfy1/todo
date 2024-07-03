@@ -1,7 +1,10 @@
 import 'dart:async';
 
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../../../../../core/service/service_locator.dart';
 
 part 'counter_state.dart';
 
@@ -34,22 +37,27 @@ class CounterCubit extends Cubit<CounterState> {
     seconds = maxSeconds;
     emit(CounterSetTime());
   }
-    void handleTimerDialogResult(Set<TextEditingController>? value) {
+
+  void handleTimerDialogResult(Set<TextEditingController>? value) {
     if (value != null && value.length == 2) {
       minutesController = value.elementAt(0);
       secondsController = value.elementAt(1);
       updateTimerSetting();
     }
   }
+
   void startTimer() {
     // updateTimerSetting();
     timer = Timer.periodic(
       const Duration(seconds: 1),
-      (timer) {
+      (timer) async {
         if (seconds > 0) {
           seconds--;
           emit(CounterTicTak());
         } else {
+          await getIt<AudioPlayer>().play(
+            AssetSource('sounds/done.mp3'),
+          );
           stopTimer();
         }
       },
