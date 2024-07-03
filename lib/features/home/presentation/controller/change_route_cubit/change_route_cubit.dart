@@ -5,7 +5,8 @@ import 'package:testfirebase/features/foucs/presentation/view/focus.dart';
 import 'package:testfirebase/features/home/presentation/controller/change_route_cubit/change_route_state.dart';
 
 import 'package:testfirebase/features/home/presentation/view/widgets/tasks_body.dart';
-import 'package:testfirebase/features/profile/presentation/controller/cubit/update_name_cubit.dart';
+import 'package:testfirebase/features/profile/presentation/controller/update_name_cubit/update_name_cubit.dart';
+import 'package:testfirebase/features/profile/presentation/controller/update_new_image_cubit/update_new_image_cubit.dart';
 import 'package:testfirebase/features/profile/presentation/view/profile.dart';
 import 'package:testfirebase/features/task_details/presentation/controller/cubit/edit_task_cubit.dart';
 
@@ -20,8 +21,15 @@ class ChangeRouteCubit extends Cubit<ChangeRouteState> {
       child: const Calender(),
     ),
     const FocusRoute(),
-    BlocProvider(
-      create: (context) => UpdateNameCubit(),
+    MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => UpdateNameCubit(),
+        ),
+        BlocProvider(
+          create: (context) => UpdateNewImageCubit(),
+        ),
+      ],
       child: const Profile(),
     )
   ];
