@@ -4,8 +4,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 import 'package:testfirebase/core/widgets/cached_profile_photo.dart';
-import 'package:testfirebase/features/profile/presentation/controller/cubit/update_name_cubit.dart';
-import 'package:testfirebase/features/profile/presentation/controller/cubit/update_name_state.dart';
+import 'package:testfirebase/features/profile/presentation/controller/update_name_cubit/update_name_cubit.dart';
+import 'package:testfirebase/features/profile/presentation/controller/update_name_cubit/update_name_state.dart';
+import 'package:testfirebase/features/profile/presentation/controller/update_new_image_cubit/update_new_image_cubit.dart';
+import 'package:testfirebase/features/profile/presentation/controller/update_new_image_cubit/update_new_image_state.dart';
 import 'package:testfirebase/features/profile/presentation/view/widgets/change_account_image_section.dart';
 import 'package:testfirebase/features/profile/presentation/view/widgets/change_account_name_section.dart';
 import 'package:testfirebase/features/profile/presentation/view/widgets/change_language_section.dart';
@@ -30,12 +32,16 @@ class Profile extends StatelessWidget {
           textAlign: TextAlign.center,
         ),
         Gap(25.h),
-        ClipOval(
-          child: CachedProfilePhoto(
-            hight: 100,
-            width: 100,
-            radius: 45.r,
-          ),
+        BlocBuilder<UpdateNewImageCubit, UpdateNewImageState>(
+          builder: (context, state) {
+            return ClipOval(
+              child: CachedProfilePhoto(
+                hight: 100,
+                width: 100,
+                radius: 45.r,
+              ),
+            );
+          },
         ),
         Gap(25.h),
         BlocBuilder<UpdateNameCubit, UpdateNameState>(
