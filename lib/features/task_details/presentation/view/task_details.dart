@@ -65,7 +65,10 @@ class TaskDetails extends StatelessWidget {
                           return state is DeleteTaskLoading
                               ? const LoadingWidget()
                               : IconButton(
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    EditTaskCubit.get(context)
+                                        .deleteTask(doc: task.docID);
+                                  },
                                   icon: SvgPicture.asset(AppIcons.iconsTrash),
                                 );
                         },

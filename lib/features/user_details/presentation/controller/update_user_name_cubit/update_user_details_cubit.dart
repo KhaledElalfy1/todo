@@ -4,7 +4,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:testfirebase/core/utils/app_images.dart';
 import 'package:testfirebase/features/user_details/presentation/controller/update_user_name_cubit/update_user_details_state.dart';
 import 'package:testfirebase/generated/l10n.dart';
 
@@ -39,7 +38,7 @@ class UpdateUserDetailsCubit extends Cubit<UpdateUserDetailsState> {
   }
 
   Future<void> updateUserPicture() async {
-    userImage ??= File(AppImages.defaultProfilePicture);
+    if (userImage == null) return;
 
     try {
       final fileName = DateTime.now().millisecondsSinceEpoch.toString();

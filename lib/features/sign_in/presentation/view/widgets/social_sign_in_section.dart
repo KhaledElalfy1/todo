@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -23,8 +24,12 @@ class SocialSignInSection extends StatelessWidget {
       children: [
         BlocConsumer<SignInCubit, SignInState>(
           listener: (context, state) {
-            if (state is GoogleSignInSuccess) {
+            if (state is GoogleSignInSuccess &&
+                FirebaseAuth.instance.currentUser!.displayName != null) {
               context.pushReplacementNamed(Routing.home);
+            } else if (state is GoogleSignInSuccess &&
+                FirebaseAuth.instance.currentUser!.displayName == null) {
+              context.pushReplacementNamed(Routing.userDetails);
             } else if (state is GoogleSignInFailure) {
               PopupWindow(
                 title: S.of(context).failure,
@@ -38,7 +43,7 @@ class SocialSignInSection extends StatelessWidget {
             return SocialSignIn(
               onPressed: SignInCubit.get(context).googleSignIn,
               iconPath: AppIcons.iconsGoogle,
-              text:S.of(context).loginWithGoogle,
+              text: S.of(context).loginWithGoogle,
             );
           },
         ),
