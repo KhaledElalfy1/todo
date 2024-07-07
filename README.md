@@ -55,3 +55,6 @@ Whether you need to keep track of personal tasks or manage professional projects
      ```sh
        flutter run
      ```
+## Video Demo
+
+https://github.com/KhaledElalfy1/todo/assets/121667425/5e274b7c-166f-497a-9712-870bc7ee9638
